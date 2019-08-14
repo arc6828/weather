@@ -1,0 +1,1643 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>1RG.kmz</name>
+	<open>1</open>
+	<Style id="Conduits">
+		<IconStyle>
+			<scale>0</scale>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0</scale>
+		</LabelStyle>
+		<BalloonStyle>
+			<bgColor>ffe8dad5</bgColor>
+		</BalloonStyle>
+		<LineStyle>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Style id="Outfalls">
+		<IconStyle>
+			<scale>0.5</scale>
+			<Icon>
+				<href>https://www.chiwater.com/images/node.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0</scale>
+		</LabelStyle>
+		<BalloonStyle>
+			<bgColor>ffe8dad5</bgColor>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff010101</color>
+			<width>0.1</width>
+		</LineStyle>
+	</Style>
+	<Style id="Junctions">
+		<IconStyle>
+			<scale>0.4</scale>
+			<Icon>
+				<href>https://www.chiwater.com/images/node.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0</scale>
+		</LabelStyle>
+		<BalloonStyle>
+			<bgColor>ffe8dad5</bgColor>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff010101</color>
+			<width>0.1</width>
+		</LineStyle>
+	</Style>
+	<Style id="Subcatchments">
+		<IconStyle>
+			<scale>0</scale>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0</scale>
+		</LabelStyle>
+		<BalloonStyle>
+			<bgColor>7fe8dad5</bgColor>
+		</BalloonStyle>
+		<LineStyle>
+			<color>7f006400</color>
+			<width>1.6</width>
+		</LineStyle>
+	</Style>
+	<Folder>
+		<name>Subcatchments</name>
+		<Style id="Subcatchments">
+			<IconStyle>
+				<scale>0</scale>
+			</IconStyle>
+			<LabelStyle>
+				<scale>0</scale>
+			</LabelStyle>
+			<BalloonStyle>
+				<textColor>ff000000</textColor>
+				<bgColor>7fe8dad5</bgColor>
+				<displayMode>default</displayMode>
+			</BalloonStyle>
+			<LineStyle>
+				<color>7f006400</color>
+				<width>1.6</width>
+			</LineStyle>
+		</Style>
+		<Placemark>
+			<name>S1</name>
+			<description><![CDATA[<p></p><table width=260 cellspacing=0>
+        <tr bgcolor="#c7cddb">
+            <td  colspan=2><b>Attributes</b></td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Rain Gage</td>
+            <td>RG1</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Outlet</td>
+            <td>J1</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Area</td>
+            <td>2.4058 ha</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Imperv.</td>
+            <td>60 %</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>N-Perv Pattern</td>
+            <td></td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Dstore Pattern</td>
+            <td></td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Infil. Pattern</td>
+            <td></td>
+        </tr>
+        <tr bgcolor="#c7cddb">
+            <td  colspan=2><b>Groundwater</b></td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Bottom Elevation</td>
+            <td>-99 m</td>
+        </tr>
+        <tr bgcolor="#c7cddb">
+            <td  colspan=2><b>Results</b></td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Precipitation</td>
+            <td>20.58 mm</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Runon</td>
+            <td>0 mm</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Evaporation</td>
+            <td>0 mm</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Infiltration</td>
+            <td>8.23 mm</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Runoff Depth</td>
+            <td>12.34 mm</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Runoff Volume</td>
+            <td>0.3 ML</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Peak Runoff</td>
+            <td>0.1 m³/s</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Runoff Coefficient</td>
+            <td>0.6</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>GW Evaporation</td>
+            <td>0 mm</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>GW Seepage</td>
+            <td>0 mm</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>GW Outflow</td>
+            <td>0 mm</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>GW Max. Outflow</td>
+            <td>0 m³/s</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>GW Avg. Moisture</td>
+            <td>0</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>GW Avg. Table</td>
+            <td>0 m</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>GW Final Moisture</td>
+            <td>0</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>GW Final Table</td>
+            <td>0 m</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Imperv Runoff</td>
+            <td>12.34 mm</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Perv Runoff</td>
+            <td>0 mm</td>
+        </tr>
+</table>
+<br/><table>
+              <tr>
+                <td width = "24" align= "right"><img alt="chiLogo" src="http://www.chiwater.com/images/chiLogo24.png" width="24" height="24"/></td> 
+                <td width = "142"><p style = "margin: 0px 0px 3px 3px; cursor: default;">Powered by PCSWMM</p> </td> 
+              </tr> 
+            </table>]]></description>
+			<styleUrl>#Subcatchments</styleUrl>
+			<Style>
+				<LineStyle>
+					<color>7f006400</color>
+					<width>1.6</width>
+				</LineStyle>
+				<PolyStyle>
+					<color>7f8bbc8f</color>
+				</PolyStyle>
+			</Style>
+			<MultiGeometry>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								105.604336477747,21.3167337230407,0 105.606157845561,21.3169324174523,0 105.606334463046,21.315839597024,0 105.604457902268,21.3155967476778,0 105.604336477747,21.3167337230407,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</MultiGeometry>
+		</Placemark>
+		<Placemark>
+			<name>S2</name>
+			<description><![CDATA[<p></p><table width=260 cellspacing=0>
+        <tr bgcolor="#c7cddb">
+            <td  colspan=2><b>Attributes</b></td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Rain Gage</td>
+            <td>RG1</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Outlet</td>
+            <td>J2</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Area</td>
+            <td>1.9212 ha</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Imperv.</td>
+            <td>85 %</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>N-Perv Pattern</td>
+            <td></td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Dstore Pattern</td>
+            <td></td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Infil. Pattern</td>
+            <td></td>
+        </tr>
+        <tr bgcolor="#c7cddb">
+            <td  colspan=2><b>Groundwater</b></td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Bottom Elevation</td>
+            <td>-99 m</td>
+        </tr>
+        <tr bgcolor="#c7cddb">
+            <td  colspan=2><b>Results</b></td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Precipitation</td>
+            <td>20.58 mm</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Runon</td>
+            <td>0 mm</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Evaporation</td>
+            <td>0 mm</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Infiltration</td>
+            <td>3.09 mm</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Runoff Depth</td>
+            <td>17.47 mm</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Runoff Volume</td>
+            <td>0.34 ML</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Peak Runoff</td>
+            <td>0.11 m³/s</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Runoff Coefficient</td>
+            <td>0.849</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>GW Evaporation</td>
+            <td>0 mm</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>GW Seepage</td>
+            <td>0 mm</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>GW Outflow</td>
+            <td>0 mm</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>GW Max. Outflow</td>
+            <td>0 m³/s</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>GW Avg. Moisture</td>
+            <td>0</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>GW Avg. Table</td>
+            <td>0 m</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>GW Final Moisture</td>
+            <td>0</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>GW Final Table</td>
+            <td>0 m</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Imperv Runoff</td>
+            <td>17.47 mm</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Perv Runoff</td>
+            <td>0 mm</td>
+        </tr>
+</table>
+<br/><table>
+              <tr>
+                <td width = "24" align= "right"><img alt="chiLogo" src="http://www.chiwater.com/images/chiLogo24.png" width="24" height="24"/></td> 
+                <td width = "142"><p style = "margin: 0px 0px 3px 3px; cursor: default;">Powered by PCSWMM</p> </td> 
+              </tr> 
+            </table>]]></description>
+			<styleUrl>#Subcatchments</styleUrl>
+			<Style>
+				<LineStyle>
+					<color>7f006400</color>
+					<width>1.6</width>
+				</LineStyle>
+				<PolyStyle>
+					<color>7f8bbc8f</color>
+				</PolyStyle>
+			</Style>
+			<MultiGeometry>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								105.606157845561,21.3169324174523,0 105.607508233415,21.3171053556725,0 105.607916661349,21.3159794188105,0 105.606334463046,21.315839597024,0 105.606157845561,21.3169324174523,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</MultiGeometry>
+		</Placemark>
+		<Placemark>
+			<name>S4</name>
+			<description><![CDATA[<p></p><table width=260 cellspacing=0>
+        <tr bgcolor="#c7cddb">
+            <td  colspan=2><b>Attributes</b></td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Rain Gage</td>
+            <td>RG1</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Outlet</td>
+            <td>J4</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Area</td>
+            <td>5.3021 ha</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Imperv.</td>
+            <td>75 %</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>N-Perv Pattern</td>
+            <td></td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Dstore Pattern</td>
+            <td></td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Infil. Pattern</td>
+            <td></td>
+        </tr>
+        <tr bgcolor="#c7cddb">
+            <td  colspan=2><b>Groundwater</b></td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Bottom Elevation</td>
+            <td>-99 m</td>
+        </tr>
+        <tr bgcolor="#c7cddb">
+            <td  colspan=2><b>Results</b></td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Precipitation</td>
+            <td>20.58 mm</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Runon</td>
+            <td>0 mm</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Evaporation</td>
+            <td>0 mm</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Infiltration</td>
+            <td>5.15 mm</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Runoff Depth</td>
+            <td>15.42 mm</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Runoff Volume</td>
+            <td>0.82 ML</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Peak Runoff</td>
+            <td>0.27 m³/s</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Runoff Coefficient</td>
+            <td>0.749</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>GW Evaporation</td>
+            <td>0 mm</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>GW Seepage</td>
+            <td>0 mm</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>GW Outflow</td>
+            <td>0 mm</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>GW Max. Outflow</td>
+            <td>0 m³/s</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>GW Avg. Moisture</td>
+            <td>0</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>GW Avg. Table</td>
+            <td>0 m</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>GW Final Moisture</td>
+            <td>0</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>GW Final Table</td>
+            <td>0 m</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Imperv Runoff</td>
+            <td>15.42 mm</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Perv Runoff</td>
+            <td>0 mm</td>
+        </tr>
+</table>
+<br/><table>
+              <tr>
+                <td width = "24" align= "right"><img alt="chiLogo" src="http://www.chiwater.com/images/chiLogo24.png" width="24" height="24"/></td> 
+                <td width = "142"><p style = "margin: 0px 0px 3px 3px; cursor: default;">Powered by PCSWMM</p> </td> 
+              </tr> 
+            </table>]]></description>
+			<styleUrl>#Subcatchments</styleUrl>
+			<Style>
+				<LineStyle>
+					<color>7f006400</color>
+					<width>1.6</width>
+				</LineStyle>
+				<PolyStyle>
+					<color>7f8bbc8f</color>
+				</PolyStyle>
+			</Style>
+			<MultiGeometry>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								105.604457902268,21.3155967476778,0 105.606334463046,21.315839597024,0 105.607916661349,21.3159794188105,0 105.60848629149,21.3156977565959,0 105.608068624435,21.3150712559,0 105.607606207339,21.3144745887257,0 105.607054290159,21.3146834224463,0 105.604682537956,21.3143328800797,0 105.604457902268,21.3155967476778,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</MultiGeometry>
+		</Placemark>
+		<Placemark>
+			<name>S3</name>
+			<description><![CDATA[<p></p><table width=260 cellspacing=0>
+        <tr bgcolor="#c7cddb">
+            <td  colspan=2><b>Attributes</b></td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Rain Gage</td>
+            <td>RG1</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Outlet</td>
+            <td>J3</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Area</td>
+            <td>2.3462 ha</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Imperv.</td>
+            <td>85 %</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>N-Perv Pattern</td>
+            <td></td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Dstore Pattern</td>
+            <td></td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Infil. Pattern</td>
+            <td></td>
+        </tr>
+        <tr bgcolor="#c7cddb">
+            <td  colspan=2><b>Groundwater</b></td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Bottom Elevation</td>
+            <td>-99 m</td>
+        </tr>
+        <tr bgcolor="#c7cddb">
+            <td  colspan=2><b>Results</b></td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Precipitation</td>
+            <td>20.58 mm</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Runon</td>
+            <td>0 mm</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Evaporation</td>
+            <td>0 mm</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Infiltration</td>
+            <td>3.09 mm</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Runoff Depth</td>
+            <td>17.47 mm</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Runoff Volume</td>
+            <td>0.41 ML</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Peak Runoff</td>
+            <td>0.13 m³/s</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Runoff Coefficient</td>
+            <td>0.849</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>GW Evaporation</td>
+            <td>0 mm</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>GW Seepage</td>
+            <td>0 mm</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>GW Outflow</td>
+            <td>0 mm</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>GW Max. Outflow</td>
+            <td>0 m³/s</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>GW Avg. Moisture</td>
+            <td>0</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>GW Avg. Table</td>
+            <td>0 m</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>GW Final Moisture</td>
+            <td>0</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>GW Final Table</td>
+            <td>0 m</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Imperv Runoff</td>
+            <td>17.47 mm</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Perv Runoff</td>
+            <td>0 mm</td>
+        </tr>
+</table>
+<br/><table>
+              <tr>
+                <td width = "24" align= "right"><img alt="chiLogo" src="http://www.chiwater.com/images/chiLogo24.png" width="24" height="24"/></td> 
+                <td width = "142"><p style = "margin: 0px 0px 3px 3px; cursor: default;">Powered by PCSWMM</p> </td> 
+              </tr> 
+            </table>]]></description>
+			<styleUrl>#Subcatchments</styleUrl>
+			<Style>
+				<LineStyle>
+					<color>7f006400</color>
+					<width>1.6</width>
+				</LineStyle>
+				<PolyStyle>
+					<color>7f8bbc8f</color>
+				</PolyStyle>
+			</Style>
+			<MultiGeometry>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								105.607508233415,21.3171053556725,0 105.608091210581,21.3173859701492,0 105.60862213768,21.3178744232282,0 105.609209697002,21.3171735992655,0 105.60848629149,21.3156977565959,0 105.607916661349,21.3159794188105,0 105.607508233415,21.3171053556725,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</MultiGeometry>
+		</Placemark>
+	</Folder>
+	<Folder>
+		<name>Outlets</name>
+		<Style id="Outlets">
+			<IconStyle>
+				<scale>0</scale>
+			</IconStyle>
+			<LabelStyle>
+				<scale>0</scale>
+			</LabelStyle>
+			<BalloonStyle>
+				<textColor>ff000000</textColor>
+				<bgColor>ffe8dad5</bgColor>
+				<displayMode>default</displayMode>
+			</BalloonStyle>
+			<LineStyle>
+				<width>2</width>
+			</LineStyle>
+		</Style>
+	</Folder>
+	<Folder>
+		<name>Weirs</name>
+		<Style id="Weirs">
+			<IconStyle>
+				<scale>0</scale>
+			</IconStyle>
+			<LabelStyle>
+				<scale>0</scale>
+			</LabelStyle>
+			<BalloonStyle>
+				<textColor>ff000000</textColor>
+				<bgColor>ffe8dad5</bgColor>
+				<displayMode>default</displayMode>
+			</BalloonStyle>
+			<LineStyle>
+				<width>2</width>
+			</LineStyle>
+		</Style>
+	</Folder>
+	<Folder>
+		<name>Orifices</name>
+		<Style id="Orifices">
+			<IconStyle>
+				<scale>0</scale>
+			</IconStyle>
+			<LabelStyle>
+				<scale>0</scale>
+			</LabelStyle>
+			<BalloonStyle>
+				<textColor>ff000000</textColor>
+				<bgColor>ffe8dad5</bgColor>
+				<displayMode>default</displayMode>
+			</BalloonStyle>
+			<LineStyle>
+				<width>2</width>
+			</LineStyle>
+		</Style>
+	</Folder>
+	<Folder>
+		<name>Pumps</name>
+		<Style id="Pumps">
+			<IconStyle>
+				<scale>0</scale>
+			</IconStyle>
+			<LabelStyle>
+				<scale>0</scale>
+			</LabelStyle>
+			<BalloonStyle>
+				<textColor>ff000000</textColor>
+				<bgColor>ffe8dad5</bgColor>
+				<displayMode>default</displayMode>
+			</BalloonStyle>
+			<LineStyle>
+				<width>2</width>
+			</LineStyle>
+		</Style>
+	</Folder>
+	<Folder>
+		<name>Conduits</name>
+		<Style id="Conduits">
+			<IconStyle>
+				<scale>0</scale>
+			</IconStyle>
+			<LabelStyle>
+				<scale>0</scale>
+			</LabelStyle>
+			<BalloonStyle>
+				<textColor>ff000000</textColor>
+				<bgColor>ffe8dad5</bgColor>
+				<displayMode>default</displayMode>
+			</BalloonStyle>
+			<LineStyle>
+				<width>2</width>
+			</LineStyle>
+		</Style>
+		<Placemark>
+			<name>C1</name>
+			<description><![CDATA[<p></p><table width=260 cellspacing=0>
+        <tr bgcolor="#c7cddb">
+            <td  colspan=2><b>Results</b></td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Max. |Flow|</td>
+            <td>0.45 m³/s</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Time Max. Flow</td>
+            <td>12/17/2017 15:50 M/D/Y</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Max. |Velocity|</td>
+            <td>3.38 m/s</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Max/Full Flow</td>
+            <td>0.11</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Max/Full Depth</td>
+            <td>0.23</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Max. Volume</td>
+            <td>0 m³</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Full Both Ends (h)</td>
+            <td>0</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Full Upstream (h)</td>
+            <td>0</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Full Downstream (h)</td>
+            <td>0</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Above Full Normal (h)</td>
+            <td>0</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Capacity Limited (h)</td>
+            <td>0</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Length Factor</td>
+            <td>1 fraction</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Dry</td>
+            <td>0.09 fraction</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Subcritical</td>
+            <td>0 fraction</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Supercritical</td>
+            <td>0.91 fraction</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Normal Limited</td>
+            <td>0.05 fraction</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Inlet Control</td>
+            <td>0 fraction</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Total TSS</td>
+            <td>41280 kg</td>
+        </tr>
+</table>
+<br/><table>
+              <tr>
+                <td width = "24" align= "right"><img alt="chiLogo" src="http://www.chiwater.com/images/chiLogo24.png" width="24" height="24"/></td> 
+                <td width = "142"><p style = "margin: 0px 0px 3px 3px; cursor: default;">Powered by PCSWMM</p> </td> 
+              </tr> 
+            </table>]]></description>
+			<styleUrl>#Conduits</styleUrl>
+			<Style>
+				<LineStyle>
+					<color>ff00ffff</color>
+					<width>2</width>
+				</LineStyle>
+			</Style>
+			<MultiGeometry>
+				<LineString>
+					<coordinates>
+						105.606455955116,21.314695940353,0 105.606505508312,21.3141154600307,0 
+					</coordinates>
+				</LineString>
+			</MultiGeometry>
+		</Placemark>
+		<Placemark>
+			<name>C2</name>
+			<description><![CDATA[<p></p><table width=260 cellspacing=0>
+        <tr bgcolor="#c7cddb">
+            <td  colspan=2><b>Results</b></td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Max. |Flow|</td>
+            <td>0.179 m³/s</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Time Max. Flow</td>
+            <td>12/17/2017 15:50 M/D/Y</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Max. |Velocity|</td>
+            <td>1.74 m/s</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Max/Full Flow</td>
+            <td>2.25</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Max/Full Depth</td>
+            <td>0.78</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Max. Volume</td>
+            <td>0 m³</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Full Both Ends (h)</td>
+            <td>0.01</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Full Upstream (h)</td>
+            <td>0.98</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Full Downstream (h)</td>
+            <td>0.01</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Above Full Normal (h)</td>
+            <td>1.12</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Capacity Limited (h)</td>
+            <td>0.01</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Length Factor</td>
+            <td>1 fraction</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Dry</td>
+            <td>0.09 fraction</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Subcritical</td>
+            <td>0.9 fraction</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Supercritical</td>
+            <td>0 fraction</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Normal Limited</td>
+            <td>0.01 fraction</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Inlet Control</td>
+            <td>0 fraction</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Total TSS</td>
+            <td>18550 kg</td>
+        </tr>
+</table>
+<br/><table>
+              <tr>
+                <td width = "24" align= "right"><img alt="chiLogo" src="http://www.chiwater.com/images/chiLogo24.png" width="24" height="24"/></td> 
+                <td width = "142"><p style = "margin: 0px 0px 3px 3px; cursor: default;">Powered by PCSWMM</p> </td> 
+              </tr> 
+            </table>]]></description>
+			<styleUrl>#Conduits</styleUrl>
+			<Style>
+				<LineStyle>
+					<color>ff00ffff</color>
+					<width>2</width>
+				</LineStyle>
+			</Style>
+			<MultiGeometry>
+				<LineString>
+					<coordinates>
+						105.606215268165,21.3159135333262,0 105.606455955116,21.314695940353,0 
+					</coordinates>
+				</LineString>
+			</MultiGeometry>
+		</Placemark>
+		<Placemark>
+			<name>C3</name>
+			<description><![CDATA[<p></p><table width=260 cellspacing=0>
+        <tr bgcolor="#c7cddb">
+            <td  colspan=2><b>Results</b></td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Max. |Flow|</td>
+            <td>0.058 m³/s</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Time Max. Flow</td>
+            <td>12/17/2017 16:14 M/D/Y</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Max. |Velocity|</td>
+            <td>0.46 m/s</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Max/Full Flow</td>
+            <td>0.64</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Max/Full Depth</td>
+            <td>1</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Max. Volume</td>
+            <td>0 m³</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Full Both Ends (h)</td>
+            <td>0.82</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Full Upstream (h)</td>
+            <td>0.82</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Full Downstream (h)</td>
+            <td>0.98</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Above Full Normal (h)</td>
+            <td>0.01</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Capacity Limited (h)</td>
+            <td>0.01</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Length Factor</td>
+            <td>1 fraction</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Dry</td>
+            <td>0.1 fraction</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Subcritical</td>
+            <td>0.9 fraction</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Supercritical</td>
+            <td>0 fraction</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Normal Limited</td>
+            <td>0.87 fraction</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Inlet Control</td>
+            <td>0 fraction</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Total TSS</td>
+            <td>5242.973 kg</td>
+        </tr>
+</table>
+<br/><table>
+              <tr>
+                <td width = "24" align= "right"><img alt="chiLogo" src="http://www.chiwater.com/images/chiLogo24.png" width="24" height="24"/></td> 
+                <td width = "142"><p style = "margin: 0px 0px 3px 3px; cursor: default;">Powered by PCSWMM</p> </td> 
+              </tr> 
+            </table>]]></description>
+			<styleUrl>#Conduits</styleUrl>
+			<Style>
+				<LineStyle>
+					<color>ff00ffff</color>
+					<width>2</width>
+				</LineStyle>
+			</Style>
+			<MultiGeometry>
+				<LineString>
+					<coordinates>
+						105.606066608577,21.3168479646556,0 105.606215268165,21.3159135333262,0 
+					</coordinates>
+				</LineString>
+			</MultiGeometry>
+		</Placemark>
+		<Placemark>
+			<name>C4</name>
+			<description><![CDATA[<p></p><table width=260 cellspacing=0>
+        <tr bgcolor="#c7cddb">
+            <td  colspan=2><b>Results</b></td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Max. |Flow|</td>
+            <td>0.058 m³/s</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Time Max. Flow</td>
+            <td>12/17/2017 16:20 M/D/Y</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Max. |Velocity|</td>
+            <td>1.85 m/s</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Max/Full Flow</td>
+            <td>1.57</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Max/Full Depth</td>
+            <td>1</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Max. Volume</td>
+            <td>0 m³</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Full Both Ends (h)</td>
+            <td>0.96</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Full Upstream (h)</td>
+            <td>0.97</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Full Downstream (h)</td>
+            <td>1.04</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Above Full Normal (h)</td>
+            <td>0.98</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Capacity Limited (h)</td>
+            <td>0.93</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Length Factor</td>
+            <td>1 fraction</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Dry</td>
+            <td>0.09 fraction</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Subcritical</td>
+            <td>0.82 fraction</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Supercritical</td>
+            <td>0.09 fraction</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Normal Limited</td>
+            <td>0.85 fraction</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Inlet Control</td>
+            <td>0 fraction</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Total TSS</td>
+            <td>5184.557 kg</td>
+        </tr>
+</table>
+<br/><table>
+              <tr>
+                <td width = "24" align= "right"><img alt="chiLogo" src="http://www.chiwater.com/images/chiLogo24.png" width="24" height="24"/></td> 
+                <td width = "142"><p style = "margin: 0px 0px 3px 3px; cursor: default;">Powered by PCSWMM</p> </td> 
+              </tr> 
+            </table>]]></description>
+			<styleUrl>#Conduits</styleUrl>
+			<Style>
+				<LineStyle>
+					<color>ff00ffff</color>
+					<width>2</width>
+				</LineStyle>
+			</Style>
+			<MultiGeometry>
+				<LineString>
+					<coordinates>
+						105.60742578195,21.3169895452447,0 105.606066608577,21.3168479646556,0 
+					</coordinates>
+				</LineString>
+			</MultiGeometry>
+		</Placemark>
+		<Placemark>
+			<name>C5</name>
+			<description><![CDATA[<p></p><table width=260 cellspacing=0>
+        <tr bgcolor="#c7cddb">
+            <td  colspan=2><b>Results</b></td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Max. |Flow|</td>
+            <td>0.079 m³/s</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Time Max. Flow</td>
+            <td>12/17/2017 15:50 M/D/Y</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Max. |Velocity|</td>
+            <td>2.51 m/s</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Max/Full Flow</td>
+            <td>5.79</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Max/Full Depth</td>
+            <td>1</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Max. Volume</td>
+            <td>0 m³</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Full Both Ends (h)</td>
+            <td>1.35</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Full Upstream (h)</td>
+            <td>1.37</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Full Downstream (h)</td>
+            <td>1.51</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Above Full Normal (h)</td>
+            <td>1.34</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Capacity Limited (h)</td>
+            <td>1.29</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Length Factor</td>
+            <td>1 fraction</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Dry</td>
+            <td>0.09 fraction</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Subcritical</td>
+            <td>0.91 fraction</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Supercritical</td>
+            <td>0 fraction</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Normal Limited</td>
+            <td>0.85 fraction</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Inlet Control</td>
+            <td>0 fraction</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Total TSS</td>
+            <td>6002.69 kg</td>
+        </tr>
+</table>
+<br/><table>
+              <tr>
+                <td width = "24" align= "right"><img alt="chiLogo" src="http://www.chiwater.com/images/chiLogo24.png" width="24" height="24"/></td> 
+                <td width = "142"><p style = "margin: 0px 0px 3px 3px; cursor: default;">Powered by PCSWMM</p> </td> 
+              </tr> 
+            </table>]]></description>
+			<styleUrl>#Conduits</styleUrl>
+			<Style>
+				<LineStyle>
+					<color>ff00ffff</color>
+					<width>2</width>
+				</LineStyle>
+			</Style>
+			<MultiGeometry>
+				<LineString>
+					<coordinates>
+						105.60454461756,21.3157011624426,0 105.606215268165,21.3159135333262,0 
+					</coordinates>
+				</LineString>
+			</MultiGeometry>
+		</Placemark>
+		<Placemark>
+			<name>C6</name>
+			<description><![CDATA[<p></p><table width=260 cellspacing=0>
+        <tr bgcolor="#c7cddb">
+            <td  colspan=2><b>Results</b></td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Max. |Flow|</td>
+            <td>0.047 m³/s</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Time Max. Flow</td>
+            <td>12/17/2017 15:36 M/D/Y</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Max. |Velocity|</td>
+            <td>1.51 m/s</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Max/Full Flow</td>
+            <td>1.36</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Max/Full Depth</td>
+            <td>1</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Max. Volume</td>
+            <td>0 m³</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Full Both Ends (h)</td>
+            <td>0.92</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Full Upstream (h)</td>
+            <td>0.92</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Full Downstream (h)</td>
+            <td>1.51</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Above Full Normal (h)</td>
+            <td>0.89</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Capacity Limited (h)</td>
+            <td>0.87</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Length Factor</td>
+            <td>1 fraction</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Dry</td>
+            <td>0.09 fraction</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Subcritical</td>
+            <td>0.89 fraction</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Supercritical</td>
+            <td>0.01 fraction</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Normal Limited</td>
+            <td>0.87 fraction</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Inlet Control</td>
+            <td>0 fraction</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Total TSS</td>
+            <td>7508.785 kg</td>
+        </tr>
+</table>
+<br/><table>
+              <tr>
+                <td width = "24" align= "right"><img alt="chiLogo" src="http://www.chiwater.com/images/chiLogo24.png" width="24" height="24"/></td> 
+                <td width = "142"><p style = "margin: 0px 0px 3px 3px; cursor: default;">Powered by PCSWMM</p> </td> 
+              </tr> 
+            </table>]]></description>
+			<styleUrl>#Conduits</styleUrl>
+			<Style>
+				<LineStyle>
+					<color>ff00ffff</color>
+					<width>2</width>
+				</LineStyle>
+			</Style>
+			<MultiGeometry>
+				<LineString>
+					<coordinates>
+						105.607758496266,21.3160480344668,0 105.606215268165,21.3159135333262,0 
+					</coordinates>
+				</LineString>
+			</MultiGeometry>
+		</Placemark>
+	</Folder>
+	<Folder>
+		<name>Storages</name>
+		<Style id="Storages">
+			<IconStyle>
+				<scale>0</scale>
+			</IconStyle>
+			<LabelStyle>
+				<scale>0</scale>
+			</LabelStyle>
+			<BalloonStyle>
+				<textColor>ff000000</textColor>
+				<bgColor>ffe8dad5</bgColor>
+				<displayMode>default</displayMode>
+			</BalloonStyle>
+			<LineStyle>
+				<color>ff010101</color>
+				<width>0.1</width>
+			</LineStyle>
+		</Style>
+	</Folder>
+	<Folder>
+		<name>Dividers</name>
+		<Style id="Dividers">
+			<IconStyle>
+				<scale>0</scale>
+			</IconStyle>
+			<LabelStyle>
+				<scale>0</scale>
+			</LabelStyle>
+			<BalloonStyle>
+				<textColor>ff000000</textColor>
+				<bgColor>ffe8dad5</bgColor>
+				<displayMode>default</displayMode>
+			</BalloonStyle>
+			<LineStyle>
+				<color>ff010101</color>
+				<width>0.1</width>
+			</LineStyle>
+		</Style>
+	</Folder>
+	<Folder>
+		<name>Outfalls</name>
+		<Style id="Outfalls">
+			<IconStyle>
+				<scale>0.5</scale>
+				<Icon>
+					<href>https://www.chiwater.com/images/node.png</href>
+				</Icon>
+			</IconStyle>
+			<LabelStyle>
+				<scale>0</scale>
+			</LabelStyle>
+			<BalloonStyle>
+				<textColor>ff000000</textColor>
+				<bgColor>ffe8dad5</bgColor>
+				<displayMode>default</displayMode>
+			</BalloonStyle>
+			<LineStyle>
+				<color>ff010101</color>
+				<width>0.1</width>
+			</LineStyle>
+		</Style>
+		<Placemark>
+			<name>OF1</name>
+			<description><![CDATA[<p></p><table width=260 cellspacing=0>
+        <tr bgcolor="#c7cddb">
+            <td  colspan=2><b>Results</b></td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Max. Depth</td>
+            <td>0.23 m</td>
+        </tr>
+        <tr bgcolor="#eef0f5">
+            <td>Total inflow</td>
+            <td>1.65 ML</td>
+        </tr>
+        <tr bgcolor="#fafbfc">
+            <td>Total TSS</td>
+            <td>41276.918 kg</td>
+        </tr>
+</table>
+<br/><table>
+              <tr>
+                <td width = "24" align= "right"><img alt="chiLogo" src="http://www.chiwater.com/images/chiLogo24.png" width="24" height="24"/></td> 
+                <td width = "142"><p style = "margin: 0px 0px 3px 3px; cursor: default;">Powered by PCSWMM</p> </td> 
+              </tr> 
+            </table>]]></description>
+			<styleUrl>#Outfalls</styleUrl>
+			<Style>
+				<LineStyle>
+					<color>ff0000ff</color>
+				</LineStyle>
+				<PolyStyle>
+					<color>ff0000ff</color>
+				</PolyStyle>
+			</Style>
+			<MultiGeometry>
+				<Point>
+					<coordinates>105.606505508312,21.3141154600307,0</coordinates>
+				</Point>
+			</MultiGeometry>
+		</Placemark>
+	</Folder>
+	<Folder>
+		<name>Junctions</name>
+		<Style id="Junctions">
+			<IconStyle>
+				<scale>0.4</scale>
+				<Icon>
+					<href>https://www.chiwater.com/images/node.png</href>
+				</Icon>
+			</IconStyle>
+			<LabelStyle>
+				<scale>0</scale>
+			</LabelStyle>
+			<BalloonStyle>
+				<textColor>ff000000</textColor>
+				<bgColor>ffe8dad5</bgColor>
+				<displayMode>default</displayMode>
+			</BalloonStyle>
+			<LineStyle>
+				<color>ff010101</color>
+				<width>0.1</width>
+			</LineStyle>
+		</Style>
+		<Placemark>
+			<name>J1</name>
+			<description><![CDATA[<p></p><table width=260 cellspacing=0>
+</table>
+<br/><table>
+              <tr>
+                <td width = "24" align= "right"><img alt="chiLogo" src="http://www.chiwater.com/images/chiLogo24.png" width="24" height="24"/></td> 
+                <td width = "142"><p style = "margin: 0px 0px 3px 3px; cursor: default;">Powered by PCSWMM</p> </td> 
+              </tr> 
+            </table>]]></description>
+			<styleUrl>#Junctions</styleUrl>
+			<Style>
+				<LineStyle>
+					<color>ffc08000</color>
+				</LineStyle>
+				<PolyStyle>
+					<color>ffc08000</color>
+				</PolyStyle>
+			</Style>
+			<MultiGeometry>
+				<Point>
+					<coordinates>105.60454461756,21.3157011624426,0</coordinates>
+				</Point>
+			</MultiGeometry>
+		</Placemark>
+		<Placemark>
+			<name>J2</name>
+			<description><![CDATA[<p></p><table width=260 cellspacing=0>
+</table>
+<br/><table>
+              <tr>
+                <td width = "24" align= "right"><img alt="chiLogo" src="http://www.chiwater.com/images/chiLogo24.png" width="24" height="24"/></td> 
+                <td width = "142"><p style = "margin: 0px 0px 3px 3px; cursor: default;">Powered by PCSWMM</p> </td> 
+              </tr> 
+            </table>]]></description>
+			<styleUrl>#Junctions</styleUrl>
+			<Style>
+				<LineStyle>
+					<color>ffc08000</color>
+				</LineStyle>
+				<PolyStyle>
+					<color>ffc08000</color>
+				</PolyStyle>
+			</Style>
+			<MultiGeometry>
+				<Point>
+					<coordinates>105.607758496266,21.3160480344668,0</coordinates>
+				</Point>
+			</MultiGeometry>
+		</Placemark>
+		<Placemark>
+			<name>J3</name>
+			<description><![CDATA[<p></p><table width=260 cellspacing=0>
+</table>
+<br/><table>
+              <tr>
+                <td width = "24" align= "right"><img alt="chiLogo" src="http://www.chiwater.com/images/chiLogo24.png" width="24" height="24"/></td> 
+                <td width = "142"><p style = "margin: 0px 0px 3px 3px; cursor: default;">Powered by PCSWMM</p> </td> 
+              </tr> 
+            </table>]]></description>
+			<styleUrl>#Junctions</styleUrl>
+			<Style>
+				<LineStyle>
+					<color>ffc08000</color>
+				</LineStyle>
+				<PolyStyle>
+					<color>ffc08000</color>
+				</PolyStyle>
+			</Style>
+			<MultiGeometry>
+				<Point>
+					<coordinates>105.60742578195,21.3169895452447,0</coordinates>
+				</Point>
+			</MultiGeometry>
+		</Placemark>
+		<Placemark>
+			<name>J4</name>
+			<description><![CDATA[<p></p><table width=260 cellspacing=0>
+</table>
+<br/><table>
+              <tr>
+                <td width = "24" align= "right"><img alt="chiLogo" src="http://www.chiwater.com/images/chiLogo24.png" width="24" height="24"/></td> 
+                <td width = "142"><p style = "margin: 0px 0px 3px 3px; cursor: default;">Powered by PCSWMM</p> </td> 
+              </tr> 
+            </table>]]></description>
+			<styleUrl>#Junctions</styleUrl>
+			<Style>
+				<LineStyle>
+					<color>ffc08000</color>
+				</LineStyle>
+				<PolyStyle>
+					<color>ffc08000</color>
+				</PolyStyle>
+			</Style>
+			<MultiGeometry>
+				<Point>
+					<coordinates>105.606455955116,21.314695940353,0</coordinates>
+				</Point>
+			</MultiGeometry>
+		</Placemark>
+		<Placemark>
+			<name>J3_1</name>
+			<description><![CDATA[<p></p><table width=260 cellspacing=0>
+</table>
+<br/><table>
+              <tr>
+                <td width = "24" align= "right"><img alt="chiLogo" src="http://www.chiwater.com/images/chiLogo24.png" width="24" height="24"/></td> 
+                <td width = "142"><p style = "margin: 0px 0px 3px 3px; cursor: default;">Powered by PCSWMM</p> </td> 
+              </tr> 
+            </table>]]></description>
+			<styleUrl>#Junctions</styleUrl>
+			<Style>
+				<LineStyle>
+					<color>ffc08000</color>
+				</LineStyle>
+				<PolyStyle>
+					<color>ffc08000</color>
+				</PolyStyle>
+			</Style>
+			<MultiGeometry>
+				<Point>
+					<coordinates>105.606066608577,21.3168479646556,0</coordinates>
+				</Point>
+			</MultiGeometry>
+		</Placemark>
+		<Placemark>
+			<name>J3_2</name>
+			<description><![CDATA[<p></p><table width=260 cellspacing=0>
+</table>
+<br/><table>
+              <tr>
+                <td width = "24" align= "right"><img alt="chiLogo" src="http://www.chiwater.com/images/chiLogo24.png" width="24" height="24"/></td> 
+                <td width = "142"><p style = "margin: 0px 0px 3px 3px; cursor: default;">Powered by PCSWMM</p> </td> 
+              </tr> 
+            </table>]]></description>
+			<styleUrl>#Junctions</styleUrl>
+			<Style>
+				<LineStyle>
+					<color>ffc08000</color>
+				</LineStyle>
+				<PolyStyle>
+					<color>ffc08000</color>
+				</PolyStyle>
+			</Style>
+			<MultiGeometry>
+				<Point>
+					<coordinates>105.606215268165,21.3159135333262,0</coordinates>
+				</Point>
+			</MultiGeometry>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>
