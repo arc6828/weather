@@ -72,8 +72,8 @@
     <script>
       var map;
 
-      //var src = "https://csincube.com/1RG.kml";
-      var src = "{{ url('/') }}/reports/2019-08-14_10-00-00/kml/1RG.kml";
+      var src = "https://csincube.com/1RG.kmz";
+      //var src = "{{ url('/') }}/reports/2019-08-14_10-00-00/kml/1RG.kmz";
       //var src = "https://csincube.com/us_states.kml";
       //var src = 'https://developers.google.com/maps/documentation/javascript/examples/kml/westcampus.kml';
 
