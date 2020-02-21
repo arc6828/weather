@@ -72,7 +72,7 @@
     <script>
       var map;
 
-      var src = "https://csincube.com/1RG.kmz";
+      var src = "https://weather.ckartisan.com/sample/kml/test1.kmz";
       //var src = "{{ url('/') }}/reports/2019-08-14_10-00-00/kml/1RG.kmz";
       //var src = "https://csincube.com/us_states.kml";
       //var src = 'https://developers.google.com/maps/documentation/javascript/examples/kml/westcampus.kml';
