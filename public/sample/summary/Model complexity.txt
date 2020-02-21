@@ -1,0 +1,19 @@
+Name	test1	test1	test1
+Subcatchments	66	n/a	n/a
+Groundwater	0	n/a	n/a
+Aquifers	n/a	n/a	n/a
+Snowpacks	n/a	n/a	n/a
+RDII hydrographs	n/a	n/a	n/a
+Junction nodes	12	n/a	n/a
+Outfall nodes	1	n/a	n/a
+Flow divider nodes	n/a	n/a	n/a
+Storage unit nodes	n/a	n/a	n/a
+Conduit links	24	n/a	n/a
+Pump links	n/a	n/a	n/a
+Orifice links	n/a	n/a	n/a
+Weir links	n/a	n/a	n/a
+Outlet links	n/a	n/a	n/a
+Transect	n/a	n/a	n/a
+Pollutants	2	n/a	n/a
+Land Uses	20	n/a	n/a
+Model complexity (total uncertain input parameters)	125	0	0

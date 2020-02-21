@@ -1,0 +1,13 @@
+Name	test1	test1	test1
+Dry weather inflow (MG)	0.000	n/a	n/a
+Wet weather inflow (MG)	6.400	n/a	n/a
+Groundwater inflow (MG)	0.000	n/a	n/a
+RDII inflow (MG)	0.000	n/a	n/a
+External inflow (MG)	0.000	n/a	n/a
+External outflow (MG)	3.009	n/a	n/a
+Flooding loss (MG)	3.391	n/a	n/a
+Evaporation loss (MG)	0.000	n/a	n/a
+Exfiltration loss (MG)	0.000	n/a	n/a
+Initial stored volume (MG)	0.000	n/a	n/a
+Final stored volume (MG)	0.000	n/a	n/a
+Continuity error (%)	0.000	n/a	n/a

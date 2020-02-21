@@ -1,0 +1,5 @@
+Name	test1	test1	test1
+Time series inflows	0	0	0
+Dry weather inflows	0	0	0
+Groundwater inflows	0	0	0
+RDII inflows	0	0	0

@@ -1,0 +1,32 @@
+Name	test1	test1	test1
+Flow Units	CFS	CFS	CFS
+Infiltration method	Horton	Horton	Horton
+Flow routing method	Dynamic Wave	Dynamic Wave	Dynamic Wave
+Link offsets defined by	Depth	Depth	Depth
+Allow ponding	No	No	No
+Skip steady flow periods	No	No	No
+Inertial dampening	Partial	Partial	Partial
+Define supercritical flow by	Both	Both	Both
+Force Main Equation	H-W	H-W	H-W
+Variable time step	On	On	On
+Adjustment factor (%)	75	75	75
+Conduit lengthening (s)	0	0	0
+Minimum surface area (ft?)	0	0	0
+Starting date	Aug-29-2017 07:00:00 PM	 	 
+Ending date	Aug-31-2017 07:00:00 PM	Feb-19-2020 06:00:00 AM	Feb-19-2020 06:00:00 AM
+Duration of simulation (hours)	48	n/a	n/a
+Antecedent dry days (days)	0	0	0
+Rain interval (h:mm)	06:00	n/a	n/a
+Report time step (h:mm:ss)	00:15:00	00:01:00	00:01:00
+Wet time step (h:mm:ss)	00:05:00	00:05:00	00:05:00
+Dry time step (h:mm:ss)	00:05:00	00:05:00	00:05:00
+Routing time step (s)	5	5	5
+Minimum time step used (s)	2.24	n/a	n/a
+Average time step used (s)	4.67	n/a	n/a
+Minimum conduit slope	0	0	0
+Ignore rainfall/runoff	No	No	No
+Ignore snow melt	No	No	No
+Ignore groundwater	No	No	No
+Ignore flow routing	No	No	No
+Ignore water quality	No	No	No
+Report average results	No	No	No

@@ -1,0 +1,14 @@
+Name	test1	test1	test1
+Max. roughness	0.013	n/a	n/a
+Min. roughness	0.013	n/a	n/a
+Max. entry loss coef.	0	n/a	n/a
+Min. entry loss coef.	0	n/a	n/a
+Max. exit loss coef.	0	n/a	n/a
+Min. exit loss coef.	0	n/a	n/a
+Max. avg. loss coef.	0	n/a	n/a
+Min. avg. loss coef.	0	n/a	n/a
+Max. length (ft)	174.918	n/a	n/a
+Min. length (ft)	64.477	n/a	n/a
+Total length (ft)	783.79	n/a	n/a
+Max. slope (ft/ft)	0.0279	n/a	n/a
+Min. slope (ft/ft)	0.0015	n/a	n/a

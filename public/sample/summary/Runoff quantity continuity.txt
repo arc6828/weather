@@ -1,0 +1,13 @@
+Name	test1	test1	test1
+Initial LID storage (in)	n/a	n/a	n/a
+Initial snow cover (in)	n/a	n/a	n/a
+Total precipitation (in)	26.100	n/a	n/a
+Outfall runon (in)	n/a	n/a	n/a
+Evaporation loss (in)	0.000	n/a	n/a
+Infiltration loss (in)	6.381	n/a	n/a
+Surface runoff (in)	19.680	n/a	n/a
+LID drainage (in)	n/a	n/a	n/a
+Snow removed (in)	n/a	n/a	n/a
+Final snow cover (in)	n/a	n/a	n/a
+Final storage (in)	0.046	n/a	n/a
+Continuity error (%)	-0.029	n/a	n/a

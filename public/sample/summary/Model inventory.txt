@@ -1,0 +1,30 @@
+Name	test1	test1	test1
+Raingages	1	0	0
+Subcatchments	4	0	0
+Aquifers	0	0	0
+Snowpacks	0	0	0
+RDII hydrographs	0	0	0
+Junction nodes	6	0	0
+Outfall nodes	1	0	0
+Flow divider nodes	0	0	0
+Storage unit nodes	0	0	0
+Conduit links	6	0	0
+Pump links	0	0	0
+Orifice links	0	0	0
+Weir links	0	0	0
+Outlet links	0	0	0
+Treatment units	0	0	0
+Transects	0	0	0
+Control rules	0	0	0
+Pollutants	2	0	0
+Land Uses	2	0	0
+Control Curves	0	0	0
+Diversion Curves	0	0	0
+Pump Curves	0	0	0
+Rating Curves	0	0	0
+Shape Curves	0	0	0
+Storage Curves	0	0	0
+Tidal Curves	0	0	0
+Weir Curves	0	0	0
+Time Series	1	0	0
+Time Patterns	0	0	0

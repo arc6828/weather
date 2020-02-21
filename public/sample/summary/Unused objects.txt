@@ -1,0 +1,16 @@
+Name	test1	test1	test1
+Rain Gages	0	n/a	n/a
+Aquifers	n/a	n/a	n/a
+Snow Packs	n/a	n/a	n/a
+Unit Hydrographs	n/a	n/a	n/a
+Transects	n/a	n/a	n/a
+Control Curves	n/a	n/a	n/a
+Diversion Curves	n/a	n/a	n/a
+Pump Curves	n/a	n/a	n/a
+Rating Curves	n/a	n/a	n/a
+Shape Curves	n/a	n/a	n/a
+Storage Curves	n/a	n/a	n/a
+Tidal Curves	n/a	n/a	n/a
+Weir Curves	n/a	n/a	n/a
+Time Series	0	n/a	n/a
+Time Patterns	n/a	n/a	n/a

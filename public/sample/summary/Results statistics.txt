@@ -1,0 +1,27 @@
+Name	test1	test1	test1
+Max. subcatchment total runoff (MG)	2.81	n/a	n/a
+Max. subcatchment peak runoff (cfs)	8.02	n/a	n/a
+Max. subcatchment runoff coefficient	0.848	n/a	n/a
+Max. subcatchment total precip (in)	26.1	n/a	n/a
+Min. subcatchment total precip (in)	26.1	n/a	n/a
+Max. node depth (ft)	11	n/a	n/a
+Num. nodes surcharged 	6	n/a	n/a
+Max. node surcharge duration (hours)	31.8	n/a	n/a
+Max. node height above crown (ft)	10.8	n/a	n/a
+Min. node depth below rim (ft)	0	n/a	n/a
+Num. nodes flooded	3	n/a	n/a
+Max. node flooding duration (hours)	26.38	n/a	n/a
+Max. node flood volume (MG)	1.348	n/a	n/a
+Max. node ponded volume or depth (acre-in/1000 ft?/ft)	0	n/a	n/a
+Max. storage volume (1000 ft?)	n/a	n/a	n/a
+Max. storage percent full (%)	n/a	n/a	n/a
+Max. outfall flow frequency (%)	95.24	n/a	n/a
+Max. outfall peak flow (cfs)	8.23	n/a	n/a
+Max. outfall total volume (MG)	3.009	n/a	n/a
+Total outfall volume (MG) 	3.009	n/a	n/a
+Max. link peak flow (cfs)	8.23	n/a	n/a
+Max. link peak velocity (ft/s)	10.48	n/a	n/a
+Min. link peak velocity (ft/s)	0.9	n/a	n/a
+Num. conduits surcharged 	6	n/a	n/a
+Max. conduit surcharge duration (hours)	32.52	n/a	n/a
+Max. conduit capacity limited duration (hours)	31.54	n/a	n/a

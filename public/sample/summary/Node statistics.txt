@@ -1,0 +1,7 @@
+Name	test1	test1	test1
+Max. ground elev. (ft)	19.5	n/a	n/a
+Min. ground elev. (ft)	12.4	n/a	n/a
+Max. invert elev. (ft)	10.2	n/a	n/a
+Min. invert elev. (ft)	6.2	n/a	n/a
+Max. depth (ft)	11	n/a	n/a
+Min. depth (ft)	2.4	n/a	n/a

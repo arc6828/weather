@@ -1,0 +1,20 @@
+Name	test1	test1	test1
+Max. width (ft)	265.105	n/a	n/a
+Min. width (ft)	96.06	n/a	n/a
+Max. area ( ac)	5.3021	n/a	n/a
+Min. area ( ac)	1.9212	n/a	n/a
+Total area ( ac)	11.9753	n/a	n/a
+Max. length of overland flow (ft)	871.2	n/a	n/a
+Min. length of overland flow (ft)	871.2	n/a	n/a
+Max. slope (%)	0.65	n/a	n/a
+Min. slope (%)	0.65	n/a	n/a
+Max. imperviousness (%)	85	n/a	n/a
+Min. imperviousness (%)	60	n/a	n/a
+Max. imp. roughness	0.014	n/a	n/a
+Min. imp. roughness	0.014	n/a	n/a
+Max. perv. roughness	0.5	n/a	n/a
+Min. perv. roughness	0.5	n/a	n/a
+Max. imp. depression storage (in)	0.05	n/a	n/a
+Min. imp. depression storage (in)	0.05	n/a	n/a
+Max. perv. depression storage (in)	6	n/a	n/a
+Min. perv. depression storage (in)	6	n/a	n/a
