@@ -72,8 +72,8 @@
     <script>
       var map;
 
-      //var src = "https://weather.ckartisan.com/sample/kml/test1.kmz";
-      var src = "https://weather.ckartisan.com/sample/kml/2D_Base.kmz";
+      var src = "https://weather.ckartisan.com/sample/kml/test1.kmz";
+      //var src = "https://weather.ckartisan.com/sample/kml/2D_Base.kmz";
       // /2D_Base.kmz
       //var src = "{{ url('/') }}/reports/2019-08-14_10-00-00/kml/1RG.kmz";
       //var src = "https://csincube.com/us_states.kml";
@@ -82,8 +82,8 @@
 
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
-          //center: {lat: 21.3143328800798, lng: 105.603779579014},
-          center: {lat: 13.751288, lng: 100.628847},
+          center: {lat: 21.3143328800798, lng: 105.603779579014},
+          //center: {lat: 13.751288, lng: 100.628847},
           //13.751288, 100.628847
           zoom: 15
         });
