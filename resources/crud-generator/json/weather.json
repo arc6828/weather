@@ -1,0 +1,1083 @@
+{
+    "fields": [
+        {
+            "name": "Outfalls",
+            "type": "file"
+        },
+
+        {
+            "name": "kmls",
+            "type": "file"
+        },
+
+        {
+            "name": "profiles",
+            "type": "file"
+        },
+
+        {
+            "name":"circular",
+            "type":"string"
+        },
+
+        {
+            "name":"mxrougs",
+            "type":"string"
+        },
+
+        {
+            "name":"mnrougs",
+            "type":"string"
+        },
+
+        {
+            "name":"mxenlefs",
+            "type":"string"
+        },
+
+        {
+            "name":"mienlefs",
+            "type":"string"
+        },
+
+        {
+            "name":"mxeloefs",
+            "type":"string"
+        },
+
+        {
+            "name":"mneloefs",
+            "type":"string"
+        },
+
+        {
+            "name":"mxaglefs",
+            "type":"string"
+        },
+
+        {
+            "name":"miaglefs",
+            "type":"string"
+        },
+
+        {
+            "name":"mxleths",
+            "type":"string"
+        },
+
+        {
+            "name":"mileths",
+            "type":"string"
+        },
+        
+        {
+            "name":"totallgth",
+            "type":"string"
+        },
+
+        {
+            "name":"mxslope",
+            "type":"string"
+        },
+
+        {
+            "name":"mislope",
+            "type":"string"
+        },
+
+        {
+            "name":"dryweaflow",
+            "type":"string"
+        },
+
+        {
+            "name":"wetweaflow",
+            "type":"string"
+        },
+
+        {
+            "name":"groundweaflow",
+            "type":"string"
+        },
+
+        {
+            "name":"rdiiflow",
+            "type":"string"
+        },
+
+        {
+            "name":"exnalflow",
+            "type":"string"
+        },
+
+        {
+            "name":"exnaloutflow",
+            "type":"string"
+        },
+
+        {
+            "name":"floodloss",
+            "type":"string"
+        },
+
+        {
+            "name":"evaloss",
+            "type":"string"
+        },
+
+        {
+            "name":"exfiltionloss",
+            "type":"string"
+        },
+
+        {
+            "name":"lnitialvols",
+            "type":"string"
+        },
+
+        {
+            "name":"finalvols",
+            "type":"string"
+        },
+
+        {
+            "name":"conerrors",
+            "type":"string"
+        },
+
+        {
+            "name":"timeflows",
+            "type":"string"
+        },
+
+        {
+            "name":"dryweaflows",
+            "type":"string"
+        },
+
+        {
+            "name":"groundflows",
+            "type":"string"
+        },
+
+        {
+            "name":"rdiiflows",
+            "type":"string"
+        },
+
+        {
+            "name":"subments",
+            "type":"string"
+        },
+
+        {
+            "name":"grounwter",
+            "type":"string"
+        },
+
+        {
+            "name":"complexity_aquifers",
+            "type":"string"
+        },
+
+        {
+            "name":"complexity_snows",
+            "type":"string"
+        },
+
+        {
+            "name":"complexity_rdiigraphs",
+            "type":"string"
+        },
+
+        {
+            "name":"complexity_jundes",
+            "type":"string"
+        },
+
+        {
+            "name":"complexity_outdes",
+            "type":"string"
+        },
+
+        {
+            "name":"complexity_fldides",
+            "type":"string"
+        },
+
+        {
+            "name":"complexity_storaundes",
+            "type":"string"
+        },
+
+        {
+            "name":"complexity_conlinks",
+            "type":"string"
+        },
+
+        {
+            "name":"complexity_pumplinks",
+            "type":"string"
+        },
+
+        {
+            "name":"complexity_oriflinks",
+            "type":"string"
+        },
+
+        {
+            "name":"complexity_weirlinks",
+            "type":"string"
+        },
+
+        {
+            "name":"complexity_outlinks",
+            "type":"string"
+        },
+
+        {
+            "name":"complexity_transect",
+            "type":"string"
+        },
+
+
+        {
+            "name":"complexity_polluts",
+            "type":"string"
+        },
+
+
+        {
+            "name":"complexity_landus",
+            "type":"string"
+        },
+
+
+        {
+            "name":"totalcomity",
+            "type":"string"
+        },
+
+
+        {
+            "name":"raings",
+            "type":"string"
+        },
+
+
+        {
+            "name":"inventory_subments",
+            "type":"string"
+        },
+
+
+        {
+            "name":"inventory_aquifers",
+            "type":"string"
+        },
+
+
+        {
+            "name":"inventory_snows",
+            "type":"string"
+        },
+
+
+        {
+            "name":"inventory_rdiigraphs",
+            "type":"string"
+        },
+
+
+        {
+            "name":"inventory_jundes",
+            "type":"string"
+        },
+
+
+        {
+            "name":"inventory_outdes",
+            "type":"string"
+        },
+
+
+        {
+            "name":"inventory_fldides",
+            "type":"string"
+        },
+
+
+        {
+            "name":"inventory_storaundes",
+            "type":"string"
+        },
+
+
+        {
+            "name":"inventory_conlinks",
+            "type":"string"
+        },
+
+
+        {
+            "name":"inventory_pumplinks",
+            "type":"string"
+        },
+
+
+        {
+            "name":"inventory_oriflinks",
+            "type":"string"
+        },
+
+        {
+            "name":"inventory_weirlinks",
+            "type":"string"
+        },
+
+        {
+            "name":"inventory_outlinks",
+            "type":"string"
+        },
+
+        {
+            "name":"inventory_treunits",
+            "type":"string"
+        },
+
+        {
+            "name":"inventory_transect",
+            "type":"string"
+        },
+
+        {
+            "name":"inventory_conruls",
+            "type":"string"
+        },
+
+        {
+            "name":"inventory_polluts",
+            "type":"string"
+        },
+
+        {
+            "name":"inventory_landus",
+            "type":"string"
+        },
+
+        {
+            "name":"conves",
+            "type":"string"
+        },
+
+        {
+            "name":"divsionves",
+            "type":"string"
+        },
+
+        {
+            "name":"pumpves",
+            "type":"string"
+        },
+
+        {
+            "name":"ratingves",
+            "type":"string"
+        },
+
+        {
+            "name":"shapeves",
+            "type":"string"
+        },
+
+        {
+            "name":"strogves",
+            "type":"string"
+        },
+
+        {
+            "name":"tidalves",
+            "type":"string"
+        },
+
+        {
+            "name":"weirves",
+            "type":"string"
+        },
+
+        {
+            "name":"timeseries",
+            "type":"string"
+        },
+
+        {
+            "name":"timepatns",
+            "type":"string"
+        },
+
+        {
+            "name":"mxgroudev",
+            "type":"string"
+        },
+
+        {
+            "name":"mngroudev",
+            "type":"string"
+        },
+
+        {
+            "name":"mxvertev",
+            "type":"string"
+        },
+
+        {
+            "name":"mnvertev",
+            "type":"string"
+        },
+
+        {
+            "name":"mxdepth",
+            "type":"string"
+        },
+
+        {
+            "name":"midepth",
+            "type":"string"
+        },
+
+        {
+            "name":"flowunits",
+            "type":"string"
+        },
+
+        {
+            "name":"inftionmet",
+            "type":"string"
+        },
+
+        {
+            "name":"flowtingmet",
+            "type":"string"
+        },
+
+        {
+            "name":"linkoffsetsned",
+            "type":"string"
+        },
+
+        {
+            "name":"allowding",
+            "type":"string"
+        },
+
+        {
+            "name":"skipflowds",
+            "type":"string"
+        },
+
+        {
+            "name":"inertialing",
+            "type":"string"
+        },
+
+        {
+            "name":"defineflow",
+            "type":"string"
+        },
+
+        {
+            "name":"forcetion",
+            "type":"string"
+        },
+
+        {
+            "name":"variable",
+            "type":"string"
+        },
+
+        {
+            "name":"adjustment",
+            "type":"string"
+        },
+
+        {
+            "name":"conduit",
+            "type":"string"
+        },
+
+        {
+            "name":"surface",
+            "type":"string"
+        },
+
+        {
+            "name":"startingdate",
+            "type":"string"
+        },
+        {
+            "name":"endingdate",
+            "type":"string"
+        },
+
+        {
+            "name":"duration",
+            "type":"string"
+        },
+
+
+        {
+            "name":"antecedent",
+            "type":"string"
+        },
+
+        {
+            "name":"rain",
+            "type":"string"
+        },
+
+        {
+            "name":"reporttime",
+            "type":"string"
+        },
+
+        {
+            "name":"wettime",
+            "type":"string"
+        },
+
+        {
+            "name":"drytime",
+            "type":"string"
+        },
+
+        {
+            "name":"routingtime",
+            "type":"string"
+        },
+
+        {
+            "name":"minimumtime",
+            "type":"string"
+        },
+
+        {
+            "name":"avgtime",
+            "type":"string"
+        },
+
+        {
+            "name":"minimumcons",
+            "type":"string"
+        },
+
+        {
+            "name":"lgnoreofs",
+            "type":"string"
+        },
+
+        {
+            "name":"lgnoremelt",
+            "type":"string"
+        },
+
+        {
+            "name":"lgnoreter",
+            "type":"string"
+        },
+
+        {
+            "name":"lgnoreing",
+            "type":"string"
+        },
+
+        {
+            "name":"lgnorety",
+            "type":"string"
+        },
+
+        {
+            "name":"reportavgs",
+            "type":"string"
+        },
+
+        {
+            "name":"mxpipeter",
+            "type":"string"
+        },
+        {
+            "name":"mnpipditer",
+            "type":"string"
+        },
+
+        {
+            "name":"totalpipeth",
+            "type":"string"
+        },
+
+        {
+            "name":"totalotherth",
+            "type":"string"
+        },
+
+        {
+            "name":"totalpipth",
+            "type":"string"
+        },
+
+        {
+            "name":"maxmg",
+            "type":"string"
+        },
+
+        {
+            "name":"maxcfs",
+            "type":"string"
+        },
+
+        {
+            "name":"maxcoeffnt",
+            "type":"string"
+        },
+        
+        {
+            "name":"maxin",
+            "type":"string"
+        },
+
+        {
+            "name":"minin",
+            "type":"string"
+        },
+        
+        {
+            "name":"mxnode",
+            "type":"string"
+        },
+
+        {
+            "name":"surcharged",
+            "type":"string"
+        },
+
+        {
+            "name":"nodesurched",
+            "type":"string"
+        },
+
+        {
+            "name":"maxcrown",
+            "type":"string"
+        },
+
+        {
+            "name":"minbelow",
+            "type":"string"
+        },
+
+        {
+            "name":"flooded",
+            "type":"string"
+        },
+        
+        {
+            "name":"flooding",
+            "type":"string"
+        },
+
+        {
+            "name":"floodmg",
+            "type":"string"
+        },
+
+        {
+            "name":"pondedvolume",
+            "type":"string"
+        },
+
+        {
+            "name":"maxvolume",
+            "type":"string"
+        },
+
+        {
+            "name":"maxperfull",
+            "type":"string"
+        },
+
+        {
+            "name":"maxfrecy",
+            "type":"string"
+        },
+
+        {
+            "name":"maxflow",
+            "type":"string"
+        },
+
+        {
+            "name":"maxoutfallmg",
+            "type":"string"
+        },
+
+        {
+            "name":"totalmg",
+            "type":"string"
+        },
+
+        {
+            "name":"maxpeak",
+            "type":"string"
+        },
+
+        {
+            "name":"maxlinkty",
+            "type":"string"
+        },
+
+        {
+            "name":"minpeakty",
+            "type":"string"
+        },
+
+        {
+            "name":"conduits",
+            "type":"string"
+        },
+
+        {
+            "name":"maxconduits",
+            "type":"string"
+        },
+
+        {
+            "name":"maxcapacity",
+            "type":"string"
+        },
+
+        {
+            "name":"lidstroage",
+            "type":"string"
+        },
+
+        {
+            "name":"snowcover",
+            "type":"string"
+        },
+
+        {
+            "name":"totalin",
+            "type":"string"
+        },
+
+        {
+            "name":"runonin",
+            "type":"string"
+        },
+
+        {
+            "name":"evalossin",
+            "type":"string"
+        },
+
+        {
+            "name":"infitionloss",
+            "type":"string"
+        },
+
+        {
+            "name":"surfacein",
+            "type":"string"
+        },
+
+        {
+            "name":"drainage",
+            "type":"string"
+        },
+
+        {
+            "name":"snowved",
+            "type":"string"
+        },
+
+        {
+            "name":"finalsnow",
+            "type":"string"
+        },
+
+        {
+            "name":"finalin",
+            "type":"string"
+        },
+
+        {
+            "name":"conerror",
+            "type":"string"
+        },
+
+        {
+            "name":"maxwidth",
+            "type":"string"
+        },
+
+        {
+            "name":"minwidth",
+            "type":"string"
+        },
+
+        {
+            "name":"maxarea",
+            "type":"string"
+        },
+
+        {
+            "name":"minarea",
+            "type":"string"
+        },
+
+        {
+            "name":"totalarea",
+            "type":"string"
+        },
+
+        {
+            "name":"results_maxflow",
+            "type":"string"
+        },
+
+        {
+            "name":"minflow",
+            "type":"string"
+        },
+
+        {
+            "name":"maxslope",
+            "type":"string"
+        },
+
+        {
+            "name":"minslope",
+            "type":"string"
+        },
+
+        {
+            "name":"subcat_maximpness",
+            "type":"string"
+        },
+
+        {
+            "name":"subcat_minimpness",
+            "type":"string"
+        },
+
+        {
+            "name":"maximpness",
+            "type":"string"
+        },
+
+        {
+            "name":"minimpness",
+            "type":"string"
+        },
+
+        {
+            "name":"subcat_maxperv",
+            "type":"string"
+        },
+
+        {
+            "name":"subcat_minperv",
+            "type":"string"
+        },
+
+        {
+            "name":"maximp",
+            "type":"string"
+        },
+
+        {
+            "name":"minimp",
+            "type":"string"
+        },
+
+        {
+            "name":"maxperv",
+            "type":"string"
+        },
+
+        {
+            "name":"minperv",
+            "type":"string"
+        },
+
+        {
+            "name":"gages",
+            "type":"string"
+        },
+
+        {
+            "name":"aquifers",
+            "type":"string"
+        },
+
+        {
+            "name":"snowpacks",
+            "type":"string"
+        },
+
+        {
+            "name":"unitgraphs",
+            "type":"string"
+        },
+
+        {
+            "name":"transects",
+            "type":"string"
+        },
+
+        {
+            "name":"curves",
+            "type":"string"
+        },
+
+        {
+            "name":"diverves",
+            "type":"string"
+        },
+
+        {
+            "name":"unused_pumpves",
+            "type":"string"
+        },
+
+        {
+            "name":"unused_ratingves",
+            "type":"string"
+        },
+
+        {
+            "name":"unused_shapeves",
+            "type":"string"
+        },
+
+        {
+            "name":"storageves",
+            "type":"string"
+        },
+
+        {
+            "name":"unused_tidalves",
+            "type":"string"
+        },
+
+        {
+            "name":"unused_weirves",
+            "type":"string"
+        },
+
+        {
+            "name":"unused_timeseries",
+            "type":"string"
+        },
+
+        {
+            "name":"timepatts",
+            "type":"string"
+        },
+
+        {
+            "name":"invertevsJ1",
+            "type":"string"
+        },
+
+        {
+            "name":"invertevsJ2",
+            "type":"string"
+        },
+
+        {
+            "name":"invertevsJ3",
+            "type":"string"
+        },
+
+        {
+            "name":"invertevsJ4",
+            "type":"string"
+        },
+
+        {
+            "name":"invertevsJ3_1",
+            "type":"string"
+        },
+
+        {
+            "name":"invertevsJ3_2",
+            "type":"string"
+        },
+
+        {
+            "name":"rimJ1",
+            "type":"string"
+        },
+
+        {
+            "name":"rimJ2",
+            "type":"string"
+        },
+
+        {
+            "name":"rimJ3",
+            "type":"string"
+        },
+
+        {
+            "name":"rimJ4",
+            "type":"string"
+        },
+
+        {
+            "name":"rimJ3_1",
+            "type":"string"
+        },
+
+        {
+            "name":"rimJ3_2",
+            "type":"string"
+        },
+
+        {
+            "name":"totalmgJ1",
+            "type":"string"
+        },
+
+        {
+            "name":"totalmgJ2",
+            "type":"string"
+        },
+
+        {
+            "name":"totalmgJ3",
+            "type":"string"
+        },
+
+        {
+            "name":"totalmgJ4",
+            "type":"string"
+        },
+
+        {
+            "name":"totalmgJ3_1",
+            "type":"string"
+        },
+
+        {
+            "name":"totalmgJ3_2",
+            "type":"string"
+        },
+
+        {
+            "name":"report_generate",
+            "type":"string"
+        }
+       
+    ]
+}
