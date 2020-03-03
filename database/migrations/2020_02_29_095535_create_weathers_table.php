@@ -13,221 +13,221 @@ class CreateWeathersTable extends Migration
     public function up()
     {
         Schema::create('weathers', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id'); 
             $table->timestamps();
-            $table->text('Outfalls')->nullable();
-            $table->text('kmls')->nullable();
-            $table->text('profiles')->nullable();
-            $table->text('circular')->nullable();
-            $table->text('mxrougs')->nullable();
-            $table->text('mnrougs')->nullable();
-            $table->text('mxenlefs')->nullable();
-            $table->text('mienlefs')->nullable();
-            $table->text('mxeloefs')->nullable();
-            $table->text('mneloefs')->nullable();
-            $table->text('mxaglefs')->nullable();
-            $table->text('miaglefs')->nullable();
-            $table->text('mxleths')->nullable();
-            $table->text('mileths')->nullable();
-            $table->text('totallgth')->nullable();
-            $table->text('mxslope')->nullable();
-            $table->text('mislope')->nullable();
-            $table->text('dryweaflow')->nullable();
-            $table->text('wetweaflow')->nullable();
-            $table->text('groundweaflow')->nullable();
-            $table->text('rdiiflow')->nullable();
-            $table->text('exnalflow')->nullable();
-            $table->text('exnaloutflow')->nullable();
-            $table->text('floodloss')->nullable();
-            $table->text('evaloss')->nullable();
-            $table->text('exfiltionloss')->nullable();
-            $table->text('lnitialvols')->nullable();
-            $table->text('finalvols')->nullable();
-            $table->text('conerrors')->nullable();
-            $table->text('timeflows')->nullable();
-            $table->text('dryweaflows')->nullable();
-            $table->text('groundflows')->nullable();
-            $table->text('rdiiflows')->nullable();
-            $table->text('subments')->nullable();
-            $table->text('grounwter')->nullable();
-            $table->text('complexity_aquifers')->nullable();
-            $table->text('complexity_snows')->nullable();
-            $table->text('complexity_rdiigraphs')->nullable();
-            $table->text('complexity_jundes')->nullable();
-            $table->text('complexity_outdes')->nullable();
-            $table->text('complexity_fldides')->nullable();
-            $table->text('complexity_storaundes')->nullable();
-            $table->text('complexity_conlinks')->nullable();
-            $table->text('complexity_pumplinks')->nullable();
-            $table->text('complexity_oriflinks')->nullable();
-            $table->text('complexity_weirlinks')->nullable();
-            $table->text('complexity_outlinks')->nullable();
-            $table->text('complexity_transect')->nullable();
-            $table->text('complexity_polluts')->nullable();
-            $table->text('complexity_landus')->nullable();
-            $table->text('totalcomity')->nullable();
-            $table->text('raings')->nullable();
-            $table->text('inventory_subments')->nullable();
-            $table->text('inventory_aquifers')->nullable();
-            $table->text('inventory_snows')->nullable();
-            $table->text('inventory_rdiigraphs')->nullable();
-            $table->text('inventory_jundes')->nullable();
-            $table->text('inventory_outdes')->nullable();
-            $table->text('inventory_fldides')->nullable();
-            $table->text('inventory_storaundes')->nullable();
-            $table->text('inventory_conlinks')->nullable();
-            $table->text('inventory_pumplinks')->nullable();
-            $table->text('inventory_oriflinks')->nullable();
-            $table->text('inventory_weirlinks')->nullable();
-            $table->text('inventory_outlinks')->nullable();
-            $table->text('inventory_treunits')->nullable();
-            $table->text('inventory_transect')->nullable();
-            $table->text('inventory_conruls')->nullable();
-            $table->text('inventory_polluts')->nullable();
-            $table->text('inventory_landus')->nullable();
-            $table->text('conves')->nullable();
-            $table->text('divsionves')->nullable();
-            $table->text('pumpves')->nullable();
-            $table->text('ratingves')->nullable();
-            $table->text('shapeves')->nullable();
-            $table->text('strogves')->nullable();
-            $table->text('tidalves')->nullable();
-            $table->text('weirves')->nullable();
-            $table->text('timeseries')->nullable();
-            $table->text('timepatns')->nullable();
-            $table->text('mxgroudev')->nullable();
-            $table->text('mngroudev')->nullable();
-            $table->text('mxvertev')->nullable();
-            $table->text('mnvertev')->nullable();
-            $table->text('mxdepth')->nullable();
-            $table->text('midepth')->nullable();
-            $table->text('flowunits')->nullable();
-            $table->text('inftionmet')->nullable();
-            $table->text('flowtingmet')->nullable();
-            $table->text('linkoffsetsned')->nullable();
-            $table->text('allowding')->nullable();
-            $table->text('skipflowds')->nullable();
-            $table->text('inertialing')->nullable();
-            $table->text('defineflow')->nullable();
-            $table->text('forcetion')->nullable();
-            $table->text('variable')->nullable();
-            $table->text('adjustment')->nullable();
-            $table->text('conduit')->nullable();
-            $table->text('surface')->nullable();
-            $table->text('startingdate')->nullable();
-            $table->text('endingdate')->nullable();
-            $table->text('duration')->nullable();
-            $table->text('antecedent')->nullable();
-            $table->text('rain')->nullable();
-            $table->text('reporttime')->nullable();
-            $table->text('wettime')->nullable();
-            $table->text('drytime')->nullable();
-            $table->text('routingtime')->nullable();
-            $table->text('minimumtime')->nullable();
-            $table->text('avgtime')->nullable();
-            $table->text('minimumcons')->nullable();
-            $table->text('lgnoreofs')->nullable();
-            $table->text('lgnoremelt')->nullable();
-            $table->text('lgnoreter')->nullable();
-            $table->text('lgnoreing')->nullable();
-            $table->text('lgnorety')->nullable();
-            $table->text('reportavgs')->nullable();
-            $table->text('mxpipeter')->nullable();
-            $table->text('mnpipditer')->nullable();
-            $table->text('totalpipeth')->nullable();
-            $table->text('totalotherth')->nullable();
-            $table->text('totalpipth')->nullable();
-            $table->text('maxmg')->nullable();
-            $table->text('maxcfs')->nullable();
-            $table->text('maxcoeffnt')->nullable();
-            $table->text('maxin')->nullable();
-            $table->text('minin')->nullable();
-            $table->text('mxnode')->nullable();
-            $table->text('surcharged')->nullable();
-            $table->text('nodesurched')->nullable();
-            $table->text('maxcrown')->nullable();
-            $table->text('minbelow')->nullable();
-            $table->text('flooded')->nullable();
-            $table->text('flooding')->nullable();
-            $table->text('floodmg')->nullable();
-            $table->text('pondedvolume')->nullable();
-            $table->text('maxvolume')->nullable();
-            $table->text('maxperfull')->nullable();
-            $table->text('maxfrecy')->nullable();
-            $table->text('maxflow')->nullable();
-            $table->text('maxoutfallmg')->nullable();
-            $table->text('totalmg')->nullable();
-            $table->text('maxpeak')->nullable();
-            $table->text('maxlinkty')->nullable();
-            $table->text('minpeakty')->nullable();
-            $table->text('conduits')->nullable();
-            $table->text('maxconduits')->nullable();
-            $table->text('maxcapacity')->nullable();
-            $table->text('lidstroage')->nullable();
-            $table->text('snowcover')->nullable();
-            $table->text('totalin')->nullable();
-            $table->text('runonin')->nullable();
-            $table->text('evalossin')->nullable();
-            $table->text('infitionloss')->nullable();
-            $table->text('surfacein')->nullable();
-            $table->text('drainage')->nullable();
-            $table->text('snowved')->nullable();
-            $table->text('finalsnow')->nullable();
-            $table->text('finalin')->nullable();
-            $table->text('conerror')->nullable();
-            $table->text('maxwidth')->nullable();
-            $table->text('minwidth')->nullable();
-            $table->text('maxarea')->nullable();
-            $table->text('minarea')->nullable();
-            $table->text('totalarea')->nullable();
-            $table->text('results_maxflow')->nullable();
-            $table->text('minflow')->nullable();
-            $table->text('maxslope')->nullable();
-            $table->text('minslope')->nullable();
-            $table->text('subcat_maximpness')->nullable();
-            $table->text('subcat_minimpness')->nullable();
-            $table->text('maximpness')->nullable();
-            $table->text('minimpness')->nullable();
-            $table->text('subcat_maxperv')->nullable();
-            $table->text('subcat_minperv')->nullable();
-            $table->text('maximp')->nullable();
-            $table->text('minimp')->nullable();
-            $table->text('maxperv')->nullable();
-            $table->text('minperv')->nullable();
-            $table->text('gages')->nullable();
-            $table->text('aquifers')->nullable();
-            $table->text('snowpacks')->nullable();
-            $table->text('unitgraphs')->nullable();
-            $table->text('transects')->nullable();
-            $table->text('curves')->nullable();
-            $table->text('diverves')->nullable();
-            $table->text('unused_pumpves')->nullable();
-            $table->text('unused_ratingves')->nullable();
-            $table->text('unused_shapeves')->nullable();
-            $table->text('storageves')->nullable();
-            $table->text('unused_tidalves')->nullable();
-            $table->text('unused_weirves')->nullable();
-            $table->text('unused_timeseries')->nullable();
-            $table->text('timepatts')->nullable();
-            $table->text('invertevsJ1')->nullable();
-            $table->text('invertevsJ2')->nullable();
-            $table->text('invertevsJ3')->nullable();
-            $table->text('invertevsJ4')->nullable();
-            $table->text('invertevsJ3_1')->nullable();
-            $table->text('invertevsJ3_2')->nullable();
-            $table->text('rimJ1')->nullable();
-            $table->text('rimJ2')->nullable();
-            $table->text('rimJ3')->nullable();
-            $table->text('rimJ4')->nullable();
-            $table->text('rimJ3_1')->nullable();
-            $table->text('rimJ3_2')->nullable();
-            $table->text('totalmgJ1')->nullable();
-            $table->text('totalmgJ2')->nullable();
-            $table->text('totalmgJ3')->nullable();
-            $table->text('totalmgJ4')->nullable();
-            $table->text('totalmgJ3_1')->nullable();
-            $table->text('totalmgJ3_2')->nullable();
-            $table->text('report_generate')->nullable();
+            $table->text('Outfalls')->nullable();//Outfall.png
+            $table->text('kmls')->nullable();//test1.kmz
+            $table->text('profiles')->nullable();//Main Drains.png
+            $table->text('circular')->nullable();//Conduit statistics.txt
+            $table->text('mxrougs')->nullable(); //Conduit statistics.txt 
+            $table->text('mnrougs')->nullable();//Conduit statistics.txt
+            $table->text('mxenlefs')->nullable();  //Conduit statistics.txt
+            $table->text('mienlefs')->nullable();//Conduit statistics.txt
+            $table->text('mxeloefs')->nullable(); //Conduit statistics.txt
+            $table->text('mneloefs')->nullable();  //Conduit statistics.txt
+            $table->text('mxaglefs')->nullable();  //Conduit statistics.txt
+            $table->text('miaglefs')->nullable(); //Conduit statistics.txt
+            $table->text('mxleths')->nullable();//Conduit statistics.txt
+            $table->text('mileths')->nullable();//Conduit statistics.txt
+            $table->text('totallgth')->nullable(); //Conduit statistics.txt
+            $table->text('mxslope')->nullable();//Conduit statistics.txt
+            $table->text('mislope')->nullable(); //Conduit statistics.txt
+            $table->text('dryweaflow')->nullable();  //Flow routing continuity
+            $table->text('wetweaflow')->nullable();  //Flow routing continuity
+            $table->text('groundweaflow')->nullable();//Flow routing continuity
+            $table->text('rdiiflow')->nullable();//Flow routing continuity
+            $table->text('exnalflow')->nullable();//Flow routing continuity
+            $table->text('exnaloutflow')->nullable();//Flow routing continuity
+            $table->text('floodloss')->nullable();//Flow routing continuity
+            $table->text('evaloss')->nullable();// Flow routing continuity
+            $table->text('exfiltionloss')->nullable();//Flow routing continuity
+            $table->text('lnitialvols')->nullable();// Flow routing continuity
+            $table->text('finalvols')->nullable();// Flow routing continuity
+            $table->text('conerrors')->nullable();// Flow routing continuity
+            $table->text('timeflows')->nullable();//Inflows
+            $table->text('dryweaflows')->nullable();//Inflows
+            $table->text('groundflows')->nullable();//Inflows
+            $table->text('rdiiflows')->nullable();//Inflows
+            $table->text('subments')->nullable();//Model complexity
+            $table->text('grounwter')->nullable();//Model complexity
+            $table->text('complexity_aquifers')->nullable();//Model complexity
+            $table->text('complexity_snows')->nullable();//Model complexity
+            $table->text('complexity_rdiigraphs')->nullable();//Model complexity
+            $table->text('complexity_jundes')->nullable();//Model complexity
+            $table->text('complexity_outdes')->nullable();//Model complexity
+            $table->text('complexity_fldides')->nullable();//Model complexity
+            $table->text('complexity_storaundes')->nullable();//Model complexity
+            $table->text('complexity_conlinks')->nullable();//Model complexity
+            $table->text('complexity_pumplinks')->nullable();//Model complexity
+            $table->text('complexity_oriflinks')->nullable();//Model complexity
+            $table->text('complexity_weirlinks')->nullable();//Model complexity
+            $table->text('complexity_outlinks')->nullable();//Model complexity
+            $table->text('complexity_transect')->nullable();//Model complexity
+            $table->text('complexity_polluts')->nullable();//Model complexity
+            $table->text('complexity_landus')->nullable();//Model complexity
+            $table->text('totalcomity')->nullable();//Model complexity
+            $table->text('raings')->nullable();//Model inventory
+            $table->text('inventory_subments')->nullable();//Model inventory
+            $table->text('inventory_aquifers')->nullable();//Model inventory
+            $table->text('inventory_snows')->nullable();//Model inventory
+            $table->text('inventory_rdiigraphs')->nullable();//Model inventory
+            $table->text('inventory_jundes')->nullable();//Model inventory
+            $table->text('inventory_outdes')->nullable();//Model inventory
+            $table->text('inventory_fldides')->nullable();//Model inventory
+            $table->text('inventory_storaundes')->nullable();//Model inventory
+            $table->text('inventory_conlinks')->nullable();//Model inventory
+            $table->text('inventory_pumplinks')->nullable();//Model inventory
+            $table->text('inventory_oriflinks')->nullable();//Model inventory
+            $table->text('inventory_weirlinks')->nullable();//Model inventory
+            $table->text('inventory_outlinks')->nullable();//Model inventory
+            $table->text('inventory_treunits')->nullable();//Model inventory
+            $table->text('inventory_transect')->nullable();//Model inventory
+            $table->text('inventory_conruls')->nullable();//Model inventory
+            $table->text('inventory_polluts')->nullable();//Model inventory
+            $table->text('inventory_landus')->nullable();//Model inventory
+            $table->text('conves')->nullable();//Model inventory
+            $table->text('divsionves')->nullable();//Model inventory
+            $table->text('pumpves')->nullable();//Model inventory
+            $table->text('ratingves')->nullable();//Model inventory
+            $table->text('shapeves')->nullable();//Model inventory
+            $table->text('strogves')->nullable();//Model inventory
+            $table->text('tidalves')->nullable();//Model inventory
+            $table->text('weirves')->nullable();//Model inventory
+            $table->text('timeseries')->nullable();//Model inventory
+            $table->text('timepatns')->nullable();//Model inventory
+            $table->text('mxgroudev')->nullable();//Node statistics
+            $table->text('mngroudev')->nullable();//Node statistics
+            $table->text('mxvertev')->nullable();//Node statistics
+            $table->text('mnvertev')->nullable();//Node statistics
+            $table->text('mxdepth')->nullable();//Node statistics
+            $table->text('midepth')->nullable();//Node statistics
+            $table->text('flowunits')->nullable();//Options
+            $table->text('inftionmet')->nullable();//Options
+            $table->text('flowtingmet')->nullable();//Options
+            $table->text('linkoffsetsned')->nullable();//Options
+            $table->text('allowding')->nullable();//Options
+            $table->text('skipflowds')->nullable();//Options
+            $table->text('inertialing')->nullable();//Options
+            $table->text('defineflow')->nullable();//Options
+            $table->text('forcetion')->nullable();//Options
+            $table->text('variable')->nullable();//Options
+            $table->text('adjustment')->nullable();//Options
+            $table->text('conduit')->nullable();//Options
+            $table->text('surface')->nullable();//Options
+            $table->text('startingdate')->nullable();//Options
+            $table->text('endingdate')->nullable();//Options
+            $table->text('duration')->nullable();//Options
+            $table->text('antecedent')->nullable();//Options
+            $table->text('rain')->nullable();//Options
+            $table->text('reporttime')->nullable();//Options
+            $table->text('wettime')->nullable();//Options
+            $table->text('drytime')->nullable();//Options
+            $table->text('routingtime')->nullable();//Options
+            $table->text('minimumtime')->nullable();//Options
+            $table->text('avgtime')->nullable();//Options
+            $table->text('minimumcons')->nullable();//Options
+            $table->text('lgnoreofs')->nullable();//Options
+            $table->text('lgnoremelt')->nullable();//Options
+            $table->text('lgnoreter')->nullable();//Options
+            $table->text('lgnoreing')->nullable();//Options
+            $table->text('lgnorety')->nullable();//Options
+            $table->text('reportavgs')->nullable();//Options
+            $table->text('mxpipeter')->nullable();//Pipe inventory
+            $table->text('mnpipditer')->nullable();//Pipe inventory
+            $table->text('totalpipeth')->nullable();//Pipe inventory
+            $table->text('totalotherth')->nullable();//Pipe inventory
+            $table->text('totalpipth')->nullable();//Pipe inventory
+            $table->text('maxmg')->nullable();//Results statistics
+            $table->text('maxcfs')->nullable();//Results statistics
+            $table->text('maxcoeffnt')->nullable();//Results statistics
+            $table->text('maxin')->nullable();//Results statistics
+            $table->text('minin')->nullable();//Results statistics
+            $table->text('mxnode')->nullable();//Results statistics
+            $table->text('surcharged')->nullable();//Results statistics
+            $table->text('nodesurched')->nullable();//Results statistics
+            $table->text('maxcrown')->nullable();//Results statistics
+            $table->text('minbelow')->nullable();//Results statistics
+            $table->text('flooded')->nullable();//Results statistics
+            $table->text('flooding')->nullable();//Results statistics
+            $table->text('floodmg')->nullable();//Results statistics
+            $table->text('pondedvolume')->nullable();//Results statistics
+            $table->text('maxvolume')->nullable();//Results statistics
+            $table->text('maxperfull')->nullable();//Results statistics
+            $table->text('maxfrecy')->nullable();//Results statistics
+            $table->text('maxflow')->nullable();//Results statistics
+            $table->text('maxoutfallmg')->nullable();//Results statistics
+            $table->text('totalmg')->nullable();//Results statistics
+            $table->text('maxpeak')->nullable();//Results statistics
+            $table->text('maxlinkty')->nullable();//Results statistics
+            $table->text('minpeakty')->nullable();//Results statistics
+            $table->text('conduits')->nullable();//Results statistics
+            $table->text('maxconduits')->nullable();//Results statistics
+            $table->text('maxcapacity')->nullable();//Results statistics
+            $table->text('lidstroage')->nullable();//Runoff quantity continuity
+            $table->text('snowcover')->nullable();//Runoff quantity continuity
+            $table->text('totalin')->nullable();//Runoff quantity continuity
+            $table->text('runonin')->nullable();//Runoff quantity continuity
+            $table->text('evalossin')->nullable();//Runoff quantity continuity
+            $table->text('infitionloss')->nullable();//Runoff quantity continuity
+            $table->text('surfacein')->nullable();//Runoff quantity continuity
+            $table->text('drainage')->nullable();//Runoff quantity continuity
+            $table->text('snowved')->nullable();//Runoff quantity continuity
+            $table->text('finalsnow')->nullable();//Runoff quantity continuity
+            $table->text('finalin')->nullable();//Runoff quantity continuity
+            $table->text('conerror')->nullable();//Runoff quantity continuity
+            $table->text('maxwidth')->nullable();//Subcatchment statistics
+            $table->text('minwidth')->nullable();//Subcatchment statistics
+            $table->text('maxarea')->nullable();//Subcatchment statistics
+            $table->text('minarea')->nullable();//Subcatchment statistics
+            $table->text('totalarea')->nullable();//Subcatchment statistics
+            $table->text('results_maxflow')->nullable();//Subcatchment statistics
+            $table->text('minflow')->nullable();//Subcatchment statistics
+            $table->text('maxslope')->nullable();//Subcatchment statistics
+            $table->text('minslope')->nullable();//Subcatchment statistics
+            $table->text('subcat_maximpness')->nullable();//Subcatchment statistics
+            $table->text('subcat_minimpness')->nullable();//Subcatchment statistics
+            $table->text('maximpness')->nullable();//Subcatchment statistics
+            $table->text('minimpness')->nullable();//Subcatchment statistics
+            $table->text('subcat_maxperv')->nullable();//Subcatchment statistics
+            $table->text('subcat_minperv')->nullable();//Subcatchment statistics
+            $table->text('maximp')->nullable();//Unused objects
+            $table->text('minimp')->nullable();//Unused objects
+            $table->text('maxperv')->nullable();//Unused objects
+            $table->text('minperv')->nullable();//Unused objects
+            $table->text('gages')->nullable();//Unused objects
+            $table->text('aquifers')->nullable();//Unused objects
+            $table->text('snowpacks')->nullable();//Unused objects
+            $table->text('unitgraphs')->nullable();//Unused objects
+            $table->text('transects')->nullable();//Unused objects
+            $table->text('curves')->nullable();//Unused objects
+            $table->text('diverves')->nullable();//Unused objects
+            $table->text('unused_pumpves')->nullable();//Unused objects
+            $table->text('unused_ratingves')->nullable();//Unused objects
+            $table->text('unused_shapeves')->nullable();//Unused objects
+            $table->text('storageves')->nullable();//Unused objects
+            $table->text('unused_tidalves')->nullable();//Unused objects
+            $table->text('unused_weirves')->nullable();//Unused objects
+            $table->text('unused_timeseries')->nullable();//Unused objects
+            $table->text('timepatts')->nullable();//Unused objects
+            $table->text('invertevsJ1')->nullable();//Junctions Flood.txt
+            $table->text('invertevsJ2')->nullable();//Junctions Flood.txt
+            $table->text('invertevsJ3')->nullable();//Junctions Flood.txt
+            $table->text('invertevsJ4')->nullable();//Junctions Flood.txt
+            $table->text('invertevsJ3_1')->nullable();//Junctions Flood.txt
+            $table->text('invertevsJ3_2')->nullable();//Junctions Flood.txt
+            $table->text('rimJ1')->nullable();//Junctions Flood.txt
+            $table->text('rimJ2')->nullable();//Junctions Flood.txt
+            $table->text('rimJ3')->nullable();//Junctions Flood.txt
+            $table->text('rimJ4')->nullable();//Junctions Flood.txt
+            $table->text('rimJ3_1')->nullable();//Junctions Flood.txt
+            $table->text('rimJ3_2')->nullable();//Junctions Flood.txt
+            $table->text('totalmgJ1')->nullable();//Junctions Flood.txt
+            $table->text('totalmgJ2')->nullable();//Junctions Flood.txt
+            $table->text('totalmgJ3')->nullable();//Junctions Flood.txt
+            $table->text('totalmgJ4')->nullable();//Junctions Flood.txt
+            $table->text('totalmgJ3_1')->nullable();//Junctions Flood.txt
+            $table->text('totalmgJ3_2')->nullable();//Junctions Flood.txt
+            $table->text('report_generate')->nullable();//test.html
             });
     }
 
