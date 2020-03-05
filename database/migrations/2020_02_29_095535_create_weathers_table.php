@@ -18,6 +18,9 @@ class CreateWeathersTable extends Migration
             $table->string('Outfalls')->nullable();//Outfall.png
             $table->string('kmls')->nullable();//test1.kmz
             $table->string('profiles')->nullable();//Main Drains.png
+            $table->string('report_generate',50)->nullable();//test.html
+            $table->text('detail')->nullable(); //EVERYTHING in comment
+            /*
             $table->string('circular',10)->nullable();//Conduit statistics.txt
             $table->string('mxrougs',10)->nullable(); //Conduit statistics.txt 
             $table->string('mnrougs',10)->nullable();//Conduit statistics.txt
@@ -227,7 +230,7 @@ class CreateWeathersTable extends Migration
             $table->string('totalmgJ4',10)->nullable();//Junctions Flood.txt
             $table->string('totalmgJ3_1',10)->nullable();//Junctions Flood.txt
             $table->string('totalmgJ3_2',10)->nullable();//Junctions Flood.txt
-            $table->string('report_generate',50)->nullable();//test.html
+            */
             });
     }
 
