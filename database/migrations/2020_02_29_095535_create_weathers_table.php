@@ -15,9 +15,9 @@ class CreateWeathersTable extends Migration
         Schema::create('weathers', function (Blueprint $table) {
             $table->increments('id'); 
             $table->timestamps();
-            $table->string('Outfalls',10)->nullable();//Outfall.png
-            $table->string('kmls',10)->nullable();//test1.kmz
-            $table->string('profiles',10)->nullable();//Main Drains.png
+            $table->string('Outfalls')->nullable();//Outfall.png
+            $table->string('kmls')->nullable();//test1.kmz
+            $table->string('profiles')->nullable();//Main Drains.png
             $table->string('circular',10)->nullable();//Conduit statistics.txt
             $table->string('mxrougs',10)->nullable(); //Conduit statistics.txt 
             $table->string('mnrougs',10)->nullable();//Conduit statistics.txt
