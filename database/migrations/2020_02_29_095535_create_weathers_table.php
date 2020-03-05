@@ -18,7 +18,7 @@ class CreateWeathersTable extends Migration
             $table->text('Outfalls')->nullable();//Outfall.png
             $table->text('kmls')->nullable();//test1.kmz
             $table->text('profiles')->nullable();//Main Drains.png
-            $table->text('circular')->nullable();//Conduit statistics.txt
+            $table->text('circular')->nullable();//Conduit statistics.txt  ชื่อคอลั้ม
             $table->text('mxrougs')->nullable(); //Conduit statistics.txt 
             $table->text('mnrougs')->nullable();//Conduit statistics.txt
             $table->text('mxenlefs')->nullable();  //Conduit statistics.txt
