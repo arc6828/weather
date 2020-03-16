@@ -83,6 +83,16 @@ class WeatherController extends Controller
     public function show($id)
     {
         $weather = Weather::findOrFail($id);
+        
+        //COPY DETAIL OBJECT
+        $large_object = json_decode($weather->detail);         
+        //CLEAR DETAIL
+        $weather->detail = "";
+        //COPY MAIN OBJECT
+        $small_object = json_decode(json_encode($weather));
+        //MERGE DETAIL AND MAIN
+        $weather = (object) array_merge( (array) $large_object , (array) $small_object); 
+        
 
         return view('weather.show', compact('weather'));
     }
@@ -97,6 +107,15 @@ class WeatherController extends Controller
     public function edit($id)
     {
         $weather = Weather::findOrFail($id);
+
+        //COPY DETAIL OBJECT
+        $large_object = json_decode($weather->detail);         
+        //CLEAR DETAIL
+        $weather->detail = "";
+        //COPY MAIN OBJECT
+        $small_object = json_decode(json_encode($weather));
+        //MERGE DETAIL AND MAIN
+        $weather = (object) array_merge( (array) $large_object , (array) $small_object); 
 
         return view('weather.edit', compact('weather'));
     }

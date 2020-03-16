@@ -5,32 +5,25 @@
 </head>
 <body>
 
-<div class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-           
-                @include('layout.navbar')
-        </div>
-    </div>
-
-
-    <div class="subnavbar">
-        <div class="subnavbar-inner">
-       
-                @include('layout.subnavbar')
-        </div>
-    </div>
-
-
-<div class="main">           
-         @yield('content')
-</div>
-                            </div>
-        @include('layout.footer')
-
+  <div>
+    @include('layout.navbar')
   </div>
-</div>
-    @include('layout.js')    
+  <div>    
+    @include('layout.subnavbar')
+  </div>
+
+
+
+
+  <div class="" style="padding-bottom:100px !important;">           
+    @yield('content')
+    
+  </div>
+  <div >
+    @include('layout.footer')
+  </div>
+  @include('layout.js')    
          
         
-    </body>
+</body>
 </html>
