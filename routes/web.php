@@ -18,5 +18,4 @@ Route::get('/', function () {
 Route::get('/', function () {
     return view('index');
 });
-
 Route::resource('weather', 'WeatherController');

@@ -1,14 +1,12 @@
-@extends('layouts.app')
+@extends('layout.main')
 
 @section('content')
     <div class="container">
         <div class="row">
-            @include('admin.sidebar')
-
             <div class="col-md-9">
                 <div class="card">
                     <div class="card-header">Weather</div>
-                    <div class="card-body">
+                        <div class="card-body">
                         <a href="{{ url('/weather/create') }}" class="btn btn-success btn-sm" title="Add New Weather">
                             <i class="fa fa-plus" aria-hidden="true"></i> Add New
                         </a>
@@ -54,7 +52,6 @@
                             </table>
                             <div class="pagination-wrapper"> {!! $weather->appends(['search' => Request::get('search')])->render() !!} </div>
                         </div>
-
                     </div>
                 </div>
             </div>
