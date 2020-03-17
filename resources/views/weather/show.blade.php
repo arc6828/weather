@@ -24,23 +24,61 @@
                                         <h3> Google Map</h3>
                                     </div>
                                     <div class="widget-content">
-                                            CARD
+                                        <div id="map" style="height: 300px;"></div>
+                                        <script>
+                                            var map;
+
+                                            //var src = "https://weather.ckartisan.com/sample/kml/test1.kmz";
+                                            var src = "https://weather.ckartisan.com/sample/kml/test2.kmz";
+                                            //var src = "https://weather.ckartisan.com/sample/kml/2D_Base.kmz";
+                                            // /2D_Base.kmz
+                                            //var src = "{{ url('/') }}/reports/2019-08-14_10-00-00/kml/1RG.kmz";
+                                            //var src = "https://csincube.com/us_states.kml";
+                                            //var src = 'https://developers.google.com/maps/documentation/javascript/examples/kml/westcampus.kml';
+
+
+                                            function initMap() {
+                                                map = new google.maps.Map(document.getElementById('map'), {
+                                                //center: {lat: 21.3143328800798, lng: 105.603779579014},
+                                                center: {lat: 13.751288, lng: 100.628847},
+                                                //13.751288, 100.628847
+                                                zoom: 15
+                                                });
+
+                                                var kmlLayer = new google.maps.KmlLayer(src, {
+                                                suppressInfoWindows: true,
+                                                preserveViewport: false,
+                                                map: map
+                                                });
+                                                console.log("kmlLayer : " , kmlLayer);
+                                            }
+                                        </script>
+                                        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-NoP20OejFNd_gxMizvmRCDHwRPg0gJI&callback=initMap"
+                                        async defer></script>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="widget">
                                     <div class="widget-header"> 
-                                        <h3> Profile</h3>
+                                        <h3>Graph</h3>
                                     </div>
                                     <div class="widget-content">
-                                        <tr>
-                                            <th>ID</th><td>{{ $weather->id }}</td>
-                                        </tr>                                    
+                                        <img src="{{ url('storage') }}/{{ $weather->Outfalls }}" width="100%" />                                    
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
+                                <div class="widget">
+                                    <div class="widget-header"> 
+                                        <h3>Profile</h3>
+                                    </div>
+                                    <div class="widget-content">profiles                                        
+                                        <img src="{{ url('storage') }}/{{ $weather->profiles }}" width="100%" />                                       
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
                                 <div class="widget">
                                     <div class="widget-header"> 
                                         <h3> Radar</h3>
@@ -51,6 +89,31 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-md-6">
+                                <div class="widget">
+                                    <div class="widget-header"> 
+                                        <h3>Summary/Conduit Inventory.txt</h3>
+                                    </div>
+                                    <div class="widget-content">
+                                        <table class="table table-sm">
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="widget">
+                                    <div class="widget-header"> 
+                                        <h3>Summary/Conduit statistics.txt</h3>
+                                    </div>
+                                    <div class="widget-content">
+                                        <table class="table table-sm">
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+
                             <div class="col-md-6">
                                 <div class="widget">
                                     <div class="widget-header"> 
