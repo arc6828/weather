@@ -19,9 +19,9 @@
 </div>
 <script>
 var url = window.location.href;
-//console.log("URL : ", url);
+console.log("URL : ", url);
 var object = document.querySelector('a[href="'+url+'"]');
-//console.log("Object : " , object);
+console.log("Object : " , object);
 if(object){
     object.parentNode.classList.add('active');
 }
