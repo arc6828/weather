@@ -15,7 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 */
+/*
 Route::get('/', function () {
     return view('index');
 });
+*/
+Route::get('/', 'WeatherController@show_latest');
 Route::resource('weather', 'WeatherController');

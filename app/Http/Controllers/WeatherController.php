@@ -97,6 +97,24 @@ class WeatherController extends Controller
         return view('weather.show', compact('weather'));
     }
 
+    public function show_latest()
+    {
+
+        $weather = Weather::latest()->firstOrFail();;
+        
+        //COPY DETAIL OBJECT
+        $large_object = json_decode($weather->detail);         
+        //CLEAR DETAIL
+        $weather->detail = "";
+        //COPY MAIN OBJECT
+        $small_object = json_decode(json_encode($weather));
+        //MERGE DETAIL AND MAIN
+        $weather = (object) array_merge( (array) $large_object , (array) $small_object); 
+        
+
+        return view('weather.show', compact('weather'));
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
