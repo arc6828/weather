@@ -450,24 +450,20 @@
                                     </div>
                                     <div class="widget-content">
                                         <table class="table table-sm">
-                                            <tr><th> Invert Elev. (ft)-J1 </th><td> {{ $weather->invertevsJ1 }} </td></tr>
-                                            <tr><th> Invert Elev. (ft)-J2 </th><td> {{ $weather->invertevsJ2 }} </td></tr>
-                                            <tr><th> Invert Elev. (ft)-J3 </th><td> {{ $weather->invertevsJ3 }} </td></tr>
-                                            <tr><th> Invert Elev. (ft)-J4 </th><td> {{ $weather->invertevsJ4 }} </td></tr>
-                                            <tr><th> Invert Elev. (ft)-J3_1 </th><td> {{ $weather->invertevsJ3_1 }} </td></tr>
-                                            <tr><th> Invert Elev. (ft)-J3_2 </th><td> {{ $weather->invertevsJ3_2 }} </td></tr>
-                                            <tr><th> Rim Elev. (ft)-J1 </th><td> {{ $weather->rimJ1 }} </td></tr>
-                                            <tr><th> Rim Elev. (ft)-J2 </th><td> {{ $weather->rimJ2 }} </td></tr>
-                                            <tr><th> Rim Elev. (ft)-J3 </th><td> {{ $weather->rimJ3 }} </td></tr>
-                                            <tr><th> Rim Elev. (ft)-J4 </th><td> {{ $weather->rimJ4 }} </td></tr>
-                                            <tr><th> Rim Elev. (ft)-J3_1 </th><td> {{ $weather->rimJ3_1 }} </td></tr>
-                                            <tr><th> Rim Elev. (ft)-J3_2 </th><td> {{ $weather->rimJ3_2 }} </td></tr>
-                                            <tr><th> Total Flood Vol. (MG)-J1 </th><td> {{ $weather->totalmgJ1 }} </td></tr>
-                                            <tr><th> Total Flood Vol. (MG)-J2 </th><td> {{ $weather->totalmgJ2 }} </td></tr>
-                                            <tr><th> Total Flood Vol. (MG)-J3 </th><td> {{ $weather->totalmgJ3 }} </td></tr>
-                                            <tr><th> Total Flood Vol. (MG)-J4 </th><td> {{ $weather->totalmgJ4 }} </td></tr>
-                                            <tr><th> Total Flood Vol. (MG)-J3_1 </th><td> {{ $weather->totalmgJ3_1 }} </td></tr>
-                                            <tr><th> Total Flood Vol. (MG)-J3_2 </th><td> {{ $weather->totalmgJ3_2 }} </td>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Invert Elev. (ft)</th>                                        
+                                                <th>Rim Elev. (ft) </th>
+                                                <th>Total Flood Vol. (MG)</th>
+                                            </tr>
+                                            <tr>
+                                                <td>J1</td> <td>{{ $weather->invertevsJ1 }} </td> <td> {{ $weather->rimJ1 }} </td> <td> {{ $weather->totalmgJ1 }} </td>
+                                                <tr><td>J2</td> <td> {{ $weather->invertevsJ2 }} </td> <td> {{ $weather->rimJ2 }} </td> <td> {{ $weather->totalmgJ2 }} </td></tr>
+                                                <tr><td>J3</td> <td> {{ $weather->invertevsJ3 }} </td> <td> {{ $weather->rimJ3 }} </td> <td> {{ $weather->totalmgJ3 }} </td></tr>
+                                                <tr><td>J4</td> <td> {{ $weather->invertevsJ4 }} </td> <td> {{ $weather->rimJ4 }} </td> <td> {{ $weather->totalmgJ4 }} </td></tr>
+                                                <tr><td>J3_1</td> <td> {{ $weather->invertevsJ3_1 }}</td> <td> {{ $weather->rimJ3_1 }} </td> <td> {{ $weather->totalmgJ3_1 }} </td>
+                                                <tr><td>J3_2</td>  <td> {{ $weather->invertevsJ3_2 }} </td> <td> {{ $weather->rimJ3_2 }} </td> <td> {{ $weather->totalmgJ3_2 }} </td>
+                                            </tr>
                                             <tr><th> Report Generate </th><td> {{ $weather->report_generate }} </td></tr>
                                         </table>
                                     </div>
