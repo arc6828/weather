@@ -29,7 +29,7 @@
                                             var map;
 
                                             //var src = "https://weather.ckartisan.com/sample/kml/test1.kmz";
-                                            var src = "https://weather.ckartisan.com/sample/kml/test2.kmz";
+                                            var src = "{{ asset('/storage') }}/{{ $weather->kmls }} ";
                                             //var src = "https://weather.ckartisan.com/sample/kml/2D_Base.kmz";
                                             // /2D_Base.kmz
                                             //var src = "{{ url('/') }}/reports/2019-08-14_10-00-00/kml/1RG.kmz";

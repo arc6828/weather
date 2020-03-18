@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
   @include('layout.head')
 </head>
 <body>
+  
+  @include('layout.js')   
 
   <div>
     @include('layout.navbar')
@@ -12,17 +15,13 @@
     @include('layout.subnavbar')
   </div>
 
-
-
-
   <div class="" style="padding-bottom:100px !important;">           
-    @yield('content')
-    
+    @yield('content')    
   </div>
+
   <div >
     @include('layout.footer')
-  </div>
-  @include('layout.js')    
+  </div> 
          
         
 </body>

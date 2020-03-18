@@ -41,9 +41,9 @@
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                   
-                                        <td> <img src="{{ asset("/storage/{$item->Outfalls}") }}" </td>
-                                        <td> <img src="{{ asset("/storage/{$item->kmls }") }}" </td>
-                                        <td> <img src="{{ asset("/storage/{$item->profiles}") }}" </td>
+                                        <td> <img src="{{ asset('/storage') }}/{{ $item->Outfalls }}" width="100" /></td>
+                                        <td> {{ asset('/storage') }}/{{ $item->kmls }} </td>
+                                        <td> <img src="{{ asset('/storage') }}/{{ $item->profiles }}"  width="100"/>  </td>
                                         <td>{{ $item->report_generate }}</td>
                                         <td>
                                             <a href="{{ url('/weather/' . $item->id) }}" title="View Weather"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
