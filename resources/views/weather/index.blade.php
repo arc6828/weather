@@ -40,7 +40,10 @@
                                 @foreach($weather as $item)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $item->Outfalls }}</td><td>{{ $item->kmls }}</td><td>{{ $item->profiles }}</td>
+                                  
+                                        <td> <img src="{{ asset("/storage/{$item->Outfalls}") }}" </td>
+                                        <td> <img src="{{ asset("/storage/{$item->kmls }") }}" </td>
+                                        <td> <img src="{{ asset("/storage/{$item->profiles}") }}" </td>
                                         <td>{{ $item->report_generate }}</td>
                                         <td>
                                             <a href="{{ url('/weather/' . $item->id) }}" title="View Weather"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>

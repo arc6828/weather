@@ -73,7 +73,7 @@
                                     <div class="widget-header"> 
                                         <h3>Profile</h3>
                                     </div>
-                                    <div class="widget-content">profiles                                        
+                                    <div class="widget-content">                                       
                                         <img src="{{ url('storage') }}/{{ $weather->profiles }}" width="100%" />                                       
                                     </div>
                                 </div>
@@ -89,13 +89,159 @@
                                     </div>
                                 </div>
                             </div>
+                            
                             <div class="col-md-6">
                                 <div class="widget">
                                     <div class="widget-header"> 
-                                        <h3>Summary/Conduit Inventory.txt</h3>
+                                    <a href="#demo"  data-toggle="collapse">
+                                        <h3>Model inventory</h3>
+                                    </a>
+                                    </div>
+                                    <div class="widget-content">
+                                        <div id="demo" class="collapse">
+                                            <table class="table table-sm">
+                                                <tr><th> Raingages </th><td> {{ $weather->raings }} </td></tr>
+                                                <tr><th> Subcatchments </th><td> {{ $weather->inventory_subments }} </td></tr>
+                                                <tr><th> Aquifers </th><td> {{ $weather->inventory_aquifers }} </td></tr>
+                                                <tr><th> Snowpacks </th><td> {{ $weather->inventory_snows }} </td></tr>
+                                                <tr><th> RDII hydrographs </th><td> {{ $weather->inventory_rdiigraphs }} </td></tr>
+                                                <tr><th> Junction nodes </th><td> {{ $weather->inventory_jundes }} </td></tr>
+                                                <tr><th> Outfall nodes </th><td> {{ $weather->inventory_outdes }} </td></tr>
+                                                <tr><th> Flow divider nodes </th><td> {{ $weather->inventory_fldides }} </td></tr>
+                                                <tr><th> Storage unit nodes </th><td> {{ $weather->inventory_storaundes }} </td></tr>
+                                                <tr><th> Conduit links </th><td> {{ $weather->inventory_conlinks }} </td></tr>
+                                                <tr><th> Pump links </th><td> {{ $weather->inventory_pumplinks }} </td></tr>
+                                                <tr><th> Orifice links </th><td> {{ $weather->inventory_oriflinks }} </td></tr>
+                                                <tr><th> Weir links	 </th><td> {{ $weather->inventory_weirlinks }} </td></tr>
+                                                <tr><th> Outlet links </th><td> {{ $weather->inventory_outlinks }} </td></tr>
+                                                <tr><th> Treatment units </th><td> {{ $weather->inventory_treunits }} </td></tr>
+                                                <tr><th> Transects	 </th><td> {{ $weather->inventory_transect }} </td></tr>
+                                                <tr><th> Control rules </th><td> {{ $weather->inventory_conruls }} </td></tr>
+                                                <tr><th> Pollutants </th><td> {{ $weather->inventory_polluts }} </td></tr>
+                                                <tr><th> Land Uses </th><td> {{ $weather->inventory_landus }} </td></tr>
+                                                <tr><th> Control Curves </th><td> {{ $weather->conves }} </td></tr>
+                                                <tr><th> Diversion Curves </th><td> {{ $weather->divsionves }} </td></tr>
+                                                <tr><th> Pump Curves </th><td> {{ $weather->pumpves }} </td></tr>
+                                                <tr><th> Rating Curves </th><td> {{ $weather->ratingves }} </td></tr>
+                                                <tr><th> Shape Curves </th><td> {{ $weather->shapeves }} </td></tr>
+                                                <tr><th> Storage Curves </th><td> {{ $weather->strogves }} </td></tr>
+                                                <tr><th> Tidal Curves </th><td> {{ $weather->tidalves }} </td></tr>
+                                                <tr><th> Weir Curves </th><td> {{ $weather->weirves }} </td></tr>
+                                                <tr><th> Time Series </th><td> {{ $weather->timeseries }} </td></tr>
+                                                <tr><th> Time Patterns </th><td> {{ $weather->timepatns }} </td></tr>
+                                            </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                            <div class="col-md-6">
+                                <div class="widget">
+                                    <div class="widget-header"> 
+                                        <h3>Options</h3>
                                     </div>
                                     <div class="widget-content">
                                         <table class="table table-sm">
+                                            <tr><th> Flow Units	 </th><td> {{ $weather->flowunits }} </td></tr>
+                                            <tr><th> Infiltration method </th><td> {{ $weather->inftionmet }} </td></tr>
+                                            <tr><th> Flow routing method </th><td> {{ $weather->flowtingmet }} </td></tr>
+                                            <tr><th> Link offsets defined </th><td> {{ $weather->linkoffsetsned }} </td></tr>
+                                            <tr><th> Allow ponding </th><td> {{ $weather->allowding }} </td></tr>
+                                            <tr><th> Skip steady flow periods </th><td> {{ $weather->skipflowds }} </td></tr>
+                                            <tr><th> Inertial dampening </th><td> {{ $weather->inertialing }} </td></tr>
+                                            <tr><th> Define supercritical flow  </th><td> {{ $weather->defineflow }} </td></tr>
+                                            <tr><th> Force Main Equation </th><td> {{ $weather->forcetion }} </td></tr>
+                                            <tr><th> Variable time step </th><td> {{ $weather->variable }} </td></tr>
+                                            <tr><th> Adjustment factor (%) </th><td> {{ $weather->adjustment }} </td></tr>
+                                            <tr><th> Conduit lengthening (s)  </th><td> {{ $weather->conduit }} </td></tr>
+                                            <tr><th> Minimum surface area (ft?) </th><td> {{ $weather->surface }} </td></tr>
+                                            <tr><th> Starting date </th><td> {{ $weather->startingdate }} </td></tr>
+                                            <tr><th> Ending date </th><td> {{ $weather->endingdate }} </td></tr>
+                                            <tr><th> Duration of simulation (hours)</th><td> {{ $weather->duration }} </td></tr>
+                                            <tr><th> Antecedent dry days (days) </th><td> {{ $weather->antecedent }} </td></tr>
+                                            <tr><th> Rain interval (h:mm) </th><td> {{ $weather->rain }} </td></tr>
+                                            <tr><th> Report time step (h:mm:ss) </th><td> {{ $weather->reporttime }} </td></tr>
+                                            <tr><th> Wet time step (h:mm:ss) </th><td> {{ $weather->wettime }} </td></tr>
+                                            <tr><th> Dry time step (h:mm:ss) </th><td> {{ $weather->drytime }} </td></tr>
+                                            <tr><th> Routing time step (s) </th><td> {{ $weather->routingtime }} </td></tr>
+                                            <tr><th> Minimum time step used (s) </th><td> {{ $weather->minimumtime }} </td></tr>
+                                            <tr><th> Average time step used (s) </th><td> {{ $weather->avgtime }} </td></tr>
+                                            <tr><th> Minimum conduit slope </th><td> {{ $weather->minimumcons }} </td></tr>
+                                            <tr><th> Ignore rainfall/runoff </th><td> {{ $weather->lgnoreofs }} </td></tr>
+                                            <tr><th> Ignore snow melt </th><td> {{ $weather->lgnoremelt }} </td></tr>
+                                            <tr><th> Ignore groundwater </th><td> {{ $weather->lgnoreter }} </td></tr>
+                                            <tr><th> Ignore flow routing </th><td> {{ $weather->lgnoreing }} </td></tr>
+                                            <tr><th> Ignore water quality </th><td> {{ $weather->lgnorety }} </td></tr>
+                                            <tr><th> Report average results </th><td> {{ $weather->reportavgs }} </td></tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="widget">
+                                    <div class="widget-header"> 
+                                        <h3>Results statistics</h3>
+                                    </div>
+                                    <div class="widget-content">
+                                        <table class="table table-sm">
+                                            <tr><th> Max. subcatchment total runoff (MG) </th><td> {{ $weather->maxmg }} </td></tr>
+                                            <tr><th> Max. subcatchment peak runoff (cfs) </th><td> {{ $weather->maxcfs }} </td></tr>
+                                            <tr><th> Max. subcatchment runoff coefficient </th><td> {{ $weather->maxcoeffnt }} </td></tr>
+                                            <tr><th> Max. subcatchment total precip (in) </th><td> {{ $weather->maxin }} </td></tr>
+                                            <tr><th> Min. subcatchment total precip (in) </th><td> {{ $weather->minin }} </td></tr>
+                                            <tr><th> Max. node depth (ft)	 </th><td> {{ $weather->mxnode }} </td></tr>
+                                            <tr><th> Num. nodes surcharged  </th><td> {{ $weather->surcharged }} </td></tr>
+                                            <tr><th> Max. node surcharge duration (hours) </th><td> {{ $weather->nodesurched }} </td></tr>
+                                            <tr><th> Max. node height above crown (ft) </th><td> {{ $weather->maxcrown }} </td></tr>
+                                            <tr><th> Min. node depth below rim (ft) </th><td> {{ $weather->minbelow }} </td></tr>
+                                            <tr><th> Num. nodes flooded	 </th><td> {{ $weather->flooded }} </td></tr>
+                                            <tr><th> Max. node flooding duration (hours) </th><td> {{ $weather->flooding }} </td></tr>
+                                            <tr><th> Max. node flood volume (MG) </th><td> {{ $weather->floodmg }} </td></tr>
+                                            <tr><th> Max. node ponded volume or depth  </th><td> {{ $weather->pondedvolume }} </td></tr>
+                                            <tr><th> Max. storage volume (1000 ft?) </th><td> {{ $weather->maxvolume }} </td></tr>
+                                            <tr><th> Max. storage percent full (%) </th><td> {{ $weather->maxperfull }} </td></tr>
+                                            <tr><th> Max. outfall flow frequency (%) </th><td> {{ $weather->maxfrecy }} </td></tr>
+                                            <tr><th> Max. outfall peak flow (cfs) </th><td> {{ $weather->maxflow }} </td></tr>
+                                            <tr><th> Max. outfall total volume (MG)	</th><td> {{ $weather->maxoutfallmg }} </td></tr>
+                                            <tr><th> Total outfall volume (MG)  </th><td> {{ $weather->totalmg }} </td></tr>
+                                            <tr><th> Max. link peak flow (cfs) </th><td> {{ $weather->maxpeak }} </td></tr>
+                                            <tr><th> Max. link peak velocity (ft/s)</th><td> {{ $weather->maxlinkty }} </td></tr>
+                                            <tr><th> Min. link peak velocity (ft/s) </th><td> {{ $weather->minpeakty }} </td></tr>
+                                            <tr><th> Num. conduits surcharged  </th><td> {{ $weather->conduits }} </td></tr>
+                                            <tr><th> Max. conduit surcharge duration (hours) </th><td> {{ $weather->maxconduits }} </td></tr>
+                                            <tr><th> Max. conduit capacity limited duration (hours) </th><td> {{ $weather->maxcapacity }} </td></tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="widget">
+                                    <div class="widget-header"> 
+                                        <h3> Subcatchment statistics </h3>
+                                    </div>
+                                    <div class="widget-content">
+                                        <table class="table table-sm">
+                                            <tr><th> Max. width (ft) </th><td> {{ $weather->maxwidth }} </td></tr>
+                                            <tr><th> Min. width (ft) </th><td> {{ $weather->minwidth }} </td></tr>
+                                            <tr><th> Max. area (ac) </th><td> {{ $weather->maxarea }} </td></tr>
+                                            <tr><th> Min. area (ac) </th><td> {{ $weather->minarea }} </td></tr>
+                                            <tr><th> Total area (ac) </th><td> {{ $weather->totalarea }} </td></tr>
+                                            <tr><th> Max. length of overland flow (ft) </th><td> {{ $weather->results_maxflow }} </td></tr>
+                                            <tr><th> Min. length of overland flow (ft) </th><td> {{ $weather->minflow }}</td></tr>
+                                            <tr><th> Max. slope (%)	 </th><td> {{ $weather->maxslope }} </td></tr>
+                                            <tr><th> Min. slope (%) </th><td> {{ $weather->minslope }} </td></tr>
+                                            <tr><th> Max. imperviousness (%) </th><td> {{ $weather->subcat_maximpness }} </td></tr>
+                                            <tr><th> Min. imperviousness (%) </th><td> {{ $weather->subcat_minimpness }} </td></tr>
+                                            <tr><th> Max. imp. roughness </th><td> {{ $weather->maximpness }} </td></tr>
+                                            <tr><th> Min. imp. roughness </th><td> {{ $weather->minimpness }} </td></tr>
+                                            <tr><th> Max. perv. roughness </th><td> {{ $weather->subcat_maxperv }} </td></tr>
+                                            <tr><th> Min. perv. roughness </th><td> {{ $weather->subcat_minperv }} </td></tr>
+                                            <tr><th> Max. imp. depression storage (in) </th><td> {{ $weather->maximp }} </td></tr>
+                                            <tr><th> Min. imp. depression storage (in)</th><td> {{ $weather->minimp }} </td></tr>
+                                            <tr><th> Max. perv. depression storage (in) </th><td> {{ $weather->maxperv }} </td></tr>
+                                            <tr><th> Min. perv. depression storage (in) </th><td> {{ $weather->minperv }} </td></tr>
                                         </table>
                                     </div>
                                 </div>
@@ -104,84 +250,81 @@
                             <div class="col-md-6">
                                 <div class="widget">
                                     <div class="widget-header"> 
+                                        <h3>Model complexity</h3>
+                                    </div>
+                                    <div class="widget-content">
+                                        <table class="table table-sm">
+                                            <tr><th> Subcatchments </th><td> {{ $weather->subments }} </td></tr>
+                                            <tr><th> Groundwater </th><td> {{ $weather->grounwter }} </td></tr>
+                                            <tr><th> Aquifers </th><td> {{ $weather->complexity_aquifers }} </td></tr>
+                                            <tr><th> Snowpacks	 </th><td> {{ $weather->complexity_snows }} </td></tr>
+                                            <tr><th> RDII hydrographs </th><td> {{ $weather->complexity_rdiigraphs }} </td></tr>
+                                            <tr><th> Junction nodes </th><td> {{ $weather->complexity_jundes }} </td></tr>
+                                            <tr><th> Outfall nodes </th><td> {{ $weather->complexity_outdes }} </td></tr>
+                                            <tr><th> Flow divider nodes </th><td> {{ $weather->complexity_fldides }} </td></tr>
+                                            <tr><th> Storage unit nodes </th><td> {{ $weather->complexity_storaundes }} </td></tr>
+                                            <tr><th> Conduit links </th><td> {{ $weather->complexity_conlinks }} </td></tr>
+                                            <tr><th> Pump links </th><td> {{ $weather->complexity_pumplinks }} </td></tr>
+                                            <tr><th> Orifice links </th><td> {{ $weather->complexity_oriflinks }} </td></tr>
+                                            <tr><th> Weir links </th><td> {{ $weather->complexity_weirlinks }} </td></tr>
+                                            <tr><th> Outlet links	 </th><td> {{ $weather->complexity_outlinks }} </td></tr>
+                                            <tr><th> Transect </th><td> {{ $weather->complexity_transect }} </td></tr>
+                                            <tr><th> Pollutants </th><td> {{ $weather->complexity_polluts }} </td></tr>
+                                            <tr><th> Land Uses </th><td> {{ $weather->complexity_landus }} </td></tr>
+                                            <tr><th> Model complexity (total uncertain input parameters) </th><td> {{ $weather->totalcomity }} </td></tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div> 
+
+                            <div class="col-md-6">
+                                <div class="widget">
+                                    <div class="widget-header"> 
+                                        <h3> Unused objects </h3>
+                                    </div>
+                                    <div class="widget-content">
+                                        <table class="table table-sm">
+                                            <tr><th> Rain Gages </th><td> {{ $weather->gages }} </td></tr>
+                                            <tr><th> Aquifers </th><td> {{ $weather->aquifers }} </td></tr>
+                                            <tr><th> Snow Packs </th><td> {{ $weather->snowpacks }} </td></tr>
+                                            <tr><th> Unit Hydrographs </th><td> {{ $weather->unitgraphs }} </td></tr>
+                                            <tr><th> Transects </th><td> {{ $weather->transects }} </td></tr>
+                                            <tr><th> Control Curves </th><td> {{ $weather->curves }} </td></tr>
+                                            <tr><th> Diversion Curves </th><td> {{ $weather->diverves }} </td></tr>
+                                            <tr><th> Pump Curves </th><td> {{ $weather->unused_pumpves }} </td></tr>
+                                            <tr><th> Rating Curves </th><td> {{ $weather->unused_ratingves }} </td></tr>
+                                            <tr><th> Shape Curves </th><td> {{ $weather->unused_shapeves }} </td></tr>
+                                            <tr><th> Storage Curves </th><td> {{ $weather->storageves }} </td></tr>
+                                            <tr><th> Tidal Curves </th><td> {{ $weather->unused_tidalves }} </td></tr>
+                                            <tr><th> Weir Curves </th><td> {{ $weather->unused_weirves }} </td></tr>
+                                            <tr><th> Time Series </th><td> {{ $weather->unused_timeseries }} </td></tr>
+                                            <tr><th> Time Patterns </th><td> {{ $weather->timepatts }} </td></tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            <div class="col-md-6">
+                                <div class="widget">
+                                    <div class="widget-header"> 
                                         <h3>Summary/Conduit statistics.txt</h3>
                                     </div>
                                     <div class="widget-content">
                                         <table class="table table-sm">
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="col-md-6">
-                                <div class="widget">
-                                    <div class="widget-header"> 
-                                        <h3> Sum 1</h3>
-                                    </div>
-                                    <div class="widget-content">
-                                        <table class="table table-sm">
-                                            <tr><th> Circular </th><td> {{ $weather->circular }} </td></tr>
-                                            <tr><th> Mxrougs </th><td> {{ $weather->mxrougs }} </td></tr>
-                                            <tr><th> Mnrougs </th><td> {{ $weather->mnrougs }} </td></tr>
-                                            <tr><th> Mxenlefs </th><td> {{ $weather->mxenlefs }} </td></tr>
-                                            <tr><th> Mienlefs </th><td> {{ $weather->mienlefs }} </td></tr>
-                                            <tr><th> Mxeloefs </th><td> {{ $weather->mxeloefs }} </td></tr>
-                                            <tr><th> Mneloefs </th><td> {{ $weather->mneloefs }} </td></tr>
-                                            <tr><th> Mxaglefs </th><td> {{ $weather->mxaglefs }} </td></tr>
-                                            <tr><th> Miaglefs </th><td> {{ $weather->miaglefs }} </td></tr>
-                                            <tr><th> Mxleths </th><td> {{ $weather->mxleths }} </td></tr>
-                                            <tr><th> Mileths </th><td> {{ $weather->mileths }} </td></tr>
-                                            <tr><th> Totallgth </th><td> {{ $weather->totallgth }} </td></tr>
-                                            <tr><th> Mxslope </th><td> {{ $weather->mxslope }} </td></tr>
-                                            <tr><th> Mislope </th><td> {{ $weather->mislope }} </td></tr>
-                                            <tr><th> Dryweaflow </th><td> {{ $weather->dryweaflow }} </td></tr>
-                                            <tr><th> Wetweaflow </th><td> {{ $weather->wetweaflow }} </td></tr>
-                                            <tr><th> Groundweaflow </th><td> {{ $weather->groundweaflow }} </td></tr>
-                                            <tr><th> Rdiiflow </th><td> {{ $weather->rdiiflow }} </td></tr>
-                                            <tr><th> Exnalflow </th><td> {{ $weather->exnalflow }} </td></tr>
-                                            <tr><th> Exnaloutflow </th><td> {{ $weather->exnaloutflow }} </td></tr>
-                                            <tr><th> Floodloss </th><td> {{ $weather->floodloss }} </td></tr>
-                                            <tr><th> Evaloss </th><td> {{ $weather->evaloss }} </td></tr>
-                                            <tr><th> Exfiltionloss </th><td> {{ $weather->exfiltionloss }} </td></tr>
-                                            <tr><th> Lnitialvols </th><td> {{ $weather->lnitialvols }} </td></tr>
-                                            <tr><th> Finalvols </th><td> {{ $weather->finalvols }} </td></tr>
-                                            <tr><th> Conerrors </th><td> {{ $weather->conerrors }} </td></tr>
-                                            <tr><th> Timeflows </th><td> {{ $weather->timeflows }} </td></tr>
-                                            <tr><th> Dryweaflows </th><td> {{ $weather->dryweaflows }} </td></tr>
-                                            <tr><th> Groundflows </th><td> {{ $weather->groundflows }} </td></tr>
-                                            <tr><th> Rdiiflows </th><td> {{ $weather->rdiiflows }} </td></tr>
-                                            <tr><th> Subments </th><td> {{ $weather->subments }} </td></tr>
-                                            <tr><th> Grounwter </th><td> {{ $weather->grounwter }} </td></tr>
-                                            <tr><th> Complexity Aquifers </th><td> {{ $weather->complexity_aquifers }} </td></tr>
-                                            <tr><th> Complexity Snows </th><td> {{ $weather->complexity_snows }} </td></tr>
-                                            <tr><th> Complexity Rdiigraphs </th><td> {{ $weather->complexity_rdiigraphs }} </td></tr>
-                                            <tr><th> Complexity Jundes </th><td> {{ $weather->complexity_jundes }} </td></tr>
-                                            <tr><th> Complexity Outdes </th><td> {{ $weather->complexity_outdes }} </td></tr>
-                                            <tr><th> Complexity Fldides </th><td> {{ $weather->complexity_fldides }} </td></tr>
-                                            <tr><th> Complexity Storaundes </th><td> {{ $weather->complexity_storaundes }} </td></tr>
-                                            <tr><th> Complexity Conlinks </th><td> {{ $weather->complexity_conlinks }} </td></tr>
-                                            <tr><th> Complexity Pumplinks </th><td> {{ $weather->complexity_pumplinks }} </td></tr
-                                            ><tr><th> Complexity Oriflinks </th><td> {{ $weather->complexity_oriflinks }} </td></tr
-                                            ><tr><th> Complexity Weirlinks </th><td> {{ $weather->complexity_weirlinks }} </td></tr>
-                                            <tr><th> Complexity Outlinks </th><td> {{ $weather->complexity_outlinks }} </td></tr>
-                                            <tr><th> Complexity Transect </th><td> {{ $weather->complexity_transect }} </td></tr>
-                                            <tr><th> Complexity Polluts </th><td> {{ $weather->complexity_polluts }} </td></tr>
-                                            <tr><th> Complexity Landus </th><td> {{ $weather->complexity_landus }} </td></tr>
-                                            <tr><th> Totalcomity </th><td> {{ $weather->totalcomity }} </td></tr>
-                                            <tr><th> Raings </th><td> {{ $weather->raings }} </td></tr>
-                                            <tr><th> Inventory Subments </th><td> {{ $weather->inventory_subments }} </td></tr>
-                                            <tr><th> Inventory Aquifers </th><td> {{ $weather->inventory_aquifers }} </td></tr>
-                                            <tr><th> Inventory Snows </th><td> {{ $weather->inventory_snows }} </td></tr>
-                                            <tr><th> Inventory Rdiigraphs </th><td> {{ $weather->inventory_rdiigraphs }} </td></tr>
-                                            <tr><th> Inventory Jundes </th><td> {{ $weather->inventory_jundes }} </td></tr>
-                                            <tr><th> Inventory Outdes </th><td> {{ $weather->inventory_outdes }} </td></tr>
-                                            <tr><th> Inventory Fldides </th><td> {{ $weather->inventory_fldides }} </td></tr>
-                                            <tr><th> Inventory Storaundes </th><td> {{ $weather->inventory_storaundes }} </td></tr>
-                                            <tr><th> Inventory Conlinks </th><td> {{ $weather->inventory_conlinks }} </td></tr>
-                                            <tr><th> Inventory Pumplinks </th><td> {{ $weather->inventory_pumplinks }} </td></tr>
-                                            <tr><th> Inventory Oriflinks </th><td> {{ $weather->inventory_oriflinks }} </td></tr>
-                                            <tr><th> Inventory Weirlinks </th><td> {{ $weather->inventory_weirlinks }} </td></tr>
+                                            <tr><th> Max. roughness </th><td> {{ $weather->mxrougs }} </td></tr>
+                                            <tr><th> Min. roughness </th><td> {{ $weather->mnrougs }} </td></tr>
+                                            <tr><th> Max. entry loss coef. </th><td> {{ $weather->mxenlefs }} </td></tr>
+                                            <tr><th> Min. entry loss coef. </th><td> {{ $weather->mienlefs }} </td></tr>
+                                            <tr><th> Max. exit loss coef. </th><td> {{ $weather->mxeloefs }} </td></tr>
+                                            <tr><th> Min. exit loss coef. </th><td> {{ $weather->mneloefs }} </td></tr>
+                                            <tr><th> Max. avg. loss coef. </th><td> {{ $weather->mxaglefs }} </td></tr>
+                                            <tr><th> Min. avg. loss coef. </th><td> {{ $weather->miaglefs }} </td></tr>
+                                            <tr><th> Max. length (ft) </th><td> {{ $weather->mxleths }} </td></tr>
+                                            <tr><th> Min. length (ft) </th><td> {{ $weather->mileths }} </td></tr>
+                                            <tr><th> Total length (ft) </th><td> {{ $weather->totallgth }} </td></tr>
+                                            <tr><th> Max. slope (ft/ft)</th><td> {{ $weather->mxslope }} </td></tr>
+                                            <tr><th> Min. slope (ft/ft) </th><td> {{ $weather->mislope }} </td></tr>        
                                         </table>
                                     </div>
                                 </div>
@@ -190,167 +333,116 @@
                             <div class="col-md-6">
                                 <div class="widget">
                                     <div class="widget-header"> 
-                                        <h3> Sum 2</h3>
+                                        <h3>Flow routing continuity</h3>
                                     </div>
                                     <div class="widget-content">
                                         <table class="table table-sm">
-                                            <tr><th> Inventory Outlinks </th><td> {{ $weather->inventory_outlinks }} </td></tr>
-                                            <tr><th> Inventory Treunits </th><td> {{ $weather->inventory_treunits }} </td></tr>
-                                            <tr><th> Inventory Transect </th><td> {{ $weather->inventory_transect }} </td></tr>
-                                            <tr><th> Inventory Conruls </th><td> {{ $weather->inventory_conruls }} </td></tr>
-                                            <tr><th> Inventory Polluts </th><td> {{ $weather->inventory_polluts }} </td></tr>
-                                            <tr><th> Inventory Landus </th><td> {{ $weather->inventory_landus }} </td></tr>
-                                            <tr><th> Conves </th><td> {{ $weather->conves }} </td></tr>
-                                            <tr><th> Divsionves </th><td> {{ $weather->divsionves }} </td></tr>
-                                            <tr><th> Pumpves </th><td> {{ $weather->pumpves }} </td></tr>
-                                            <tr><th> Ratingves </th><td> {{ $weather->ratingves }} </td></tr>
-                                            <tr><th> Shapeves </th><td> {{ $weather->shapeves }} </td></tr>
-                                            <tr><th> Strogves </th><td> {{ $weather->strogves }} </td></tr>
-                                            <tr><th> Tidalves </th><td> {{ $weather->tidalves }} </td></tr>
-                                            <tr><th> Weirves </th><td> {{ $weather->weirves }} </td></tr>
-                                            <tr><th> Timeseries </th><td> {{ $weather->timeseries }} </td></tr>
-                                            <tr><th> Timepatns </th><td> {{ $weather->timepatns }} </td></tr>
-                                            <tr><th> Mxgroudev </th><td> {{ $weather->mxgroudev }} </td></tr>
-                                            <tr><th> Mngroudev </th><td> {{ $weather->mngroudev }} </td></tr>
-                                            <tr><th> Mxvertev </th><td> {{ $weather->mxvertev }} </td></tr>
-                                            <tr><th> Mnvertev </th><td> {{ $weather->mnvertev }} </td></tr>
-                                            <tr><th> Mxdepth </th><td> {{ $weather->mxdepth }} </td></tr>
-                                            <tr><th> Midepth </th><td> {{ $weather->midepth }} </td></tr>
-                                            <tr><th> Flowunits </th><td> {{ $weather->flowunits }} </td></tr>
-                                            <tr><th> Inftionmet </th><td> {{ $weather->inftionmet }} </td></tr>
-                                            <tr><th> Flowtingmet </th><td> {{ $weather->flowtingmet }} </td></tr>
-                                            <tr><th> Linkoffsetsned </th><td> {{ $weather->linkoffsetsned }} </td></tr>
-                                            <tr><th> Allowding </th><td> {{ $weather->allowding }} </td></tr>
-                                            <tr><th> Skipflowds </th><td> {{ $weather->skipflowds }} </td></tr>
-                                            <tr><th> Inertialing </th><td> {{ $weather->inertialing }} </td></tr>
-                                            <tr><th> Defineflow </th><td> {{ $weather->defineflow }} </td></tr>
-                                            <tr><th> Forcetion </th><td> {{ $weather->forcetion }} </td></tr>
-                                            <tr><th> Variable </th><td> {{ $weather->variable }} </td></tr>
-                                            <tr><th> Adjustment </th><td> {{ $weather->adjustment }} </td></tr>
-                                            <tr><th> Conduit </th><td> {{ $weather->conduit }} </td></tr>
-                                            <tr><th> Surface </th><td> {{ $weather->surface }} </td></tr>
-                                            <tr><th> Startingdate </th><td> {{ $weather->startingdate }} </td></tr>
-                                            <tr><th> Endingdate </th><td> {{ $weather->endingdate }} </td></tr>
-                                            <tr><th> Duration </th><td> {{ $weather->duration }} </td></tr>
-                                            <tr><th> Antecedent </th><td> {{ $weather->antecedent }} </td></tr>
-                                            <tr><th> Rain </th><td> {{ $weather->rain }} </td></tr>
-                                            <tr><th> Reporttime </th><td> {{ $weather->reporttime }} </td></tr>
-                                            <tr><th> Wettime </th><td> {{ $weather->wettime }} </td></tr>
-                                            <tr><th> Drytime </th><td> {{ $weather->drytime }} </td></tr>
-                                            <tr><th> Routingtime </th><td> {{ $weather->routingtime }} </td></tr>
-                                            <tr><th> Minimumtime </th><td> {{ $weather->minimumtime }} </td></tr>
-                                            <tr><th> Avgtime </th><td> {{ $weather->avgtime }} </td></tr>
-                                            <tr><th> Minimumcons </th><td> {{ $weather->minimumcons }} </td></tr>
-                                            <tr><th> Lgnoreofs </th><td> {{ $weather->lgnoreofs }} </td></tr>
-                                            <tr><th> Lgnoremelt </th><td> {{ $weather->lgnoremelt }} </td></tr>
-                                            <tr><th> Lgnoreter </th><td> {{ $weather->lgnoreter }} </td></tr>
-                                            <tr><th> Lgnoreing </th><td> {{ $weather->lgnoreing }} </td></tr>
-                                            <tr><th> Lgnorety </th><td> {{ $weather->lgnorety }} </td></tr>
-                                            <tr><th> Reportavgs </th><td> {{ $weather->reportavgs }} </td></tr>
-                                            <tr><th> Mxpipeter </th><td> {{ $weather->mxpipeter }} </td></tr>
-                                            <tr><th> Mnpipditer </th><td> {{ $weather->mnpipditer }} </td></tr>
-                                            <tr><th> Totalpipeth </th><td> {{ $weather->totalpipeth }} </td></tr>
-                                            <tr><th> Totalotherth </th><td> {{ $weather->totalotherth }} </td></tr>
-                                            <tr><th> Totalpipth </th><td> {{ $weather->totalpipth }} </td></tr>
-                                            <tr><th> Maxmg </th><td> {{ $weather->maxmg }} </td></tr>
-                                            <tr><th> Maxcfs </th><td> {{ $weather->maxcfs }} </td></tr>
-                                            <tr><th> Maxcoeffnt </th><td> {{ $weather->maxcoeffnt }} </td></tr>
+                                            <tr><th> Dry weather inflow (MG) </th><td> {{ $weather->dryweaflow }} </td></tr>
+                                            <tr><th> Wet weather inflow (MG) </th><td> {{ $weather->wetweaflow }} </td></tr>
+                                            <tr><th> Groundwater inflow (MG) </th><td> {{ $weather->groundweaflow }} </td></tr>
+                                            <tr><th> RDII inflow (MG) </th><td> {{ $weather->rdiiflow }} </td></tr>
+                                            <tr><th> External inflow (MG) </th><td> {{ $weather->exnalflow }} </td></tr>
+                                            <tr><th> External outflow (MG) </th><td> {{ $weather->exnaloutflow }} </td></tr>
+                                            <tr><th> Flooding loss (MG) </th><td> {{ $weather->floodloss }} </td></tr>
+                                            <tr><th> Evaporation loss (MG) </th><td> {{ $weather->evaloss }} </td></tr>
+                                            <tr><th> Exfiltration loss (MG) </th><td> {{ $weather->exfiltionloss }} </td></tr>
+                                            <tr><th> Initial stored volume (MG)</th><td> {{ $weather->lnitialvols }} </td></tr>
+                                            <tr><th> Final stored volume (MG) </th><td> {{ $weather->finalvols }} </td></tr>
+                                            <tr><th> Continuity error (%) </th><td> {{ $weather->conerrors }} </td></tr>
                                         </table>
                                     </div>
                                 </div>
                             </div>
+
                             <div class="col-md-6">
                                 <div class="widget">
                                     <div class="widget-header"> 
-                                        <h3> Sum 3</h3>
+                                        <h3>Inflows</h3>
                                     </div>
                                     <div class="widget-content">
                                         <table class="table table-sm">
-                                            <tr><th> Maxin </th><td> {{ $weather->maxin }} </td></tr>
-                                            <tr><th> Minin </th><td> {{ $weather->minin }} </td></tr>
-                                            <tr><th> Mxnode </th><td> {{ $weather->mxnode }} </td></tr>
-                                            <tr><th> Surcharged </th><td> {{ $weather->surcharged }} </td></tr>
-                                            <tr><th> Nodesurched </th><td> {{ $weather->nodesurched }} </td></tr>
-                                            <tr><th> Maxcrown </th><td> {{ $weather->maxcrown }} </td></tr>
-                                            <tr><th> Minbelow </th><td> {{ $weather->minbelow }} </td></tr>
-                                            <tr><th> Flooded </th><td> {{ $weather->flooded }} </td></tr>
-                                            <tr><th> Flooding </th><td> {{ $weather->flooding }} </td></tr>
-                                            <tr><th> Floodmg </th><td> {{ $weather->floodmg }} </td></tr>
-                                            <tr><th> Pondedvolume </th><td> {{ $weather->pondedvolume }} </td></tr>
-                                            <tr><th> Maxvolume </th><td> {{ $weather->maxvolume }} </td></tr>
-                                            <tr><th> Maxperfull </th><td> {{ $weather->maxperfull }} </td></tr>
-                                            <tr><th> Maxfrecy </th><td> {{ $weather->maxfrecy }} </td></tr>
-                                            <tr><th> Maxflow </th><td> {{ $weather->maxflow }} </td></tr>
-                                            <tr><th> Maxoutfallmg </th><td> {{ $weather->maxoutfallmg }} </td></tr>
-                                            <tr><th> Totalmg </th><td> {{ $weather->totalmg }} </td></tr>
-                                            <tr><th> Maxpeak </th><td> {{ $weather->maxpeak }} </td></tr>
-                                            <tr><th> Maxlinkty </th><td> {{ $weather->maxlinkty }} </td></tr>
-                                            <tr><th> Minpeakty </th><td> {{ $weather->minpeakty }} </td></tr>
-                                            <tr><th> Conduits </th><td> {{ $weather->conduits }} </td></tr>
-                                            <tr><th> Maxconduits </th><td> {{ $weather->maxconduits }} </td></tr>
-                                            <tr><th> Maxcapacity </th><td> {{ $weather->maxcapacity }} </td></tr>
-                                            <tr><th> Lidstroage </th><td> {{ $weather->lidstroage }} </td></tr>
-                                            <tr><th> Snowcover </th><td> {{ $weather->snowcover }} </td></tr>
-                                            <tr><th> Totalin </th><td> {{ $weather->totalin }} </td></tr>
-                                            <tr><th> Runonin </th><td> {{ $weather->runonin }} </td></tr>
-                                            <tr><th> Evalossin </th><td> {{ $weather->evalossin }} </td></tr>
-                                            <tr><th> Infitionloss </th><td> {{ $weather->infitionloss }} </td></tr>
-                                            <tr><th> Surfacein </th><td> {{ $weather->surfacein }} </td></tr>
-                                            <tr><th> Drainage </th><td> {{ $weather->drainage }} </td></tr>
-                                            <tr><th> Snowved </th><td> {{ $weather->snowved }} </td></tr>
-                                            <tr><th> Finalsnow </th><td> {{ $weather->finalsnow }} </td></tr>
-                                            <tr><th> Finalin </th><td> {{ $weather->finalin }} </td></tr>
-                                            <tr><th> Conerror </th><td> {{ $weather->conerror }} </td></tr>
+                                            <tr><th> Time series inflows </th><td> {{ $weather->timeflows }} </td></tr>
+                                            <tr><th> Dry weather inflows </th><td> {{ $weather->dryweaflows }} </td></tr>
+                                            <tr><th> Groundwater inflows </th><td> {{ $weather->groundflows }} </td></tr>
+                                            <tr><th> RDII inflows </th><td> {{ $weather->rdiiflows }} </td></tr>
                                         </table>
                                     </div>
                                 </div>
                             </div>
+
                             <div class="col-md-6">
                                 <div class="widget">
                                     <div class="widget-header"> 
-                                        <h3> Sum 4 </h3>
+                                        <h3>Pipe inventory</h3>
                                     </div>
                                     <div class="widget-content">
                                         <table class="table table-sm">
-                                            <tr><th> Maxwidth </th><td> {{ $weather->maxwidth }} </td></tr>
-                                            <tr><th> Minwidth </th><td> {{ $weather->minwidth }} </td></tr>
-                                            <tr><th> Maxarea </th><td> {{ $weather->maxarea }} </td></tr>
-                                            <tr><th> Minarea </th><td> {{ $weather->minarea }} </td></tr>
-                                            <tr><th> Totalarea </th><td> {{ $weather->totalarea }} </td></tr>
-                                            <tr><th> Results Maxflow </th><td> {{ $weather->results_maxflow }} </td></tr>
-                                            <tr><th> Minflow </th><td> {{ $weather->minflow }}</td></tr>
-                                            <tr><th> Maxslope </th><td> {{ $weather->maxslope }} </td></tr>
-                                            <tr><th> Minslope </th><td> {{ $weather->minslope }} </td></tr>
-                                            <tr><th> Subcat Maximpness </th><td> {{ $weather->subcat_maximpness }} </td></tr>
-                                            <tr><th> Subcat Minimpness </th><td> {{ $weather->subcat_minimpness }} </td></tr>
-                                            <tr><th> Maximpness </th><td> {{ $weather->maximpness }} </td></tr>
-                                            <tr><th> Minimpness </th><td> {{ $weather->minimpness }} </td></tr>
-                                            <tr><th> Subcat Maxperv </th><td> {{ $weather->subcat_maxperv }} </td></tr>
-                                            <tr><th> Subcat Minperv </th><td> {{ $weather->subcat_minperv }} </td></tr>
-                                            <tr><th> Maximp </th><td> {{ $weather->maximp }} </td></tr>
-                                            <tr><th> Minimp </th><td> {{ $weather->minimp }} </td></tr>
-                                            <tr><th> Maxperv </th><td> {{ $weather->maxperv }} </td></tr>
-                                            <tr><th> Minperv </th><td> {{ $weather->minperv }} </td></tr>
-                                            <tr><th> Gages </th><td> {{ $weather->gages }} </td></tr>
-                                            <tr><th> Aquifers </th><td> {{ $weather->aquifers }} </td></tr>
-                                            <tr><th> Snowpacks </th><td> {{ $weather->snowpacks }} </td></tr>
-                                            <tr><th> Unitgraphs </th><td> {{ $weather->unitgraphs }} </td></tr>
-                                            <tr><th> Transects </th><td> {{ $weather->transects }} </td></tr>
-                                            <tr><th> Curves </th><td> {{ $weather->curves }} </td></tr>
-                                            <tr><th> Diverves </th><td> {{ $weather->diverves }} </td></tr>
-                                            <tr><th> Unused Pumpves </th><td> {{ $weather->unused_pumpves }} </td></tr>
-                                            <tr><th> Unused Ratingves </th><td> {{ $weather->unused_ratingves }} </td></tr>
-                                            <tr><th> Unused Shapeves </th><td> {{ $weather->unused_shapeves }} </td></tr>
-                                            <tr><th> Storageves </th><td> {{ $weather->storageves }} </td></tr>
-                                            <tr><th> Unused Tidalves </th><td> {{ $weather->unused_tidalves }} </td></tr>
-                                            <tr><th> Unused Weirves </th><td> {{ $weather->unused_weirves }} </td></tr>
-                                            <tr><th> Unused Timeseries </th><td> {{ $weather->unused_timeseries }} </td></tr>
-                                            <tr><th> Timepatts </th><td> {{ $weather->timepatts }} </td></tr>
-                                            <tr><th> InvertevsJ1 </th><td> {{ $weather->invertevsJ1 }} </td></tr>
+                                            <tr><th> Max. pipe diameter (ft) </th><td> {{ $weather->mxpipeter }} </td></tr>
+                                            <tr><th> Min. pipe diameter (ft)	 </th><td> {{ $weather->mnpipditer }} </td></tr>
+                                            <tr><th> Total 12” pipe length (ft) </th><td> {{ $weather->totalpipeth }} </td></tr>
+                                            <tr><th> Total other pipe length (ft) </th><td> {{ $weather->totalotherth }} </td></tr>
+                                            <tr><th> Total pipe length (ft) </th><td> {{ $weather->totalpipth }} </td></tr>
                                         </table>
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="col-md-6">
+                                <div class="widget">
+                                    <div class="widget-header"> 
+                                        <h3>Node statistics</h3>
+                                    </div>
+                                    <div class="widget-content">
+                                        <table class="table table-sm">
+                                            <tr><th> Max. ground elev. (ft) </th><td> {{ $weather->mxgroudev }} </td></tr>
+                                            <tr><th> Min. ground elev. (ft) </th><td> {{ $weather->mngroudev }} </td></tr>
+                                            <tr><th> Max. invert elev. (ft)	 </th><td> {{ $weather->mxvertev }} </td></tr>
+                                            <tr><th> Min. invert elev. (ft) </th><td> {{ $weather->mnvertev }} </td></tr>
+                                            <tr><th> Max. depth (ft) </th><td> {{ $weather->mxdepth }} </td></tr>
+                                            <tr><th> Min. depth (ft) </th><td> {{ $weather->midepth }} </td></tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="widget">
+                                    <div class="widget-header"> 
+                                        <h3>Runoff quantity continuity</h3>
+                                    </div>
+                                    <div class="widget-content">
+                                        <table class="table table-sm">
+                                            <tr><th> Initial LID storage (in) </th><td> {{ $weather->lidstroage }} </td></tr>
+                                            <tr><th> Initial snow cover (in) </th><td> {{ $weather->snowcover }} </td></tr>
+                                            <tr><th> Total precipitation (in) </th><td> {{ $weather->totalin }} </td></tr>
+                                            <tr><th> Outfall runon (in) </th><td> {{ $weather->runonin }} </td></tr>
+                                            <tr><th> Evaporation loss (in) </th><td> {{ $weather->evalossin }} </td></tr>
+                                            <tr><th> Infiltration loss (in) </th><td> {{ $weather->infitionloss }} </td></tr>
+                                            <tr><th> Surface runoff (in) </th><td> {{ $weather->surfacein }} </td></tr>
+                                            <tr><th> LID drainage (in) </th><td> {{ $weather->drainage }} </td></tr>
+                                            <tr><th> Snow removed (in) </th><td> {{ $weather->snowved }} </td></tr>
+                                            <tr><th> Final snow cover (in) </th><td> {{ $weather->finalsnow }} </td></tr>
+                                            <tr><th> Final storage (in) </th><td> {{ $weather->finalin }} </td></tr>
+                                            <tr><th> Continuity error (%) </th><td> {{ $weather->conerror }} </td></tr>
+
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="widget">
+                                    <div class="widget-header"> 
+                                        <h3>Summary/Conduit Inventory.txt</h3>
+                                    </div>
+                                    <div class="widget-content">
+                                        <table class="table table-sm">
+                                            <tr><th> Circular (ft) </th><td> {{ $weather->circular }} </td></tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+            
                             <div class="col-md-12">
                                 <div class="widget ">
                                     <div class="widget-header"> 
@@ -358,23 +450,24 @@
                                     </div>
                                     <div class="widget-content">
                                         <table class="table table-sm">
-                                            <tr><th> InvertevsJ2 </th><td> {{ $weather->invertevsJ2 }} </td></tr>
-                                            <tr><th> InvertevsJ3 </th><td> {{ $weather->invertevsJ3 }} </td></tr>
-                                            <tr><th> InvertevsJ4 </th><td> {{ $weather->invertevsJ4 }} </td></tr>
-                                            <tr><th> InvertevsJ3 1 </th><td> {{ $weather->invertevsJ3_1 }} </td></tr>
-                                            <tr><th> InvertevsJ3 2 </th><td> {{ $weather->invertevsJ3_2 }} </td></tr>
-                                            <tr><th> RimJ1 </th><td> {{ $weather->rimJ1 }} </td></tr>
-                                            <tr><th> RimJ2 </th><td> {{ $weather->rimJ2 }} </td></tr>
-                                            <tr><th> RimJ3 </th><td> {{ $weather->rimJ3 }} </td></tr>
-                                            <tr><th> RimJ4 </th><td> {{ $weather->rimJ4 }} </td></tr>
-                                            <tr><th> RimJ3 1 </th><td> {{ $weather->rimJ3_1 }} </td></tr>
-                                            <tr><th> RimJ3 2 </th><td> {{ $weather->rimJ3_2 }} </td></tr>
-                                            <tr><th> TotalmgJ1 </th><td> {{ $weather->totalmgJ1 }} </td></tr>
-                                            <tr><th> TotalmgJ2 </th><td> {{ $weather->totalmgJ2 }} </td></tr>
-                                            <tr><th> TotalmgJ3 </th><td> {{ $weather->totalmgJ3 }} </td></tr>
-                                            <tr><th> TotalmgJ4 </th><td> {{ $weather->totalmgJ4 }} </td></tr>
-                                            <tr><th> TotalmgJ3 1 </th><td> {{ $weather->totalmgJ3_1 }} </td></tr>
-                                            <tr><th> TotalmgJ3 2 </th><td> {{ $weather->totalmgJ3_2 }} </td>
+                                            <tr><th> Invert Elev. (ft)-J1 </th><td> {{ $weather->invertevsJ1 }} </td></tr>
+                                            <tr><th> Invert Elev. (ft)-J2 </th><td> {{ $weather->invertevsJ2 }} </td></tr>
+                                            <tr><th> Invert Elev. (ft)-J3 </th><td> {{ $weather->invertevsJ3 }} </td></tr>
+                                            <tr><th> Invert Elev. (ft)-J4 </th><td> {{ $weather->invertevsJ4 }} </td></tr>
+                                            <tr><th> Invert Elev. (ft)-J3_1 </th><td> {{ $weather->invertevsJ3_1 }} </td></tr>
+                                            <tr><th> Invert Elev. (ft)-J3_2 </th><td> {{ $weather->invertevsJ3_2 }} </td></tr>
+                                            <tr><th> Rim Elev. (ft)-J1 </th><td> {{ $weather->rimJ1 }} </td></tr>
+                                            <tr><th> Rim Elev. (ft)-J2 </th><td> {{ $weather->rimJ2 }} </td></tr>
+                                            <tr><th> Rim Elev. (ft)-J3 </th><td> {{ $weather->rimJ3 }} </td></tr>
+                                            <tr><th> Rim Elev. (ft)-J4 </th><td> {{ $weather->rimJ4 }} </td></tr>
+                                            <tr><th> Rim Elev. (ft)-J3_1 </th><td> {{ $weather->rimJ3_1 }} </td></tr>
+                                            <tr><th> Rim Elev. (ft)-J3_2 </th><td> {{ $weather->rimJ3_2 }} </td></tr>
+                                            <tr><th> Total Flood Vol. (MG)-J1 </th><td> {{ $weather->totalmgJ1 }} </td></tr>
+                                            <tr><th> Total Flood Vol. (MG)-J2 </th><td> {{ $weather->totalmgJ2 }} </td></tr>
+                                            <tr><th> Total Flood Vol. (MG)-J3 </th><td> {{ $weather->totalmgJ3 }} </td></tr>
+                                            <tr><th> Total Flood Vol. (MG)-J4 </th><td> {{ $weather->totalmgJ4 }} </td></tr>
+                                            <tr><th> Total Flood Vol. (MG)-J3_1 </th><td> {{ $weather->totalmgJ3_1 }} </td></tr>
+                                            <tr><th> Total Flood Vol. (MG)-J3_2 </th><td> {{ $weather->totalmgJ3_2 }} </td>
                                             <tr><th> Report Generate </th><td> {{ $weather->report_generate }} </td></tr>
                                         </table>
                                     </div>
