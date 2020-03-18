@@ -89,16 +89,16 @@
                                     </div>
                                 </div>
                             </div>
-                            
-                            <div class="col-md-6">
+    
+                            <div class="col-md-6" id="accordion">
                                 <div class="widget">
-                                    <div class="widget-header"> 
-                                    <a href="#demo"  data-toggle="collapse">
+                                    <div class="widget-header">
+                                    <a class="card-link" data-toggle="collapse" href="#collapseOne">
                                         <h3>Model inventory</h3>
                                     </a>
                                     </div>
                                     <div class="widget-content">
-                                        <div id="demo" class="collapse">
+                                        <div id="collapseOne" class="collapse show" data-parent="#accordion">
                                             <table class="table table-sm">
                                                 <tr><th> Raingages </th><td> {{ $weather->raings }} </td></tr>
                                                 <tr><th> Subcatchments </th><td> {{ $weather->inventory_subments }} </td></tr>
@@ -130,10 +130,11 @@
                                                 <tr><th> Time Series </th><td> {{ $weather->timeseries }} </td></tr>
                                                 <tr><th> Time Patterns </th><td> {{ $weather->timepatns }} </td></tr>
                                             </table>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                           
 
                             <div class="col-md-6">
                                 <div class="widget">
