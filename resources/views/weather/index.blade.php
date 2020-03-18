@@ -41,9 +41,9 @@
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                   
-                                        <td> <img src="{{ asset('/storage') }}/{{ $item->Outfalls }}" width="100" /></td>
-                                        <td> {{ asset('/storage') }}/{{ $item->kmls }} </td>
-                                        <td> <img src="{{ asset('/storage') }}/{{ $item->profiles }}"  width="100"/>  </td>
+                                        <td> <a class="btn btn-dark btn-sm" href=" {{ asset('/storage') }}/{{ $item->Outfalls }}" target="_blank"><img src="{{ asset('/storage') }}/{{ $item->Outfalls }}" width="100" /></a></td>
+                                        <td> <a class="btn btn-secondary btn-sm" href=" {{ asset('/storage') }}/{{ $item->kmls }}"><i class="icon-file"></i> KML/KMZ File</a></td>
+                                        <td> <a class="btn btn-dark btn-sm" href=" {{ asset('/storage') }}/{{ $item->profiles }}" target="_blank"><img src="{{ asset('/storage') }}/{{ $item->profiles }}"  width="100"/></a></td>
                                         <td>{{ $item->report_generate }}</td>
                                         <td>
                                             <a href="{{ url('/weather/' . $item->id) }}" title="View Weather"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
