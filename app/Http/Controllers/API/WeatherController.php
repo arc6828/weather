@@ -27,7 +27,11 @@ class WeatherController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $requestData = $request->all();
+        $requestData['detail'] = json_encode($requestData, JSON_UNESCAPED_UNICODE);
+        Weather::create($requestData);
+
+        return response()->json($requestData);
     }
 
     /**
