@@ -23,7 +23,7 @@ class WeatherController extends Controller
         if (!empty($keyword)) {
             $weather = Weather::where('Outfalls', 'LIKE', "%$keyword%")
                 ->orWhere('kmls', 'LIKE', "%$keyword%")
-                ->orWhere('profiles', 'LIKE', "%$keyword%")                
+                ->orWhere('profiles', 'LIKE', "%$keyword%")             
                 ->orWhere('detail', 'LIKE', "%$keyword%")
                 ->orWhere('report_generate', 'LIKE', "%$keyword%")
                 ->latest()->paginate($perPage);
