@@ -52,7 +52,7 @@
                                         <td> <a class="btn btn-dark btn-sm" href=" {{ asset('/storage') }}/{{ $item->profiles2 }}" target="_blank"><img src="{{ asset('/storage') }}/{{ $item->profiles5 }}"  width="100"/></a></td>
                                         <td>{{ $item->report_generate }}</td>
                                         <td>
-                                            <a class="d-none" href= "{{ url('/weather/' . $item->id) }}" title="View Weather "><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
+                                            <a class="" href= "{{ url('/weather/' . $item->id) }}" title="View Weather "><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
                                             <a class="d-none" href="{{ url('/weather/' . $item->id . '/edit') }}" title="Edit Weather"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
 
                                             <form class="d-none" method="POST" action="{{ url('/weather' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
