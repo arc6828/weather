@@ -113,7 +113,132 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6" id="accordion1">
+
+                                
+
+                                <div class="col-md-6" id="accordion8">
+                                    <div class="widget">
+                                        <div class="widget-header">
+                                            <a class="card-link" data-toggle="collapse" href="#collapset8">  
+                                                <h3>Flow routing continuity</h3>
+                                            </a>
+                                        </div>
+                                        <div class="widget-content">
+                                            <div id="collapset8" class="collapse show" data-parent="#accordion8">
+                                                <table class="table table-sm">
+                                                    <tr><th> Dry weather inflow (MG) </th><td> {{ $weather->dryweaflow }} </td></tr>
+                                                    <tr><th> Wet weather inflow (MG) </th><td> {{ $weather->wetweaflow }} </td></tr>
+                                                    <tr><th> Groundwater inflow (MG) </th><td> {{ $weather->groundweaflow }} </td></tr>
+                                                    <tr><th> RDII inflow (MG) </th><td> {{ $weather->rdiiflow }} </td></tr>
+                                                    <tr><th> External inflow (MG) </th><td> {{ $weather->exnalflow }} </td></tr>
+                                                    <tr><th> External outflow (MG) </th><td> {{ $weather->exnaloutflow }} </td></tr>
+                                                    <tr><th> Flooding loss (MG) </th><td> {{ $weather->floodloss }} </td></tr>
+                                                    <tr><th> Evaporation loss (MG) </th><td> {{ $weather->evaloss }} </td></tr>
+                                                    <tr><th> Exfiltration loss (MG) </th><td> {{ $weather->exfiltionloss }} </td></tr>
+                                                    <tr><th> Initial stored volume (MG)</th><td> {{ $weather->lnitialvols }} </td></tr>
+                                                    <tr><th> Final stored volume (MG) </th><td> {{ $weather->finalvols }} </td></tr>
+                                                    <tr><th> Continuity error (%) </th><td> {{ $weather->conerrors }} </td></tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 " id="accordion12">
+                                    <div class="widget">
+                                        <div class="widget-header"> 
+                                            <a class="card-link" data-toggle="collapse" href="#collapset12">
+                                                <h3>Runoff quantity continuity</h3>
+                                            </a>
+                                        </div>
+                                        <div class="widget-content">
+                                            <div id="collapset12" class="collapse show" data-parent="#accordion12">
+                                                <table class="table table-sm">
+                                                    <tr><th> Initial LID storage (in) </th><td> {{ $weather->lidstroage }} </td></tr>
+                                                    <tr><th> Initial snow cover (in) </th><td> {{ $weather->snowcover }} </td></tr>
+                                                    <tr><th> Total precipitation (in) </th><td> {{ $weather->totalin }} </td></tr>
+                                                    <tr><th> Outfall runon (in) </th><td> {{ $weather->runonin }} </td></tr>
+                                                    <tr><th> Evaporation loss (in) </th><td> {{ $weather->evalossin }} </td></tr>
+                                                    <tr><th> Infiltration loss (in) </th><td> {{ $weather->infitionloss }} </td></tr>
+                                                    <tr><th> Surface runoff (in) </th><td> {{ $weather->surfacein }} </td></tr>
+                                                    <tr><th> LID drainage (in) </th><td> {{ $weather->drainage }} </td></tr>
+                                                    <tr><th> Snow removed (in) </th><td> {{ $weather->snowved }} </td></tr>
+                                                    <tr><th> Final snow cover (in) </th><td> {{ $weather->finalsnow }} </td></tr>
+                                                    <tr><th> Final storage (in) </th><td> {{ $weather->finalin }} </td></tr>
+                                                    <tr><th> Continuity error (%) </th><td> {{ $weather->conerror }} </td></tr>
+
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                
+
+                                <div class="col-md-6 " id="accordion3">
+                                    <div class="widget">
+                                        <div class="widget-header">
+                                            <a class="card-link" data-toggle="collapse" href="#collapset3"> 
+                                                <h3>Results statistics</h3>
+                                            </a>
+                                        </div>
+                                        <div class="widget-content">
+                                            <div id="collapset3" class="collapse show" data-parent="#accordion3">
+                                                <table class="table table-sm">
+                                                    <tr><th> Max. subcatchment total runoff (MG) </th><td> {{ $weather->maxmg }} </td></tr>
+                                                    <tr><th> Max. subcatchment peak runoff (cfs) </th><td> {{ $weather->maxcfs }} </td></tr>
+                                                    <tr><th> Max. subcatchment runoff coefficient </th><td> {{ $weather->maxcoeffnt }} </td></tr>
+                                                    <tr><th> Max. subcatchment total precip (in) </th><td> {{ $weather->maxin }} </td></tr>
+                                                    <tr><th> Min. subcatchment total precip (in) </th><td> {{ $weather->minin }} </td></tr>
+                                                    <tr><th> Max. node depth (ft)	 </th><td> {{ $weather->mxnode }} </td></tr>
+                                                    <tr><th> Num. nodes surcharged  </th><td> {{ $weather->surcharged }} </td></tr>
+                                                    <tr><th> Max. node surcharge duration (hours) </th><td> {{ $weather->nodesurched }} </td></tr>
+                                                    <tr><th> Max. node height above crown (ft) </th><td> {{ $weather->maxcrown }} </td></tr>
+                                                    <tr><th> Min. node depth below rim (ft) </th><td> {{ $weather->minbelow }} </td></tr>
+                                                    <tr><th> Num. nodes flooded	 </th><td> {{ $weather->flooded }} </td></tr>
+                                                    <tr><th> Max. node flooding duration (hours) </th><td> {{ $weather->flooding }} </td></tr>
+                                                    <tr><th> Max. node flood volume (MG) </th><td> {{ $weather->floodmg }} </td></tr>
+                                                    <tr><th> Max. node ponded volume or depth  </th><td> {{ $weather->pondedvolume }} </td></tr>
+                                                    <tr><th> Max. storage volume (1000 ft?) </th><td> {{ $weather->maxvolume }} </td></tr>
+                                                    <tr><th> Max. storage percent full (%) </th><td> {{ $weather->maxperfull }} </td></tr>
+                                                    <tr><th> Max. outfall flow frequency (%) </th><td> {{ $weather->maxfrecy }} </td></tr>
+                                                    <tr><th> Max. outfall peak flow (cfs) </th><td> {{ $weather->maxflow }} </td></tr>
+                                                    <tr><th> Max. outfall total volume (MG)	</th><td> {{ $weather->maxoutfallmg }} </td></tr>
+                                                    <tr><th> Total outfall volume (MG)  </th><td> {{ $weather->totalmg }} </td></tr>
+                                                    <tr><th> Max. link peak flow (cfs) </th><td> {{ $weather->maxpeak }} </td></tr>
+                                                    <tr><th> Max. link peak velocity (ft/s)</th><td> {{ $weather->maxlinkty }} </td></tr>
+                                                    <tr><th> Min. link peak velocity (ft/s) </th><td> {{ $weather->minpeakty }} </td></tr>
+                                                    <tr><th> Num. conduits surcharged  </th><td> {{ $weather->conduits }} </td></tr>
+                                                    <tr><th> Max. conduit surcharge duration (hours) </th><td> {{ $weather->maxconduits }} </td></tr>
+                                                    <tr><th> Max. conduit capacity limited duration (hours) </th><td> {{ $weather->maxcapacity }} </td></tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+
+                                <div class="col-md-6" id="accordion9">
+                                    <div class="widget">
+                                        <div class="widget-header"> 
+                                            <a class="card-link" data-toggle="collapse" href="#collapset9">
+                                                <h3>Inflows</h3>
+                                            </a>
+                                        </div>
+                                        <div class="widget-content">
+                                            <div id="collapset9" class="collapse show" data-parent="#accordion9">
+                                                <table class="table table-sm">
+                                                    <tr><th> Time series inflows </th><td> {{ $weather->timeflows }} </td></tr>
+                                                    <tr><th> Dry weather inflows </th><td> {{ $weather->dryweaflows }} </td></tr>
+                                                    <tr><th> Groundwater inflows </th><td> {{ $weather->groundflows }} </td></tr>
+                                                    <tr><th> RDII inflows </th><td> {{ $weather->rdiiflows }} </td></tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 d-none" id="accordion1">
                                     <div class="widget">
                                         <div class="widget-header">
                                             <a class="card-link" data-toggle="collapse" href="#collapseOne">
@@ -159,7 +284,7 @@
                                 </div>
                             
 
-                                <div class="col-md-6" id="accordion2">
+                                <div class="col-md-6 d-none" id="accordion2">
                                     <div class="widget">
                                         <div class="widget-header"> 
                                             <a class="card-link" data-toggle="collapse" href="#collapsetwo">
@@ -206,49 +331,9 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-6" id="accordion3">
-                                    <div class="widget">
-                                        <div class="widget-header">
-                                            <a class="card-link" data-toggle="collapse" href="#collapset3"> 
-                                                <h3>Results statistics</h3>
-                                            </a>
-                                        </div>
-                                        <div class="widget-content">
-                                            <div id="collapset3" class="collapse show" data-parent="#accordion3">
-                                                <table class="table table-sm">
-                                                    <tr><th> Max. subcatchment total runoff (MG) </th><td> {{ $weather->maxmg }} </td></tr>
-                                                    <tr><th> Max. subcatchment peak runoff (cfs) </th><td> {{ $weather->maxcfs }} </td></tr>
-                                                    <tr><th> Max. subcatchment runoff coefficient </th><td> {{ $weather->maxcoeffnt }} </td></tr>
-                                                    <tr><th> Max. subcatchment total precip (in) </th><td> {{ $weather->maxin }} </td></tr>
-                                                    <tr><th> Min. subcatchment total precip (in) </th><td> {{ $weather->minin }} </td></tr>
-                                                    <tr><th> Max. node depth (ft)	 </th><td> {{ $weather->mxnode }} </td></tr>
-                                                    <tr><th> Num. nodes surcharged  </th><td> {{ $weather->surcharged }} </td></tr>
-                                                    <tr><th> Max. node surcharge duration (hours) </th><td> {{ $weather->nodesurched }} </td></tr>
-                                                    <tr><th> Max. node height above crown (ft) </th><td> {{ $weather->maxcrown }} </td></tr>
-                                                    <tr><th> Min. node depth below rim (ft) </th><td> {{ $weather->minbelow }} </td></tr>
-                                                    <tr><th> Num. nodes flooded	 </th><td> {{ $weather->flooded }} </td></tr>
-                                                    <tr><th> Max. node flooding duration (hours) </th><td> {{ $weather->flooding }} </td></tr>
-                                                    <tr><th> Max. node flood volume (MG) </th><td> {{ $weather->floodmg }} </td></tr>
-                                                    <tr><th> Max. node ponded volume or depth  </th><td> {{ $weather->pondedvolume }} </td></tr>
-                                                    <tr><th> Max. storage volume (1000 ft?) </th><td> {{ $weather->maxvolume }} </td></tr>
-                                                    <tr><th> Max. storage percent full (%) </th><td> {{ $weather->maxperfull }} </td></tr>
-                                                    <tr><th> Max. outfall flow frequency (%) </th><td> {{ $weather->maxfrecy }} </td></tr>
-                                                    <tr><th> Max. outfall peak flow (cfs) </th><td> {{ $weather->maxflow }} </td></tr>
-                                                    <tr><th> Max. outfall total volume (MG)	</th><td> {{ $weather->maxoutfallmg }} </td></tr>
-                                                    <tr><th> Total outfall volume (MG)  </th><td> {{ $weather->totalmg }} </td></tr>
-                                                    <tr><th> Max. link peak flow (cfs) </th><td> {{ $weather->maxpeak }} </td></tr>
-                                                    <tr><th> Max. link peak velocity (ft/s)</th><td> {{ $weather->maxlinkty }} </td></tr>
-                                                    <tr><th> Min. link peak velocity (ft/s) </th><td> {{ $weather->minpeakty }} </td></tr>
-                                                    <tr><th> Num. conduits surcharged  </th><td> {{ $weather->conduits }} </td></tr>
-                                                    <tr><th> Max. conduit surcharge duration (hours) </th><td> {{ $weather->maxconduits }} </td></tr>
-                                                    <tr><th> Max. conduit capacity limited duration (hours) </th><td> {{ $weather->maxcapacity }} </td></tr>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                
 
-                                <div class="col-md-6" id="accordion4">
+                                <div class="col-md-6 d-none" id="accordion4">
                                     <div class="widget">
                                         <div class="widget-header"> 
                                             <a class="card-link" data-toggle="collapse" href="#collapset4"> 
@@ -283,7 +368,7 @@
                                     </div>
                                 </div>
                                 
-                                <div class="col-md-6" id="accordion5">
+                                <div class="col-md-6 d-none" id="accordion5">
                                     <div class="widget">
                                         <div class="widget-header"> 
                                             <a class="card-link" data-toggle="collapse" href="#collapset5">
@@ -317,7 +402,7 @@
                                     </div>
                                 </div> 
 
-                                <div class="col-md-6" id="accordion6">
+                                <div class="col-md-6 d-none" id="accordion6">
                                     <div class="widget">
                                         <div class="widget-header">
                                             <a class="card-link" data-toggle="collapse" href="#collapset6"> 
@@ -349,7 +434,7 @@
                                 </div>
                                 
                                 
-                                <div class="col-md-6" id="accordion7">
+                                <div class="col-md-6 d-none" id="accordion7">
                                     <div class="widget">
                                         <div class="widget-header">
                                             <a class="card-link" data-toggle="collapse" href="#collapset7"> 
@@ -378,55 +463,9 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-6" id="accordion8">
-                                    <div class="widget">
-                                        <div class="widget-header">
-                                            <a class="card-link" data-toggle="collapse" href="#collapset8">  
-                                                <h3>Flow routing continuity</h3>
-                                            </a>
-                                        </div>
-                                        <div class="widget-content">
-                                            <div id="collapset8" class="collapse show" data-parent="#accordion8">
-                                                <table class="table table-sm">
-                                                    <tr><th> Dry weather inflow (MG) </th><td> {{ $weather->dryweaflow }} </td></tr>
-                                                    <tr><th> Wet weather inflow (MG) </th><td> {{ $weather->wetweaflow }} </td></tr>
-                                                    <tr><th> Groundwater inflow (MG) </th><td> {{ $weather->groundweaflow }} </td></tr>
-                                                    <tr><th> RDII inflow (MG) </th><td> {{ $weather->rdiiflow }} </td></tr>
-                                                    <tr><th> External inflow (MG) </th><td> {{ $weather->exnalflow }} </td></tr>
-                                                    <tr><th> External outflow (MG) </th><td> {{ $weather->exnaloutflow }} </td></tr>
-                                                    <tr><th> Flooding loss (MG) </th><td> {{ $weather->floodloss }} </td></tr>
-                                                    <tr><th> Evaporation loss (MG) </th><td> {{ $weather->evaloss }} </td></tr>
-                                                    <tr><th> Exfiltration loss (MG) </th><td> {{ $weather->exfiltionloss }} </td></tr>
-                                                    <tr><th> Initial stored volume (MG)</th><td> {{ $weather->lnitialvols }} </td></tr>
-                                                    <tr><th> Final stored volume (MG) </th><td> {{ $weather->finalvols }} </td></tr>
-                                                    <tr><th> Continuity error (%) </th><td> {{ $weather->conerrors }} </td></tr>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                
 
-                                <div class="col-md-6" id="accordion9">
-                                    <div class="widget">
-                                        <div class="widget-header"> 
-                                            <a class="card-link" data-toggle="collapse" href="#collapset9">
-                                                <h3>Inflows</h3>
-                                            </a>
-                                        </div>
-                                        <div class="widget-content">
-                                            <div id="collapset9" class="collapse show" data-parent="#accordion9">
-                                                <table class="table table-sm">
-                                                    <tr><th> Time series inflows </th><td> {{ $weather->timeflows }} </td></tr>
-                                                    <tr><th> Dry weather inflows </th><td> {{ $weather->dryweaflows }} </td></tr>
-                                                    <tr><th> Groundwater inflows </th><td> {{ $weather->groundflows }} </td></tr>
-                                                    <tr><th> RDII inflows </th><td> {{ $weather->rdiiflows }} </td></tr>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6" id="accordion10">
+                                <div class="col-md-6 d-none" id="accordion10">
                                     <div class="widget">
                                         <div class="widget-header"> 
                                             <a class="card-link" data-toggle="collapse" href="#collapset10">
@@ -447,7 +486,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-6" id="accordion11">
+                                <div class="col-md-6 d-none" id="accordion11">
                                     <div class="widget">
                                         <div class="widget-header"> 
                                             <a class="card-link" data-toggle="collapse" href="#collapset11">
@@ -469,36 +508,9 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-6" id="accordion12">
-                                    <div class="widget">
-                                        <div class="widget-header"> 
-                                            <a class="card-link" data-toggle="collapse" href="#collapset12">
-                                                <h3>Runoff quantity continuity</h3>
-                                            </a>
-                                        </div>
-                                        <div class="widget-content">
-                                            <div id="collapset12" class="collapse show" data-parent="#accordion12">
-                                                <table class="table table-sm">
-                                                    <tr><th> Initial LID storage (in) </th><td> {{ $weather->lidstroage }} </td></tr>
-                                                    <tr><th> Initial snow cover (in) </th><td> {{ $weather->snowcover }} </td></tr>
-                                                    <tr><th> Total precipitation (in) </th><td> {{ $weather->totalin }} </td></tr>
-                                                    <tr><th> Outfall runon (in) </th><td> {{ $weather->runonin }} </td></tr>
-                                                    <tr><th> Evaporation loss (in) </th><td> {{ $weather->evalossin }} </td></tr>
-                                                    <tr><th> Infiltration loss (in) </th><td> {{ $weather->infitionloss }} </td></tr>
-                                                    <tr><th> Surface runoff (in) </th><td> {{ $weather->surfacein }} </td></tr>
-                                                    <tr><th> LID drainage (in) </th><td> {{ $weather->drainage }} </td></tr>
-                                                    <tr><th> Snow removed (in) </th><td> {{ $weather->snowved }} </td></tr>
-                                                    <tr><th> Final snow cover (in) </th><td> {{ $weather->finalsnow }} </td></tr>
-                                                    <tr><th> Final storage (in) </th><td> {{ $weather->finalin }} </td></tr>
-                                                    <tr><th> Continuity error (%) </th><td> {{ $weather->conerror }} </td></tr>
+                                
 
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6" id="accordion13">
+                                <div class="col-md-6 d-none" id="accordion13">
                                     <div class="widget">
                                         <div class="widget-header"> 
                                             <a class="card-link" data-toggle="collapse" href="#collapset13">
@@ -515,7 +527,7 @@
                                     </div>
                                 </div>
                 
-                                <div class="col-md-12" id="accordion14">
+                                <div class="col-md-12 d-none" id="accordion14">
                                     <div class="widget ">
                                         <div class="widget-header"> 
                                             <a class="card-link" data-toggle="collapse" href="#collapset14">
