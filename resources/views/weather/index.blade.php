@@ -27,17 +27,23 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
+                                        <th>Report Generate</th>
                                         <th>Outfalls</th>
                                         <th>Kmls</th>
                                         <th>Profiles</th>
-                                        <th>Report Generate</th>
-                                        <th>Actions</th>
+                                        <th class="d-none">Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($weather as $item)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
+                                        
+                                        <td>
+                                            <a class="" href= "{{ url('/weather/' . $item->id) }}" title="View Weather ">                                            
+                                                {{ $item->report_generate }}
+                                            </a>                                            
+                                        </td>
                                   
                                         <td> <a class="btn btn-dark btn-sm" href=" {{ asset('/storage') }}/{{ $item->Outfalls }}" target="_blank"><img src="{{ asset('/storage') }}/{{ $item->Outfalls }}" width="50" /></a></td>
                                         <td> <a class="btn btn-secondary btn-sm" href=" {{ asset('/storage') }}/{{ $item->kmls }}"><i class="icon-file"></i> KMZ File</a></td>
@@ -52,8 +58,7 @@
                                          
                                             <a class="btn btn-dark btn-sm" href=" {{ asset('/storage') }}/{{ $item->profiles5 }}" target="_blank"><img src="{{ asset('/storage') }}/{{ $item->profiles5 }}"  width="50"/></a>
                                         </td>
-                                        <td>{{ $item->report_generate }}</td>
-                                        <td>
+                                        <td class="d-none">
                                             <a class="" href= "{{ url('/weather/' . $item->id) }}" title="View Weather "><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
                                             <a class="d-none" href="{{ url('/weather/' . $item->id . '/edit') }}" title="Edit Weather"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
 
