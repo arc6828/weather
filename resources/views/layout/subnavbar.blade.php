@@ -2,14 +2,12 @@
   <div class="subnavbar-inner">
     <div class="container">
       <ul class="mainnav">
-        <li><a href="{{ url('/') }}/"><i class="icon-dashboard"></i><span>ข้อมูลล่าสุด</span> </a> </li>
-        <li><a href="{{ url('/weather') }}"><i class="icon-list-alt"></i><span>ข้อมูลย้อนหลัง</span> </a> </li>
-        <li class="d-none"><a href="#"><i class="icon-facetime-video"></i><span>App Tour</span> </a></li>
-        <li class="d-none"><a href="#"><i class="icon-bar-chart"></i><span>Charts</span> </a> </li>
-        <li class="d-none"><a href="#"><i class="icon-code"></i><span>Shortcodes</span> </a> </li>
-        <li class="dropdown d-none">
-          <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-long-arrow-down"></i><span>Drops</span> <b class="caret"></b></a>
-          
+        <li> <a href="{{ url('/') }}/"><i class="icon-dashboard"></i><span>ข้อมูลล่าสุด</span> </a> </li>
+        <li> <a href="{{ url('/weather') }}"><i class="icon-list-alt"></i><span>ข้อมูลย้อนหลัง</span> </a> </li>
+        <li> <a href= http://weather.bangkok.go.th/linkmenu><i class="icon-list-alt"></i><span>ระบบโทรมาตร สนน.กทม. </span> </a> </li>
+        <li> <a href= http://weather.bangkok.go.th/flood><i class="icon-list-alt"></i><span>ข้อมูลตำแหน่งน้ำท่วม</span> </a> </li>
+        <li> <a href= http://weather.bangkok.go.th/rain><i class="icon-list-alt"></i><span>ข้อมูลวัดน้ำฝน</span> </a> </li>
+        <li> <a href= http://weather.bangkok.go.th/water><i class="icon-list-alt"></i><span>ข้อมูลระดับน้ำในคลอง</span> </a> </li>
         </li>
       </ul>
     </div>

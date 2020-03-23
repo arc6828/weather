@@ -9,8 +9,28 @@
     {!! $errors->first('kmls', '<p class="help-block">:message</p>') !!}
 </div>
 <div class="form-group {{ $errors->has('profiles') ? 'has-error' : ''}}">
-    <label for="profiles" class="control-label">{{ 'Profiles' }}</label>
+    <label for="profiles" class="control-label">{{ 'แยกพัฒนาการ LH' }}</label>
     <input class="form-control" name="profiles" type="file" id="profiles" value="{{ isset($weather->profiles) ? $weather->profiles : ''}}" >
+    {!! $errors->first('profiles', '<p class="help-block">:message</p>') !!}
+</div>
+<div class="form-group {{ $errors->has('profiles2') ? 'has-error' : ''}}">
+    <label for="profiles2" class="control-label">{{ 'แยกพัฒนาการ RH' }}</label>
+    <input class="form-control" name="profiles2" type="file" id="profiles" value="{{ isset($weather->profiles) ? $weather->profiles : ''}}" >
+    {!! $errors->first('profiles', '<p class="help-block">:message</p>') !!}
+</div>
+<div class="form-group {{ $errors->has('profiles3') ? 'has-error' : ''}}">
+    <label for="profiles3" class="control-label">{{ 'แยกลำสาลี RL' }}</label>
+    <input class="form-control" name="profiles3" type="file" id="profiles" value="{{ isset($weather->profiles) ? $weather->profiles : ''}}" >
+    {!! $errors->first('profiles', '<p class="help-block">:message</p>') !!}
+</div>
+<div class="form-group {{ $errors->has('profiles4') ? 'has-error' : ''}}">
+    <label for="profiles4" class="control-label">{{ 'ซอยรามคำแหง 1-5' }}</label>
+    <input class="form-control" name="profiles4" type="file" id="profiles" value="{{ isset($weather->profiles) ? $weather->profiles : ''}}" >
+    {!! $errors->first('profiles', '<p class="help-block">:message</p>') !!}
+</div>
+<div class="form-group {{ $errors->has('profiles5') ? 'has-error' : ''}}">
+    <label for="profiles5" class="control-label">{{ 'หน้ามหาวิยาลัยรามคำแหง (ฝั่งมหาวิทยาลัย)' }}</label>
+    <input class="form-control" name="profiles5" type="file" id="profiles" value="{{ isset($weather->profiles) ? $weather->profiles : ''}}" >
     {!! $errors->first('profiles', '<p class="help-block">:message</p>') !!}
 </div>
 <div class="form-group {{ $errors->has('circular') ? 'has-error' : ''}}">

@@ -162,6 +162,22 @@ class WeatherController extends Controller
             $requestData['profiles'] = $request->file('profiles')
                 ->store('uploads', 'public');
         }
+        if ($request->hasFile('profiles2')) {
+            $requestData['profiles2'] = $request->file('profiles2')
+                ->store('uploads', 'public');
+        }
+        if ($request->hasFile('profiles3')) {
+            $requestData['profiles3'] = $request->file('profiles3')
+                ->store('uploads', 'public');
+        }
+        if ($request->hasFile('profiles4')) {
+            $requestData['profiles4'] = $request->file('profiles4')
+                ->store('uploads', 'public');
+        }
+        if ($request->hasFile('profiles5')) {
+            $requestData['profiles5'] = $request->file('profiles5')
+                ->store('uploads', 'public');
+        }
 
         $weather = Weather::findOrFail($id);
         $requestData['detail'] = json_encode($requestData, JSON_UNESCAPED_UNICODE);
