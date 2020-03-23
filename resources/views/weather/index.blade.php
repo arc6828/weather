@@ -29,11 +29,7 @@
                                         <th>#</th>
                                         <th>Outfalls</th>
                                         <th>Kmls</th>
-                                        <th>แยกพัฒนาการ LH</th>
-                                        <th>แยกพัฒนาการ RH</th>
-                                        <th>แยกลำสาลี RL</th>
-                                        <th>ซอยรามคำแหง 1-5</th>
-                                        <th>หน้ามหาวิยาลัยรามคำแหง (ฝั่งมหาวิทยาลัย)</th>
+                                        <th>Profiles</th>
                                         <th>Report Generate</th>
                                         <th>Actions</th>
                                     </tr>
@@ -43,13 +39,19 @@
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                   
-                                        <td> <a class="btn btn-dark btn-sm" href=" {{ asset('/storage') }}/{{ $item->Outfalls }}" target="_blank"><img src="{{ asset('/storage') }}/{{ $item->Outfalls }}" width="100" /></a></td>
-                                        <td> <a class="btn btn-secondary btn-sm" href=" {{ asset('/storage') }}/{{ $item->kmls }}"><i class="icon-file"></i> KML/KMZ File</a></td>
-                                        <td> <a class="btn btn-dark btn-sm" href=" {{ asset('/storage') }}/{{ $item->profiles }}" target="_blank"><img src="{{ asset('/storage') }}/{{ $item->profiles }}"  width="100"/></a></td>
-                                        <td> <a class="btn btn-dark btn-sm" href=" {{ asset('/storage') }}/{{ $item->profiles2 }}" target="_blank"><img src="{{ asset('/storage') }}/{{ $item->profiles2 }}"  width="100"/></a></td>
-                                        <td> <a class="btn btn-dark btn-sm" href=" {{ asset('/storage') }}/{{ $item->profiles2 }}" target="_blank"><img src="{{ asset('/storage') }}/{{ $item->profiles3 }}"  width="100"/></a></td>
-                                        <td> <a class="btn btn-dark btn-sm" href=" {{ asset('/storage') }}/{{ $item->profiles2 }}" target="_blank"><img src="{{ asset('/storage') }}/{{ $item->profiles4 }}"  width="100"/></a></td>
-                                        <td> <a class="btn btn-dark btn-sm" href=" {{ asset('/storage') }}/{{ $item->profiles2 }}" target="_blank"><img src="{{ asset('/storage') }}/{{ $item->profiles5 }}"  width="100"/></a></td>
+                                        <td> <a class="btn btn-dark btn-sm" href=" {{ asset('/storage') }}/{{ $item->Outfalls }}" target="_blank"><img src="{{ asset('/storage') }}/{{ $item->Outfalls }}" width="50" /></a></td>
+                                        <td> <a class="btn btn-secondary btn-sm" href=" {{ asset('/storage') }}/{{ $item->kmls }}"><i class="icon-file"></i> KMZ File</a></td>
+                                        <td> 
+                                            <a class="btn btn-dark btn-sm" href=" {{ asset('/storage') }}/{{ $item->profiles }}" target="_blank"><img src="{{ asset('/storage') }}/{{ $item->profiles }}"  width="50"/></a>
+                                         
+                                            <a class="btn btn-dark btn-sm" href=" {{ asset('/storage') }}/{{ $item->profiles2 }}" target="_blank"><img src="{{ asset('/storage') }}/{{ $item->profiles2 }}"  width="50"/></a>
+                                          
+                                            <a class="btn btn-dark btn-sm" href=" {{ asset('/storage') }}/{{ $item->profiles3 }}" target="_blank"><img src="{{ asset('/storage') }}/{{ $item->profiles3 }}"  width="50"/></a>
+                                         
+                                            <a class="btn btn-dark btn-sm" href=" {{ asset('/storage') }}/{{ $item->profiles4 }}" target="_blank"><img src="{{ asset('/storage') }}/{{ $item->profiles4 }}"  width="50"/></a>
+                                         
+                                            <a class="btn btn-dark btn-sm" href=" {{ asset('/storage') }}/{{ $item->profiles5 }}" target="_blank"><img src="{{ asset('/storage') }}/{{ $item->profiles5 }}"  width="50"/></a>
+                                        </td>
                                         <td>{{ $item->report_generate }}</td>
                                         <td>
                                             <a class="" href= "{{ url('/weather/' . $item->id) }}" title="View Weather "><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
