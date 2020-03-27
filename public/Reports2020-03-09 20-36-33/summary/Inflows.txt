@@ -1,0 +1,5 @@
+Name	2D_Base
+Time series inflows	0
+Dry weather inflows	0
+Groundwater inflows	0
+RDII inflows	0
