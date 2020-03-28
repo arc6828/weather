@@ -57,6 +57,10 @@ class WeatherController extends Controller
                 ->store('uploads', 'public');
         }
         $requestData['detail'] = json_encode($requestData, JSON_UNESCAPED_UNICODE);
+
+        $report = $requestData['report_generate'];
+        $checkreport = Weather::firstOrCreate(['report_generate' => $report]);
+
         Weather::create($requestData);
 
         return response()->json($requestData);
