@@ -33,7 +33,7 @@
                                     <tr>
                                         <th>#</th>
                                         <th>address</th>
-                                        <!--<th>Owner</th>-->
+                                        <th>Owner</th>
                                         <th>staffgaugeid</th>
                                         
                                         <th>Actions</th>
@@ -50,7 +50,7 @@
                                             <div>ละติจูด : {{ $item->latitude }}</div>
                                             <div>ลองจิจูด : {{ $item->longitude }}</div>
                                         </td>
-                                        <!--<td><div>ผู้อัปโหลด : {{ $item->user->name }}</div></td>-->
+                                        <td><div>ผู้อัปโหลด : {{ $item->user->name }}</div></td>
                                         <td><div> รหัสมาตรวัด : {{ $item->staffgaugeid }} </div></td>
                                         
                                             <td>  

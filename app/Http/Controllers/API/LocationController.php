@@ -40,18 +40,7 @@ class LocationController extends Controller
     {
 
         $requestData = $request->all();
-        $requestData['user_id'] = 1;
-
-        //ดึงข้อมูล location จาก lineid
-        if ($request->has('lineid')) {
-            $lineid = $requestData['lineid'];
-            
-            //ระวัง query นี้อาจมีผลลัพธ์ เป็น null
-            $location = Location::where('lineid' , $lineid)->first();
-            $requestData['user_id'] = $location ? $location->user_id : 1 ;
-        }
-        // $requestData['latitude']
-        // $requestData['longitude']
+        
         Location::create($requestData);
         $arr = [
             'status' => 'success'
