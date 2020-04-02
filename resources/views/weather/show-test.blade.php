@@ -31,15 +31,22 @@
                                 <script>
                                     var map;
 
-                                    //var src = "https://weather.ckartisan.com/sample/kml/test1.kmz";
+                                    //var src = "https://weather.ckartisan.com/reports/2019-08-14_10-00-00/kml/1RG.kmz";
                                     //var src = "{{ asset('/storage') }}/{{ $weather->kmls }} ";
-                                    var src = "https://weather.ckartisan.com/sample/kml/2D_Base_custom.kmz";
+                                    //var src = "https://weather.ckartisan.com/sample/kml/2D_Base.kmz";
                                     //var src = "https://weather.ckartisan.com/Reports2020-03-09%2020-36-33/kml/2D_Base-custom.kmz";
                                     // /2D_Base.kmz
                                     //var src = "{{ url('/') }}/reports/2019-08-14_10-00-00/kml/1RG.kmz";
                                     //var src = "https://csincube.com/us_states.kml";
                                     //var src = 'https://developers.google.com/maps/documentation/javascript/examples/kml/westcampus.kml';
 
+                                    var src = "https://weather.ckartisan.com/sample/kml/2D_Base%20Animation.kmz";
+                                    //var src = "https://weather.ckartisan.com/sample/kml/2D_Base.kmz";
+                                    //var src = "https://weather.ckartisan.com/sample/kml/Dividers.shp.kmz";
+                                    //var src = "https://weather.ckartisan.com/sample/kml/DS%20boundary%20condition.SHP.kmz";
+                                    //var src = "https://weather.ckartisan.com/sample/kml/Outlets.shp.kmz";
+                                    //var src = "https://weather.ckartisan.com/sample/kml/Storages.shp.kmz";
+                                    //var src = "https://weather.ckartisan.com/sample/kml/Weirs.shp.kmz";
 
                                     function initMap() {
                                         map = new google.maps.Map(document.getElementById('map'), {
