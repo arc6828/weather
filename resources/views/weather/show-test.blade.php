@@ -40,13 +40,14 @@
                                     //var src = "https://csincube.com/us_states.kml";
                                     //var src = 'https://developers.google.com/maps/documentation/javascript/examples/kml/westcampus.kml';
 
-                                    var src = "https://weather.ckartisan.com/sample/kml/2D_Base%20Animation.kmz";
+                                    //var src = "https://weather.ckartisan.com/sample/kml/2D_Base%20Animation.kmz";
                                     //var src = "https://weather.ckartisan.com/sample/kml/2D_Base.kmz";
                                     //var src = "https://weather.ckartisan.com/sample/kml/Dividers.shp.kmz";
                                     //var src = "https://weather.ckartisan.com/sample/kml/DS%20boundary%20condition.SHP.kmz";
                                     //var src = "https://weather.ckartisan.com/sample/kml/Outlets.shp.kmz";
                                     //var src = "https://weather.ckartisan.com/sample/kml/Storages.shp.kmz";
                                     //var src = "https://weather.ckartisan.com/sample/kml/Weirs.shp.kmz";
+                                    var src = "https://weather.ckartisan.com/sample/kml/hello.kmz";
 
                                     function initMap() {
                                         map = new google.maps.Map(document.getElementById('map'), {
