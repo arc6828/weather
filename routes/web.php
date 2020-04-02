@@ -21,6 +21,7 @@ Route::get('/', function () {
 });
 */
 Route::get('/', 'WeatherController@show_latest');
+Route::get('/test', 'WeatherController@show_test');
 Route::resource('weather', 'WeatherController');
 Route::resource('ocr', 'OcrController');
 Route::resource('profile', 'ProfileController');
