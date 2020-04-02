@@ -47,7 +47,7 @@
                                     //var src = "https://weather.ckartisan.com/sample/kml/Outlets.shp.kmz";
                                     //var src = "https://weather.ckartisan.com/sample/kml/Storages.shp.kmz";
                                     //var src = "https://weather.ckartisan.com/sample/kml/Weirs.shp.kmz";
-                                    var src = "https://weather.ckartisan.com/sample/kml/hello.kmz";
+                                    var src = "https://weather.ckartisan.com/sample/kml/hello2.kmz";
 
                                     function initMap() {
                                         map = new google.maps.Map(document.getElementById('map'), {
@@ -57,17 +57,22 @@
                                         zoom: 15
                                         });
 
-                                        var kmlLayer = new google.maps.KmlLayer(src, {
-                                            suppressInfoWindows: true,
-                                            preserveViewport: false,
-                                            map: map
-                                        });
-                                        console.log("kmlLayer : " , kmlLayer);
-                                        kmlLayer.addListener('click', function(event) {
-                                            var content = event.featureData;
+                                        var i=0;
+                                        setInterval(function(){ 
+                                            var kmlLayer = new google.maps.KmlLayer(src, {
+                                                suppressInfoWindows: true,
+                                                preserveViewport: true,
+                                                map: map
+                                            });
+                                            console.log("kmlLayer : " , kmlLayer);
+                                            kmlLayer.addListener('click', function(event) {
+                                                var content = event.featureData;
 
-                                            console.log(content);
-                                        });
+                                                console.log(content);
+                                            });
+                                            i++;
+                                        }, 3000);
+                                        
                                     }
                                 </script>
                                 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-NoP20OejFNd_gxMizvmRCDHwRPg0gJI&callback=initMap"
