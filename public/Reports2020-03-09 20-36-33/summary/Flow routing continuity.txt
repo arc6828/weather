@@ -1,0 +1,13 @@
+Name	2D_Base
+Dry weather inflow (ML)	0.000
+Wet weather inflow (ML)	63.683
+Groundwater inflow (ML)	0.000
+RDII inflow (ML)	0.000
+External inflow (ML)	0.000
+External outflow (ML)	19.308
+Flooding loss (ML)	0.000
+Evaporation loss (ML)	0.000
+Exfiltration loss (ML)	0.000
+Initial stored volume (ML)	0.343
+Final stored volume (ML)	35.267
+Continuity error (%)	14.763

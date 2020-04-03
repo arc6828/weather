@@ -1,0 +1,13 @@
+Name	2D_Base
+Initial LID storage (mm)	n/a
+Initial snow cover (mm)	n/a
+Total precipitation (mm)	26.000
+Outfall runon (mm)	n/a
+Evaporation loss (mm)	0.000
+Infiltration loss (mm)	0.274
+Surface runoff (mm)	6.498
+LID drainage (mm)	n/a
+Snow removed (mm)	n/a
+Final snow cover (mm)	n/a
+Final storage (mm)	20.026
+Continuity error (%)	-3.070

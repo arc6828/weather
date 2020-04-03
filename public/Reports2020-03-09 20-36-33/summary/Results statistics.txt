@@ -1,0 +1,27 @@
+Name	2D_Base
+Max. subcatchment total runoff (ML)	10.44
+Max. subcatchment peak runoff (m?/s)	8.34
+Max. subcatchment runoff coefficient	0.533
+Max. subcatchment total precip (mm)	26
+Min. subcatchment total precip (mm)	26
+Max. node depth (m)	4.83
+Num. nodes surcharged 	0
+Max. node surcharge duration (hours)	0
+Max. node height above crown (m)	0
+Min. node depth below rim (m)	-0.11
+Num. nodes flooded	0
+Max. node flooding duration (hours)	0
+Max. node flood volume (ML)	0
+Max. node ponded volume or depth (ha-mm/1000 m?/m)	0
+Max. storage volume (1000 m?)	n/a
+Max. storage percent full (%)	n/a
+Max. outfall flow frequency (%)	95
+Max. outfall peak flow (m?/s)	5.909
+Max. outfall total volume (ML)	4.524
+Total outfall volume (ML) 	19.308
+Max. link peak flow (m?/s)	5.909
+Max. link peak velocity (m/s)	9.55
+Min. link peak velocity (m/s)	0
+Num. conduits surcharged 	36
+Max. conduit surcharge duration (hours)	0.41
+Max. conduit capacity limited duration (hours)	0.39

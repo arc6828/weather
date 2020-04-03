@@ -23,7 +23,7 @@ class WeatherController extends Controller
         if (!empty($keyword)) {
             $weather = Weather::where('Outfalls', 'LIKE', "%$keyword%")
                 ->orWhere('kmls', 'LIKE', "%$keyword%")
-                ->orWhere('profiles', 'LIKE', "%$keyword%")                
+                ->orWhere('profiles', 'LIKE', "%$keyword%")             
                 ->orWhere('detail', 'LIKE', "%$keyword%")
                 ->orWhere('report_generate', 'LIKE', "%$keyword%")
                 ->latest()->paginate($perPage);
@@ -97,6 +97,42 @@ class WeatherController extends Controller
         return view('weather.show', compact('weather'));
     }
 
+    public function show_latest()
+    {
+        $weather = Weather::latest()->firstOrFail();;
+        //BASE OBJECT 
+        $base_object = json_decode(file_get_contents(url('detail.json')));
+        //COPY DETAIL OBJECT
+        $large_object = json_decode($weather->detail);         
+        //CLEAR DETAIL
+        $weather->detail = "";
+        //COPY MAIN OBJECT
+        $small_object = json_decode(json_encode($weather));
+        //MERGE DETAIL AND MAIN
+        $weather = (object) array_merge((array) $base_object, (array) $large_object , (array) $small_object); 
+        
+
+        return view('weather.show', compact('weather'));
+    }
+
+    public function show_test()
+    {
+        $weather = Weather::latest()->firstOrFail();;
+        //BASE OBJECT 
+        $base_object = json_decode(file_get_contents(url('detail.json')));
+        //COPY DETAIL OBJECT
+        $large_object = json_decode($weather->detail);         
+        //CLEAR DETAIL
+        $weather->detail = "";
+        //COPY MAIN OBJECT
+        $small_object = json_decode(json_encode($weather));
+        //MERGE DETAIL AND MAIN
+        $weather = (object) array_merge((array) $base_object, (array) $large_object , (array) $small_object); 
+        
+
+        return view('weather.show-test', compact('weather'));
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -108,6 +144,7 @@ class WeatherController extends Controller
     {
         $weather = Weather::findOrFail($id);
 
+        
         //COPY DETAIL OBJECT
         $large_object = json_decode($weather->detail);         
         //CLEAR DETAIL
@@ -142,6 +179,22 @@ class WeatherController extends Controller
         }
         if ($request->hasFile('profiles')) {
             $requestData['profiles'] = $request->file('profiles')
+                ->store('uploads', 'public');
+        }
+        if ($request->hasFile('profiles2')) {
+            $requestData['profiles2'] = $request->file('profiles2')
+                ->store('uploads', 'public');
+        }
+        if ($request->hasFile('profiles3')) {
+            $requestData['profiles3'] = $request->file('profiles3')
+                ->store('uploads', 'public');
+        }
+        if ($request->hasFile('profiles4')) {
+            $requestData['profiles4'] = $request->file('profiles4')
+                ->store('uploads', 'public');
+        }
+        if ($request->hasFile('profiles5')) {
+            $requestData['profiles5'] = $request->file('profiles5')
                 ->store('uploads', 'public');
         }
 
