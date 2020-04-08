@@ -106,13 +106,13 @@ class WeatherController extends Controller
         //BASE OBJECT 
         $base_object = json_decode(file_get_contents(url('detail.json')));
         //COPY DETAIL OBJECT
-        $large_object = json_decode($weather->detail);         
+        $large_object = json_decode((array) $weather->detail);         
         //CLEAR DETAIL
         $weather->detail = "";
         //COPY MAIN OBJECT
         $small_object = json_decode(json_encode($weather));
         //MERGE DETAIL AND MAIN
-        $weather = (object) array_merge((array) $base_object, (array) $small_object, (array) $large_object['detail'] ); 
+        $weather = (object) array_merge((array) $base_object, (array) $small_object, (array) $large_object ); 
         
 
         return view('weather.show', compact('weather','base_object','small_object','large_object'));
