@@ -87,8 +87,11 @@
                     //CALL TO DRAW LINE CHARGE HERE
                     if(chart){
                       //GET JSON ....
+                      
                       var newArray1 = [];
-                      jQuery.getJSON('{{ url("/") }}/api/map/ocrs', function (ocrid) {
+                      fetch('{{ url("/") }}/api/map/staffgauges')
+                      .then((response) => response.json())
+                      .then((ocrid)=> {
                         let result = ocrid.filter(item => item.staffgaugeid == marker.data.id);
                         console.log('result',result);
                         Array.prototype.forEach.call(result, function(result) {
@@ -97,32 +100,35 @@
                           newArray1.push([new Date(responseDate), numbers]);
                         });
                       
-                      let data = new google.visualization.DataTable();
-                      data.addColumn('datetime', 'Date');
-                      data.addColumn('number', 'Level');
-                      data.addRows(newArray1);
-                      console.log('newArray1',newArray1);
+                        let data = new google.visualization.DataTable();
+                        data.addColumn('datetime', 'Date');
+                        data.addColumn('number', 'Level');
+                        data.addRows(newArray1);
+                        console.log('newArray1',newArray1);
 
-                      let logOptions = {
-                        title: 'Staffgauge',
-                        legend: 'none',
-                        hAxis: {
-                          title: 'Date',
-                          format: 'YYYY/MM/dd'
-                        },
-                        vAxis: {
-                          title: 'Level'
-                        }
-                      };
+                        let logOptions = {
+                          title: 'Staffgauge',
+                          legend: 'none',
+                          hAxis: {
+                            title: 'Date',
+                            format: 'YYYY/MM/dd'
+                          },
+                          vAxis: {
+                            title: 'Level'
+                          }
+                        };
 
-                      chart = new google.visualization.LineChart(document.getElementById('log_div'));
-                      chart.draw(data, logOptions);
+                        chart = new google.visualization.LineChart(document.getElementById('log_div'));
+                        chart.draw(data, logOptions);
+
                       });
                     }
 
                     if(table){
                       //GET JSON ....
-                      jQuery.getJSON('{{ url("/") }}/api/map/ocrs', function (ocr) {
+                      fetch('{{ url("/") }}/api/map/staffgauges')
+                      .then((response) => response.json())
+                      .then((ocr)=> {
                         console.log('ocr : ', ocr);
                         let datatable = ocr.filter(item => item.staffgaugeid == marker.data.id);
                         console.log('datatable',datatable);
@@ -133,123 +139,25 @@
                           var stgid = parseFloat(datatable.id);
                           tableArray.push([stgid, numbers, new Date(responseDate)]);
                         });
-                          let data = new google.visualization.DataTable();
-                          data.addColumn('number', 'OCR Id');
-                          data.addColumn('number', 'Level');
-                          data.addColumn('datetime', 'Date - Time');
-                          data.addRows(tableArray);
+                        let data = new google.visualization.DataTable();
+                        data.addColumn('number', 'OCR Id');
+                        data.addColumn('number', 'Level');
+                        data.addColumn('datetime', 'Date - Time');
+                        data.addRows(tableArray);
 
-                          table = new google.visualization.Table(document.getElementById('table_div'));
+                        table = new google.visualization.Table(document.getElementById('table_div'));
 
-                          table.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
+                        table.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
+
+
                       });
+                      
                     }
                     
                   });
                 });
               }); //END FETCH
               
-
-              // Change this depending on the name of your PHP or XML file
-              if(false){
-              jQuery.getJSON('{{ url("/") }}/api/map/staffgauges', function(data) {
-                //console.log(data);
-                // var xml = data.responseXML;
-                // var markers = data.getElementsByTagName('marker');
-                Array.prototype.forEach.call(data, function(data) {
-                  var id = data.id;
-                  var name = data.province;
-                  var address = data.addressgauge;
-                  var type = data.id;
-                  var point = new google.maps.LatLng(
-                      parseFloat(data.latitudegauge),
-                      parseFloat(data.longitudegauge));
-
-                  var infowincontent = document.createElement('div');
-                  var strong = document.createElement('strong');
-                  strong.textContent = name
-                  infowincontent.appendChild(strong);
-                  infowincontent.appendChild(document.createElement('br'));
-
-                  var text = document.createElement('text');
-                  text.textContent = address
-                  infowincontent.appendChild(text);
-                  var icon = customLabel[type] || {};
-                  var marker = new google.maps.Marker({
-                    map: map,
-                    position: point,
-                    label: labels[labelIndex++ % labels.length],
-                    data : data
-                  });
-                  marker.addListener('click', function() {
-                    console.log('click marker : ',marker);
-                    infoWindow.setContent(infowincontent);
-                    infoWindow.open(map, marker);
-                    //CALL TO DRAW LINE CHARGE HERE
-                    if(chart){
-                      //GET JSON ....
-                      var newArray1 = [];
-                      jQuery.getJSON('{{ url("/") }}/api/map/ocrs', function (ocrid) {
-                        let result = ocrid.filter(item => item.staffgaugeid == marker.data.id);
-                        console.log('result',result);
-                        Array.prototype.forEach.call(result, function(result) {
-                          var responseDate = moment(result.created_at).format("YYYY/MM/DD HH:mm");
-                          var numbers = parseFloat(result.title);
-                          newArray1.push([new Date(responseDate), numbers]);
-                        });
-                      
-                      let data = new google.visualization.DataTable();
-                      data.addColumn('datetime', 'Date');
-                      data.addColumn('number', 'Level');
-                      data.addRows(newArray1);
-                      console.log('newArray1',newArray1);
-
-                      let logOptions = {
-                        title: 'Staffgauge',
-                        legend: 'none',
-                        hAxis: {
-                          title: 'Date',
-                          format: 'YYYY/MM/dd'
-                        },
-                        vAxis: {
-                          title: 'Level'
-                        }
-                      };
-
-                      chart = new google.visualization.LineChart(document.getElementById('log_div'));
-                      chart.draw(data, logOptions);
-                      });
-                    }
-
-                    if(table){
-                      //GET JSON ....
-                      jQuery.getJSON('{{ url("/") }}/api/map/ocrs', function (ocr) {
-                        console.log('ocr : ', ocr);
-                        let datatable = ocr.filter(item => item.staffgaugeid == marker.data.id);
-                        console.log('datatable',datatable);
-                        var tableArray = [];
-                        Array.prototype.forEach.call(datatable, function(datatable) {
-                          var responseDate = moment(datatable.created_at).format("YYYY/MM/DD HH:mm");
-                          var numbers = parseFloat(datatable.title);
-                          var stgid = parseFloat(datatable.id);
-                          tableArray.push([stgid, numbers, new Date(responseDate)]);
-                        });
-                          let data = new google.visualization.DataTable();
-                          data.addColumn('number', 'OCR Id');
-                          data.addColumn('number', 'Level');
-                          data.addColumn('datetime', 'Date - Time');
-                          data.addRows(tableArray);
-
-                          table = new google.visualization.Table(document.getElementById('table_div'));
-
-                          table.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
-                      });
-                    }
-                    
-                  });
-                });
-              }); // END AJAX
-              }
             } //END FUNCTION
 
 
