@@ -8,8 +8,7 @@
                 <div class="card mb-4">
                     <div class="card-header">Dashboard</div>
                     <div class="card-body">
-                    <html>
-  <body>
+                    
   <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
@@ -249,13 +248,10 @@
         });
       }
     </script>
-  </head>
-  <body>
+
     <div id="log_div" style="width: 100%; height: 500px;"></div>
     <div id="table_div"></div>
-  </body>
-  </body>
-  </html>
+
   </div>
 
 </div>
