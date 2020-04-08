@@ -12,6 +12,18 @@
           <input class="form-control form-control-sm mr-sm-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-success my-2 my-sm-0 btn-sm d-none" type="submit">Search</button>
         </form>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            ลิงค์ภายนอก
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          
+            <a class="dropdown-item" href= http://weather.bangkok.go.th/linkmenu><i class="icon-list-alt mr-2"></i><span>ระบบโทรมาตร สนน.กทม. </span> </a> 
+            <a class="dropdown-item" href= http://weather.bangkok.go.th/flood><i class="icon-list-alt mr-2"></i><span>ข้อมูลตำแหน่งน้ำท่วม</span> </a> 
+            <a class="dropdown-item" href= http://weather.bangkok.go.th/rain><i class="icon-list-alt mr-2"></i><span>ข้อมูลวัดน้ำฝน</span> </a> 
+            <a class="dropdown-item" href= http://weather.bangkok.go.th/water><i class="icon-list-alt mr-2"></i><span>ข้อมูลระดับน้ำในคลอง</span> </a> 
+          </div>
+        </li>
         
       </ul>
     </div>
