@@ -5,12 +5,16 @@
             <div class="col-md-12">
                 @php
                 print_r($weather);
+                echo "<br>";
                 
                 print_r($base_object);
+                echo "<br>";
                 
                 print_r($small_object);
+                echo "<br>";
                 
                 print_r($large_object);
+                echo "<br>";
                 @endphp
                 
                 <h2>Weather : {{ $weather->report_generate }} </h2>
