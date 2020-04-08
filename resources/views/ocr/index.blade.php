@@ -49,7 +49,7 @@
                                             <div>Msg.ID : {{ $item->msgocrid }}</div><div><img src="{{ url('storage') }}/{{ $item->photo }}" width=100 /> </div><div>สร้างเมื่อ : {{ $item->created_at }}</div>
                                         </td>
                                         <td>
-                                            <div>ผู้อัปโหลด : {{ $item->user->name }}</div><div> รหัสสถานที่ : {{ $item->locationid }}</div><div> รหัสมาตรวัด : {{ $item->staffgaugeid }}</div>
+                                            <div> รหัสสถานที่ : {{ $item->locationid }}</div><div> รหัสมาตรวัด : {{ $item->staffgaugeid }}</div>
                                         </td>
                                         <td><div>ระดับน้ำ : {{ $item->title }}</div></td>
                                         <td style="max-width:200px;">{{ $item->content }}</td>
