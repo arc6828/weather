@@ -84,6 +84,8 @@ class WeatherController extends Controller
     {
         $weather = Weather::findOrFail($id);
         
+        //BASE OBJECT 
+        $base_object = json_decode(file_get_contents(url('detail.json')));
         //COPY DETAIL OBJECT
         $large_object = json_decode($weather->detail);         
         //CLEAR DETAIL
@@ -91,7 +93,8 @@ class WeatherController extends Controller
         //COPY MAIN OBJECT
         $small_object = json_decode(json_encode($weather));
         //MERGE DETAIL AND MAIN
-        $weather = (object) array_merge( (array) $large_object , (array) $small_object); 
+        $weather = (object) array_merge((array) $base_object, (array) $large_object , (array) $small_object); 
+        
         
 
         return view('weather.show', compact('weather'));
