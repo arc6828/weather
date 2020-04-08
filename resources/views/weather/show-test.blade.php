@@ -47,18 +47,18 @@
                                     //var src = "https://weather.ckartisan.com/sample/kml/Outlets.shp.kmz";
                                     //var src = "https://weather.ckartisan.com/sample/kml/Storages.shp.kmz";
                                     //var src = "https://weather.ckartisan.com/sample/kml/Weirs.shp.kmz";
-                                    var src = "https://weather.ckartisan.com/sample/kml/hello2.kmz";
+                                    var src = "https://weather.ckartisan.com/sample/kml/2D_Base-large.kmz";
 
                                     function initMap() {
                                         map = new google.maps.Map(document.getElementById('map'), {
-                                        //center: {lat: 21.3143328800798, lng: 105.603779579014},
-                                        center: {lat: 13.751288, lng: 100.628847},
-                                        //13.751288, 100.628847
-                                        zoom: 15
+                                            //center: {lat: 21.3143328800798, lng: 105.603779579014},
+                                            center: {lat: 13.751288, lng: 100.628847},
+                                            //13.751288, 100.628847
+                                            zoom: 14
                                         });
 
                                         var i=0;
-                                        setInterval(function(){ 
+                                        var refreshId = setInterval(function(){ 
                                             var kmlLayer = new google.maps.KmlLayer(src, {
                                                 suppressInfoWindows: true,
                                                 preserveViewport: true,
@@ -69,8 +69,12 @@
                                                 var content = event.featureData;
 
                                                 console.log(content);
-                                            });
+                                            });                                            
                                             i++;
+                                            if (true) {
+                                                clearInterval(refreshId);
+                                            }
+                                            
                                         }, 3000);
                                         
                                     }

@@ -45,12 +45,12 @@
                                         //center: {lat: 21.3143328800798, lng: 105.603779579014},
                                         center: {lat: 13.751288, lng: 100.628847},
                                         //13.751288, 100.628847
-                                        zoom: 15
+                                        zoom: 14
                                         });
 
                                         var kmlLayer = new google.maps.KmlLayer(src, {
                                         suppressInfoWindows: true,
-                                        preserveViewport: false,
+                                        preserveViewport: true,
                                         map: map
                                         });
                                         console.log("kmlLayer : " , kmlLayer);
