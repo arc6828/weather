@@ -115,7 +115,7 @@ class WeatherController extends Controller
         $weather = (object) array_merge((array) $base_object, (array) $small_object, (array) $large_object ); 
         
 
-        return view('weather.show', compact('weather'));
+        return view('weather.show', compact('weather','base_object','small_object','large_object'));
     }
 
     public function show_test()
