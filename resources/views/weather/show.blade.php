@@ -3,6 +3,9 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
+                @php
+                print_r($weather);
+                @endphp
                 
                 <h2>Weather : {{ $weather->report_generate }} </h2>
                 <div class="card  d-none">
