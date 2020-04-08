@@ -89,7 +89,7 @@
                       //GET JSON ....
                       
                       var newArray1 = [];
-                      fetch('{{ url("/") }}/api/map/staffgauges')
+                      fetch('{{ url("/") }}/api/map/ocrs')
                       .then((response) => response.json())
                       .then((ocrid)=> {
                         let result = ocrid.filter(item => item.staffgaugeid == marker.data.id);
@@ -126,7 +126,7 @@
 
                     if(table){
                       //GET JSON ....
-                      fetch('{{ url("/") }}/api/map/staffgauges')
+                      fetch('{{ url("/") }}/api/map/ocrs')
                       .then((response) => response.json())
                       .then((ocr)=> {
                         console.log('ocr : ', ocr);
@@ -177,7 +177,7 @@
             var chart;
             var table;
             function drawChart() {
-              let fetchapi = fetch('{{ url("/") }}/api/map/staffgauges')
+              let fetchapi = fetch('{{ url("/") }}/api/map/ocrs')
               .then((response) => response.json())
               .then((ocr)=> {
                 console.log('ocr : ', ocr);
@@ -220,13 +220,11 @@
 
 
               });
-              jQuery.getJSON('{{ url("/") }}/api/map/ocrs', function (ocr) {
-                
-              });
+              
             }
 
             function drawTable() {
-              let fetchapi = fetch('{{ url("/") }}/api/map/staffgauges')
+              let fetchapi = fetch('{{ url("/") }}/api/map/ocrs')
               .then((response) => response.json())
               .then((ocr)=> {
                 console.log('ocr : ', ocr);
@@ -261,9 +259,7 @@
 
               });
 
-              jQuery.getJSON('{{ url("/") }}/api/map/ocrs', function (ocr) {
-                
-              });
+             
             }
           </script>
 
