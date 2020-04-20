@@ -42,8 +42,12 @@
                             <div class="widget-content">
                                 <div id="map" style="height: 500px;"></div>
                                 แถบสี
+                                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-NoP20OejFNd_gxMizvmRCDHwRPg0gJI" ></script>
                                 <script>
+                                    //google.maps.event.addDomListener(window, 'load', init);
                                     var map;
+                                    var overlay;
+                                    USGSOverlay.prototype = new google.maps.OverlayView();
 
                                     //var src = "https://weather.ckartisan.com/sample/kml/test1.kmz";
                                     var src = "{{ asset('/storage') }}/{{ $weather->kmls }} ";
@@ -55,7 +59,7 @@
 
 
                                     function initMap() {
-                                        map = new google.maps.Map(document.getElementById('map'), {
+                                        var map = new google.maps.Map(document.getElementById('map'), {
                                         //center: {lat: 21.3143328800798, lng: 105.603779579014},
                                         center: {lat: 13.751288, lng: 100.628847},
                                         //13.751288, 100.628847
@@ -68,17 +72,22 @@
                                         map: map
                                         });
                                         console.log("kmlLayer : " , kmlLayer);
+
+                                        //OVERLAY                                        
+
                                         var bounds = new google.maps.LatLngBounds(
                                             new google.maps.LatLng(12.75026910981639, 99.73642387358632),
                                             new google.maps.LatLng(14.91950740666351, 101.9563556674292));
 
-                                        // The photograph is courtesy of the U.S. Geological Survey.
-                                    
-                                        var srcImage = 'http://weather.bangkok.go.th/Images/Radar/NjKML/njRadarOnGoogle.png?4/20/2020 10:38:05 AM';
+                                            
+
+                                        // The photograph is courtesy of the U.S. Geological Survey.                                       
+                                        var srcImage = 'http://weather.bangkok.go.th/Images/Radar/NjKML/njRadarOnGoogle.png';
 
                                         // The custom USGSOverlay object contains the USGS image,
                                         // the bounds of the image, and a reference to the map.
                                         overlay = new USGSOverlay(bounds, srcImage, map);
+                                        
                                     }
 
                                     function USGSOverlay(bounds, image, map) {
@@ -144,9 +153,9 @@
                                         this.div_.parentNode.removeChild(this.div_);
                                         this.div_ = null;
                                     };
+                                    google.maps.event.addDomListener(window, 'load', initMap);
                                 </script>
-                                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-NoP20OejFNd_gxMizvmRCDHwRPg0gJI&callback=initMap"
-                                async defer></script>
+                                
                             </div>
                         </div>
                     </div>
