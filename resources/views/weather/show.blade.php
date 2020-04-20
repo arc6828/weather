@@ -1,5 +1,12 @@
 @extends('layout.main')
 @section('content')
+    <style>
+    .card-link{
+        text-decoration: none;
+        color: grey;
+    }
+    
+    </style>
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -17,7 +24,7 @@
                 //echo "<br>";
                 @endphp
                 
-                <h2>Weather : {{ $weather->report_generate }} </h2>
+                <h6 class="text-right">บันทึกผลเมื่อ : {{ $weather->report_generate }} </h6>
                 <div class="card  d-none">
                     <div class="card-header">Weather : {{ $weather->report_generate }} </div>
                     <div class="card-body">
@@ -35,11 +42,11 @@
                 </div>
                 <div class="row mt-4">                       
                     <div class="col-md-12">
-                        <div class="widget ">
-                            <div class="widget-header"> 
-                                <h3> Google Map (พื้นที่เสี่ยงน้ำท่วมจากระบบ)</h3>
+                        <div class="card ">
+                            <div class="card-header"> 
+                                <h6> Google Map (พื้นที่เสี่ยงน้ำท่วมจากระบบ)</h6>
                             </div>
-                            <div class="widget-content">
+                            <div class="card-body">
                                 <div id="map" style="height: 500px;"></div>
                                 แถบสี
                                 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-NoP20OejFNd_gxMizvmRCDHwRPg0gJI" ></script>
@@ -159,12 +166,14 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="row mt-4">
                     <div class="col-md-6">
-                        <div class="widget">
-                            <div class="widget-header"> 
-                                <h3>RTF-Rainfall</h3>
+                        <div class="card">
+                            <div class="card-header"> 
+                                <h6>RTF-Rainfall</h6>
                             </div>
-                            <div class="widget-content image-container">
+                            <div class="card-body image-container">
                                 <img class="image" src="{{ url('storage') }}/{{ $weather->Outfalls }}" width="100%" >    
                                 <div class="overlay">Now</div> 
                                 <div class="overlay2">Forecast</div>               
@@ -228,24 +237,27 @@
 
             
                     <div class="col-md-6">
-                        <div class="widget">
-                            <div class="widget-header"> 
-                                <h3> Radar</h3>
+                        <div class="card">
+                            <div class="card-header"> 
+                                <h6> Radar</h6>
                             </div>
 
-                            <div class="widget-content">
+                            <div class="card-body">
                                 <img src="http://weather.bangkok.go.th/FTPCustomer/radar/pics/radar.gif" width="100%">
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div class="row mt-4">
 
                     <div class="col-md-12">
-                        <div class="widget">
-                            <div class="widget-header"> 
-                                <h3> ระดับน้ำในท่อระบายน้ำที่ตำแหน่งจุดอ่อนน้ำท่วมในพื้นที่</h3>
+                        <div class="card">
+                            <div class="card-header"> 
+                                <h6> ระดับน้ำในท่อระบายน้ำที่ตำแหน่งจุดอ่อนน้ำท่วมในพื้นที่</h6>
                             </div>
 
-                            <div class="widget-content">
+                            <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-3">
                                         <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
@@ -283,17 +295,19 @@
                         </div>
                                 
                     </div>
-
-                    
+                </div>
+                
+                <div class="row mt-4">
 
                     <div class="col-md-6" id="accordion8">
-                        <div class="widget">
-                            <div class="widget-header">
+                        <div class="card">
+                            <div class="card-header">
                                 <a class="card-link" data-toggle="collapse" href="#collapset8">  
-                                    <h3>Flow routing continuity</h3>
+                                    <span class="float-right" style=""><i class="fa fa-chevron-down"></i></span>
+                                    <h6>Flow routing continuity</h6>
                                 </a>
                             </div>
-                            <div class="widget-content">
+                            <div class="card-body">
                                 <div id="collapset8" class="collapse" data-parent="#accordion8">
                                     <table class="table table-sm">
                                         <tr><th> Dry weather inflow (MG) </th><td> {{ $weather->dryweaflow }} </td></tr>
@@ -315,13 +329,14 @@
                     </div>
 
                     <div class="col-md-6 " id="accordion12">
-                        <div class="widget">
-                            <div class="widget-header"> 
+                        <div class="card">
+                            <div class="card-header"> 
                                 <a class="card-link" data-toggle="collapse" href="#collapset12">
-                                    <h3>Runoff quantity continuity</h3>
+                                    <span class="float-right" style=""><i class="fa fa-chevron-down"></i></span>
+                                    <h6>Runoff quantity continuity</h6>
                                 </a>
                             </div>
-                            <div class="widget-content">
+                            <div class="card-body">
                                 <div id="collapset12" class="collapse" data-parent="#accordion12">
                                     <table class="table table-sm">
                                         <tr><th> Initial LID storage (in) </th><td> {{ $weather->lidstroage }} </td></tr>
@@ -342,17 +357,19 @@
                             </div>
                         </div>
                     </div>
-
-                    
+                </div>
+                
+                <div class="row mt-4">
 
                     <div class="col-md-6 " id="accordion3">
-                        <div class="widget">
-                            <div class="widget-header">
+                        <div class="card">
+                            <div class="card-header">
                                 <a class="card-link" data-toggle="collapse" href="#collapset3"> 
-                                    <h3>Results statistics</h3>
+                                    <span class="float-right" style=""><i class="fa fa-chevron-down"></i></span>
+                                    <h6>Results statistics</h6>
                                 </a>
                             </div>
-                            <div class="widget-content">
+                            <div class="card-body">
                                 <div id="collapset3" class="collapse" data-parent="#accordion3">
                                     <table class="table table-sm">
                                         <tr><th> Max. subcatchment total runoff (MG) </th><td> {{ $weather->maxmg }} </td></tr>
@@ -389,13 +406,14 @@
                     
 
                     <div class="col-md-6" id="accordion9">
-                        <div class="widget">
-                            <div class="widget-header"> 
+                        <div class="card">
+                            <div class="card-header"> 
                                 <a class="card-link" data-toggle="collapse" href="#collapset9">
-                                    <h3>Inflows</h3>
+                                    <span class="float-right" style=""><i class="fa fa-chevron-down"></i></span>
+                                    <h6>Inflows</h6>
                                 </a>
                             </div>
-                            <div class="widget-content">
+                            <div class="card-body">
                                 <div id="collapset9" class="collapse" data-parent="#accordion9">
                                     <table class="table table-sm">
                                         <tr><th> Time series inflows </th><td> {{ $weather->timeflows }} </td></tr>
@@ -409,13 +427,14 @@
                     </div>
 
                     <div class="col-md-6 d-none" id="accordion1">
-                        <div class="widget">
-                            <div class="widget-header">
+                        <div class="card">
+                            <div class="card-header">
                                 <a class="card-link" data-toggle="collapse" href="#collapseOne">
-                                    <h3>Model inventory</h3>
+                                    <span class="float-right" style=""><i class="fa fa-chevron-down"></i></span>
+                                    <h6>Model inventory</h6>
                                 </a>
                             </div>
-                            <div class="widget-content">
+                            <div class="card-body">
                                 <div id="collapseOne" class="collapse show" data-parent="#accordion1">
                                     <table class="table table-sm">
                                         <tr><th> Raingages </th><td> {{ isset($weather->raings) ? $weather->raings: ''}}</td></tr>
@@ -455,13 +474,14 @@
                 
 
                     <div class="col-md-6 d-none" id="accordion2">
-                        <div class="widget">
-                            <div class="widget-header"> 
+                        <div class="card">
+                            <div class="card-header"> 
                                 <a class="card-link" data-toggle="collapse" href="#collapsetwo">
-                                    <h3>Options</h3>
+                                    <span class="float-right" style=""><i class="fa fa-chevron-down"></i></span>
+                                    <h6>Options</h6>
                                 </a>
                             </div>
-                            <div class="widget-content">
+                            <div class="card-body">
                                 <div id="collapsetwo" class="collapse show" data-parent="#accordion2">
                                     <table class="table table-sm">
                                         <tr><th> Flow Units	 </th><td> {{ $weather->flowunits }} </td></tr>
@@ -504,13 +524,13 @@
                     
 
                     <div class="col-md-6 d-none" id="accordion4">
-                        <div class="widget">
-                            <div class="widget-header"> 
+                        <div class="card">
+                            <div class="card-header"> 
                                 <a class="card-link" data-toggle="collapse" href="#collapset4"> 
-                                    <h3> Subcatchment statistics </h3>
+                                    <h6> Subcatchment statistics </h6>
                                 </a>
                             </div>
-                            <div class="widget-content">
+                            <div class="card-body">
                                 <div id="collapset4" class="collapse show" data-parent="#accordion4">
                                     <table class="table table-sm">
                                         <tr><th> Max. width (ft) </th><td> {{ $weather->maxwidth }} </td></tr>
@@ -539,13 +559,13 @@
                     </div>
                     
                     <div class="col-md-6 d-none" id="accordion5">
-                        <div class="widget">
-                            <div class="widget-header"> 
+                        <div class="card">
+                            <div class="card-header"> 
                                 <a class="card-link" data-toggle="collapse" href="#collapset5">
-                                    <h3>Model complexity</h3>
+                                    <h6>Model complexity</h6>
                                 </a>
                             </div>
-                            <div class="widget-content">
+                            <div class="card-body">
                                 <div id="collapset5" class="collapse show" data-parent="#accordion5">
                                     <table class="table table-sm">
                                         <tr><th> Subcatchments </th><td> {{ $weather->subments }} </td></tr>
@@ -573,13 +593,13 @@
                     </div> 
 
                     <div class="col-md-6 d-none" id="accordion6">
-                        <div class="widget">
-                            <div class="widget-header">
+                        <div class="card">
+                            <div class="card-header">
                                 <a class="card-link" data-toggle="collapse" href="#collapset6"> 
-                                    <h3> Unused objects </h3>
+                                    <h6> Unused objects </h6>
                                 </a>
                             </div>
-                            <div class="widget-content">
+                            <div class="card-body">
                                 <div id="collapset6" class="collapse show" data-parent="#accordion6">
                                     <table class="table table-sm">
                                         <tr><th> Rain Gages </th><td> {{ $weather->gages }} </td></tr>
@@ -605,13 +625,13 @@
                     
                     
                     <div class="col-md-6 d-none" id="accordion7">
-                        <div class="widget">
-                            <div class="widget-header">
+                        <div class="card">
+                            <div class="card-header">
                                 <a class="card-link" data-toggle="collapse" href="#collapset7"> 
-                                    <h3>Summary/Conduit statistics.txt</h3>
+                                    <h6>Summary/Conduit statistics.txt</h6>
                                 </a>
                             </div>
-                            <div class="widget-content">
+                            <div class="card-body">
                                 <div id="collapset7" class="collapse show" data-parent="#accordion7">
                                     <table class="table table-sm">
                                         <tr><th> Max. roughness </th><td> {{ $weather->mxrougs }} </td></tr>
@@ -636,13 +656,13 @@
                     
 
                     <div class="col-md-6 d-none" id="accordion10">
-                        <div class="widget">
-                            <div class="widget-header"> 
+                        <div class="card">
+                            <div class="card-header"> 
                                 <a class="card-link" data-toggle="collapse" href="#collapset10">
-                                    <h3>Pipe inventory</h3>
+                                    <h6>Pipe inventory</h6>
                                 </a>
                             </div>
-                            <div class="widget-content">
+                            <div class="card-body">
                                 <div id="collapset10" class="collapse show" data-parent="#accordion10">
                                     <table class="table table-sm">
                                         <tr><th> Max. pipe diameter (ft) </th><td> {{ $weather->mxpipeter }} </td></tr>
@@ -657,13 +677,13 @@
                     </div>
 
                     <div class="col-md-6 d-none" id="accordion11">
-                        <div class="widget">
-                            <div class="widget-header"> 
+                        <div class="card">
+                            <div class="card-header"> 
                                 <a class="card-link" data-toggle="collapse" href="#collapset11">
-                                    <h3>Node statistics</h3>
+                                    <h6>Node statistics</h6>
                                 </a>
                             </div>
-                            <div class="widget-content">
+                            <div class="card-body">
                                 <div id="collapset11" class="collapse show" data-parent="#accordion11">
                                     <table class="table table-sm">
                                         <tr><th> Max. ground elev. (ft) </th><td> {{ $weather->mxgroudev }} </td></tr>
@@ -681,13 +701,13 @@
                     
 
                     <div class="col-md-6 d-none" id="accordion13">
-                        <div class="widget">
-                            <div class="widget-header"> 
+                        <div class="card">
+                            <div class="card-header"> 
                                 <a class="card-link" data-toggle="collapse" href="#collapset13">
-                                    <h3>Summary/Conduit Inventory.txt</h3>
+                                    <h6>Summary/Conduit Inventory.txt</h6>
                                 </a>
                             </div>
-                            <div class="widget-content">
+                            <div class="card-body">
                                 <div id="collapset13" class="collapse show" data-parent="#accordion13">
                                     <table class="table table-sm">
                                         <tr><th> Circular (ft) </th><td> {{ $weather->circular }} </td></tr>
@@ -698,13 +718,13 @@
                     </div>
     
                     <div class="col-md-12 d-none" id="accordion14">
-                        <div class="widget ">
-                            <div class="widget-header"> 
+                        <div class="card ">
+                            <div class="card-header"> 
                                 <a class="card-link" data-toggle="collapse" href="#collapset14">
-                                    <h3> Junction Flood </h3>
+                                    <h6> Junction Flood </h6>
                                 </a>
                             </div>
-                            <div class="widget-content">
+                            <div class="card-body">
                                 <div id="collapset14" class="collapse show" data-parent="#accordion14">
                                     <table class="table table-sm">
                                         <tr>
