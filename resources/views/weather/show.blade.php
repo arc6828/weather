@@ -37,10 +37,11 @@
                     <div class="col-md-12">
                         <div class="widget ">
                             <div class="widget-header"> 
-                                <h3> Google Map</h3>
+                                <h3> Google Map (พื้นที่เสี่ยงน้ำท่วมจากระบบ)</h3>
                             </div>
                             <div class="widget-content">
                                 <div id="map" style="height: 500px;"></div>
+                                แถบสี
                                 <script>
                                     var map;
 
@@ -67,7 +68,82 @@
                                         map: map
                                         });
                                         console.log("kmlLayer : " , kmlLayer);
+                                        var bounds = new google.maps.LatLngBounds(
+                                            new google.maps.LatLng(12.75026910981639, 99.73642387358632),
+                                            new google.maps.LatLng(14.91950740666351, 101.9563556674292));
+
+                                        // The photograph is courtesy of the U.S. Geological Survey.
+                                    
+                                        var srcImage = 'http://weather.bangkok.go.th/Images/Radar/NjKML/njRadarOnGoogle.png?4/20/2020 10:38:05 AM';
+
+                                        // The custom USGSOverlay object contains the USGS image,
+                                        // the bounds of the image, and a reference to the map.
+                                        overlay = new USGSOverlay(bounds, srcImage, map);
                                     }
+
+                                    function USGSOverlay(bounds, image, map) {
+                                        // Initialize all properties.
+                                        this.bounds_ = bounds;
+                                        this.image_ = image;
+                                        this.map_ = map;
+
+                                        // Define a property to hold the image's div. We'll
+                                        // actually create this div upon receipt of the onAdd()
+                                        // method so we'll leave it null for now.
+                                        this.div_ = null;
+
+                                        // Explicitly call setMap on this overlay.
+                                        this.setMap(map);
+                                    }
+                                    USGSOverlay.prototype.onAdd = function () {
+
+                                        var div = document.createElement('div');
+                                        div.style.borderStyle = 'none';
+                                        div.style.borderWidth = '0px';
+                                        div.style.position = 'absolute';
+
+                                        // Create the img element and attach it to the div.
+                                        var img = document.createElement('img');
+                                        img.src = this.image_;
+                                        img.style.width = '100%';
+                                        img.style.height = '100%';
+                                        //img.style.position = 'absolute';
+                                        div.appendChild(img);
+
+                                        this.div_ = div;
+
+                                        // Add the element to the "overlayLayer" pane.
+                                        var panes = this.getPanes();
+                                        panes.overlayLayer.appendChild(div);
+                                    };
+
+                                    USGSOverlay.prototype.draw = function () {
+
+                                        // We use the south-west and north-east
+                                        // coordinates of the overlay to peg it to the correct position and size.
+                                        // To do this, we need to retrieve the projection from the overlay.
+                                        var overlayProjection = this.getProjection();
+
+                                        // Retrieve the south-west and north-east coordinates of this overlay
+                                        // in LatLngs and convert them to pixel coordinates.
+                                        // We'll use these coordinates to resize the div.
+                                        var sw = overlayProjection.fromLatLngToDivPixel(this.bounds_.getSouthWest());
+                                        var ne = overlayProjection.fromLatLngToDivPixel(this.bounds_.getNorthEast());
+
+                                        // Resize the image's div to fit the indicated dimensions.
+                                        var div = this.div_;
+                                        div.style.left = sw.x + 'px';
+                                        div.style.top = ne.y + 'px';
+                                        div.style.width = (ne.x - sw.x) + 'px';
+                                        div.style.height = (sw.y - ne.y) + 'px';
+                                    };
+
+                                    // The onRemove() method will be called automatically from the API if
+                                    // we ever set the overlay's map property to 'null'.
+                                    USGSOverlay.prototype.onRemove = function () {
+                                        this.div_.parentNode.removeChild(this.div_);
+                                        this.div_ = null;
+                                    };
                                 </script>
                                 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-NoP20OejFNd_gxMizvmRCDHwRPg0gJI&callback=initMap"
                                 async defer></script>
@@ -77,11 +153,12 @@
                     <div class="col-md-6">
                         <div class="widget">
                             <div class="widget-header"> 
-                                <h3>Graph</h3>
+                                <h3>RTF-Rainfall</h3>
                             </div>
                             <div class="widget-content">
                                 <img src="{{ url('storage') }}/{{ $weather->Outfalls }}" width="100%" >                                    
                             </div>
+                            on hover with text
                         </div>
                     </div>
 
@@ -93,7 +170,7 @@
                             </div>
 
                             <div class="widget-content">
-                                <img src="http://weather.bangkok.go.th/FTPCustomer/radar/pics/nkradar.gif" width="100%">
+                                <img src="http://weather.bangkok.go.th/FTPCustomer/radar/pics/radar.gif" width="100%">
                             </div>
                         </div>
                     </div>
