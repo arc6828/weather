@@ -164,10 +164,65 @@
                             <div class="widget-header"> 
                                 <h3>RTF-Rainfall</h3>
                             </div>
-                            <div class="widget-content">
-                                <img src="{{ url('storage') }}/{{ $weather->Outfalls }}" width="100%" >                                    
+                            <div class="widget-content image-container">
+                                <img class="image" src="{{ url('storage') }}/{{ $weather->Outfalls }}" width="100%" >    
+                                <div class="overlay">Now</div> 
+                                <div class="overlay2">Forecast</div>               
                             </div>
-                            on hover with text
+                            <style>
+                                                        
+                            .image-container {
+                                /*position: relative;
+                                width: 50%;
+                                max-width: 300px;*/
+                            }
+
+                            .image {
+                                /*display: block;
+                                width: 100%;
+                                height: auto;*/
+                            }
+
+                            .overlay {
+                                position: absolute; 
+                                left: 0; 
+                                bottom:0;
+                                background: rgb(0, 0, 0);
+                                background: rgba(0, 0, 0, 0.5); /* Black see-through */
+                                color: #f1f1f1; 
+                                height: 90%;
+                                width : 50%;
+                                transition: .5s ease;
+                                opacity:0;
+                                color: white;
+                                font-size: 20px;
+                                /*padding: 20px;*/
+                                text-align: center;
+                                padding-top: 150px;
+                            }
+
+                            .overlay2 {
+                                position: absolute; 
+                                right: 0; 
+                                bottom:0;
+                                background: rgb(0, 0, 0);
+                                background: rgba(0, 0, 0, 0.5); /* Black see-through */
+                                color: #f1f1f1; 
+                                height: 90%;
+                                width : 50%;
+                                transition: .5s ease;
+                                opacity:0;
+                                color: white;
+                                font-size: 20px;
+                                /*padding: 20px;*/
+                                text-align: center;
+                                padding-top: 150px;
+                            }
+
+                            .image-container .overlay:hover, .image-container .overlay2:hover  {
+                                opacity: 1.0;
+                            }
+                            </style>
                         </div>
                     </div>
 
