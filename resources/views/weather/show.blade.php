@@ -238,6 +238,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="col-md-12">
                         <div class="widget">
                             <div class="widget-header"> 
@@ -293,7 +294,7 @@
                                 </a>
                             </div>
                             <div class="widget-content">
-                                <div id="collapset8" class="collapse show" data-parent="#accordion8">
+                                <div id="collapset8" class="collapse" data-parent="#accordion8">
                                     <table class="table table-sm">
                                         <tr><th> Dry weather inflow (MG) </th><td> {{ $weather->dryweaflow }} </td></tr>
                                         <tr><th> Wet weather inflow (MG) </th><td> {{ $weather->wetweaflow }} </td></tr>
@@ -321,7 +322,7 @@
                                 </a>
                             </div>
                             <div class="widget-content">
-                                <div id="collapset12" class="collapse show" data-parent="#accordion12">
+                                <div id="collapset12" class="collapse" data-parent="#accordion12">
                                     <table class="table table-sm">
                                         <tr><th> Initial LID storage (in) </th><td> {{ $weather->lidstroage }} </td></tr>
                                         <tr><th> Initial snow cover (in) </th><td> {{ $weather->snowcover }} </td></tr>
@@ -352,7 +353,7 @@
                                 </a>
                             </div>
                             <div class="widget-content">
-                                <div id="collapset3" class="collapse show" data-parent="#accordion3">
+                                <div id="collapset3" class="collapse" data-parent="#accordion3">
                                     <table class="table table-sm">
                                         <tr><th> Max. subcatchment total runoff (MG) </th><td> {{ $weather->maxmg }} </td></tr>
                                         <tr><th> Max. subcatchment peak runoff (cfs) </th><td> {{ $weather->maxcfs }} </td></tr>
@@ -395,7 +396,7 @@
                                 </a>
                             </div>
                             <div class="widget-content">
-                                <div id="collapset9" class="collapse show" data-parent="#accordion9">
+                                <div id="collapset9" class="collapse" data-parent="#accordion9">
                                     <table class="table table-sm">
                                         <tr><th> Time series inflows </th><td> {{ $weather->timeflows }} </td></tr>
                                         <tr><th> Dry weather inflows </th><td> {{ $weather->dryweaflows }} </td></tr>
