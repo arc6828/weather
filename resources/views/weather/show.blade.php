@@ -24,9 +24,10 @@
                 //echo "<br>";
                 @endphp
                 
-                <h6 class="text-right">บันทึกผลเมื่อ : {{ $weather->report_generate }} </h6>
+                <h6 class="text-right">รายงานผลเมื่อ : {{ $weather->report_generate }} </h6>
                 <div class="card  d-none">
-                    <div class="card-header">Weather : {{ $weather->report_generate }} </div>
+                    <div class="card-header">
+                        Weather : {{ $weather->report_generate }} </div>
                     <div class="card-body">
                         <a class="d-none" href="{{ url('/weather') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
                         <a class="d-none" href="{{ url('/weather/' . $weather->id . '/edit') }}" title="Edit Weather"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
@@ -43,8 +44,36 @@
                 <div class="row mt-4">                       
                     <div class="col-md-12">
                         <div class="card ">
-                            <div class="card-header"> 
-                                <h6> Google Map (พื้นที่เสี่ยงน้ำท่วมจากระบบ)</h6>
+                            <div class="card-header">
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-primary d-none" id="btn-modal" data-toggle="modal" data-target="#exampleModal">
+                                    Launch demo modal
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">ข้อมูลเพิ่มเติม</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            ...
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h6>  
+                                    <a href="void:javascript" ><span class="float-right" onclick="document.querySelector('#btn-modal').click();"><i class="fa fa-info-circle"></i></span></a>
+                                        
+                                    Google Map (พื้นที่เสี่ยงน้ำท่วมจากระบบ)
+                                </h6>
                             </div>
                             <div class="card-body">
                                 <div id="map" style="height: 500px;"></div>
