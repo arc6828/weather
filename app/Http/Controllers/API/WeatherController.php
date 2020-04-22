@@ -59,7 +59,7 @@ class WeatherController extends Controller
         $requestData['detail'] = json_encode($requestData, JSON_UNESCAPED_UNICODE);
 
         $report = $requestData['report_generate'];
-        $requestData['weather_bangkok'] = getDataFromWeatherBangkok();
+        $requestData['weather_bangkok'] = $this->getDataFromWeatherBangkok();
         $checkreport = Weather::firstOrCreate(['report_generate' => $report], $requestData);
 
         //Weather::create($requestData);
@@ -67,7 +67,7 @@ class WeatherController extends Controller
         return response()->json($requestData);
     }
 
-    function getDataFromWeatherBangkok(){
+    public function getDataFromWeatherBangkok(){
         $homepage = file_get_contents('http://weather.bangkok.go.th/radar/RadarAnimation.aspx');
         $homepage = explode("span",$homepage)[1];
         $homepage = explode(">",$homepage)[1];
