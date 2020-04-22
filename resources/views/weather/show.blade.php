@@ -24,7 +24,15 @@
                 //echo "<br>";
                 @endphp
                 
-                <h6 class="text-right">รายงานผลเมื่อ : {{ $weather->report_generate }} </h6>
+                <div class="row">
+                    <div class="col-lg-6">
+                    <h6 class="">{{ $weather->weather_bangkok }}</h6>
+                    </div>
+                    <div class="col-lg-6 text-right">
+                    <h6 class="">รายงานผลเมื่อ : {{ $weather->report_generate }} </h6>
+                    </div>
+                </div>
+                
                 <div class="card  d-none">
                     <div class="card-header">
                         Weather : {{ $weather->report_generate }} </div>
