@@ -6,7 +6,7 @@
         <li> <a href="{{ url('/weather') }}"><i class="icon-list-alt"></i><span>ข้อมูลย้อนหลัง</span> </a> </li>
         <li> <a href="{{ url('/dashboard') }}"><i class="icon-list-alt"></i><span>Dashboard</span> </a> </li>
         <li> <a href="{{ url('/ocr') }}"><i class="icon-list-alt"></i><span>ข้อมูลระดับน้ำ</span> </a> </li>
-        <li> <a href="{{ url('/location') }}"><i class="icon-list-alt"></i><span>ข้อมูลตำแหน่ง</span> </a> </li>
+        <li class="d-none"> <a href="{{ url('/location') }}"><i class="icon-list-alt"></i><span>ข้อมูลตำแหน่ง</span> </a> </li>
         <li> <a href="{{ url('/staffgauge') }}"><i class="icon-list-alt"></i><span>ข้อมูลมาตรวัด</span> </a> </li>
         </li>
       </ul>
