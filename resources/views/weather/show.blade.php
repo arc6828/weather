@@ -265,7 +265,7 @@
                                 /*background: linear-gradient(270deg, #2af598 0%, #009efd 100%);*/
                                 
                                 height: 90%;
-                                width : 72%;
+                                width : 28%;
                                 transition: 3s ease;
                                 opacity:0;
                                 color: white;
@@ -286,7 +286,7 @@
                                 /*color: #f1f1f1; */
                                 color: #555;
                                 height: 90%;
-                                width : 28%;
+                                width : 72%;
                                 transition: 3s ease;
                                 opacity:0;
                                 font-size: 20px;
