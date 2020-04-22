@@ -28,6 +28,11 @@ class WeatherController extends Controller
     public function store(Request $request)
     {
         $requestData = $request->all();
+        $report = $requestData['report_generate'];
+        $exist = Weather::where('report_generate' , $report)->exists();
+        if($exist()){
+            return response()->json(["data"=>"Existing"]);
+        }
         if ($request->hasFile('Outfalls')) {
             $requestData['Outfalls'] = $request->file('Outfalls')
                 ->store('uploads', 'public');
