@@ -14,7 +14,7 @@ class AddWeatherBangkokToWeathersTable extends Migration
     public function up()
     {
         Schema::table('weathers', function (Blueprint $table) {
-            $table->text('weather_bangkok')->nullable()->default("");
+            $table->text('weather_bangkok')->nullable();
         });
     }
 
