@@ -27,7 +27,7 @@
                 
                 <div class="row">
                     <div class="col-lg-8">
-                    <h6 class="">{{ $weather->weather_bangkok }}</h6>
+                    <h6 class=""><marquee direction="left">{{ $weather->weather_bangkok }}</marquee></h6>
                     </div>
                     <div class="col-lg-4 text-right">
                     <h6 class="">รายงานผลเมื่อ : {{ $weather->report_generate }} </h6>
