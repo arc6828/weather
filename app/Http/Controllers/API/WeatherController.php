@@ -30,7 +30,7 @@ class WeatherController extends Controller
         $requestData = $request->all();
         $report = $requestData['report_generate'];
         $exist = Weather::where('report_generate' , $report)->exists();
-        if($exist()){
+        if($exist){
             return response()->json(["data"=>"Existing"]);
         }
         if ($request->hasFile('Outfalls')) {
