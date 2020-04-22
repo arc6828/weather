@@ -202,7 +202,7 @@ class WeatherController extends Controller
         }
 
         $weather = Weather::findOrFail($id);
-        $requestData['detail'] = json_encode($requestData, JSON_UNESCAPED_UNICODE);
+        $requestData['detail'] = json_encode(["detail" => json_encode($requestData, JSON_UNESCAPED_UNICODE) ]);
         $weather->update($requestData);
 
         return redirect('weather')->with('flash_message', 'Weather updated!');

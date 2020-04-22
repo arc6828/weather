@@ -1,6 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-success" style="background: #00ba8b !important; ">
   <div class="container"> 
-    <img src="{{ url('/')}}/image/1.jpg" height="50"> &nbsp;&nbsp;<img src="{{ url('/')}}/image/unnamed.gif" height="50">
+    <img class="mr-2" src="{{ url('/')}}/image/rmutsb_logo_en.png" height="50">
+    <img class="mr-2" src="{{ url('/')}}/image/kaset.png" height="50">    
+    <img class="mr-2" src="{{ url('/')}}/image/swg.png" height="50">
     <a class="navbar-brand" href="#">&nbsp;&nbsp;Real Time Flood Forecast System: Ramkhamhaeng Area</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>

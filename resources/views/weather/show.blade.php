@@ -72,12 +72,13 @@
                                 <h6>  
                                     <a href="void:javascript" ><span class="float-right" onclick="document.querySelector('#btn-modal').click();"><i class="fa fa-info-circle"></i></span></a>
                                         
-                                    Google Map (พื้นที่เสี่ยงน้ำท่วมจากระบบ)
+                                    Google Map (พื้นที่เสี่ยงน้ำท่วมจากระบบ Flood Forecast Area)
                                 </h6>
                             </div>
                             <div class="card-body">
                                 <div id="map" style="height: 500px;"></div>
-                                แถบสี
+                                <div class="" style="position: absolute; bottom: 55px; left: 25px;"><img class="" src="{{ url('image/scale.png') }}" width="30%"></div>
+
                                 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-NoP20OejFNd_gxMizvmRCDHwRPg0gJI" ></script>
                                 <script>
                                     //google.maps.event.addDomListener(window, 'load', init);
@@ -200,14 +201,37 @@
                     <div class="col-md-6">
                         <div class="card">
                             <div class="card-header"> 
+                                <span class="float-right">
+                                    <a href="{{ url('storage') }}/{{ $weather->Outfalls }}" target="_blank"><i class="fa fa-image"></i> ดูภาพเต็มจอ</a>
+                                </span>
                                 <h6>RTF-Rainfall</h6>
                             </div>
-                            <div class="card-body image-container">
-                                <img class="image" src="{{ url('storage') }}/{{ $weather->Outfalls }}" width="100%" >    
-                                <div class="overlay">Now</div> 
-                                <div class="overlay2">Forecast</div>               
+                            <div class="card-body ">
+                                <div class="square-image">
+                                    <img class="img img-responsive full-width" src="{{ url('storage') }}/{{ $weather->Outfalls }}" width="100%" >                                        
+                                </div>
+                                <div class="image-container">
+                                    <img class="image d-none" src="{{ url('storage') }}/{{ $weather->Outfalls }}" width="100%" >    
+                                    <div class="overlay overlay-scale" >Realtime</div> 
+                                    <div class="overlay">Realtime</div> 
+                                    <div class="overlay2 overlay2-scale">Forecasting</div>  
+                                    <div class="overlay2 ">Forecasting</div>  
+                                </div>             
                             </div>
                             <style>
+                            .square-image{
+                                position:relative;
+                                overflow:hidden;
+                                padding-bottom:100%;
+                            }
+                            .square-image img{
+                                position: absolute;
+                                max-width: 100%;
+                                max-height: 100%;
+                                top: 50%;
+                                left: 50%;
+                                transform: translateX(-50%) translateY(-50%);
+                            }
                                                         
                             .image-container {
                                 /*position: relative;
@@ -225,18 +249,21 @@
                                 position: absolute; 
                                 left: 0; 
                                 bottom:0;
-                                background: rgb(0, 0, 0);
-                                background: rgba(0, 0, 0, 0.5); /* Black see-through */
-                                color: #f1f1f1; 
+                                /*background: rgb(0, 0, 0);*/
+                                background: rgba(0, 0, 255, 0.3); /* Black see-through */
+                                background-image: linear-gradient(270deg, rgba(42, 245, 152,.5) 0%, rgba(0, 158, 253,.5) 100%);
+                                
+                                /*background: linear-gradient(270deg, #2af598 0%, #009efd 100%);*/
+                                
                                 height: 90%;
-                                width : 50%;
-                                transition: .5s ease;
+                                width : 39%;
+                                transition: 3s ease;
                                 opacity:0;
                                 color: white;
                                 font-size: 20px;
                                 /*padding: 20px;*/
                                 text-align: center;
-                                padding-top: 150px;
+                                padding-top: 250px;
                             }
 
                             .overlay2 {
@@ -244,21 +271,35 @@
                                 right: 0; 
                                 bottom:0;
                                 background: rgb(0, 0, 0);
-                                background: rgba(0, 0, 0, 0.5); /* Black see-through */
-                                color: #f1f1f1; 
+                                background: rgba(0, 255, 0, 0.3); /* Black see-through */
+                                background-image: linear-gradient(270deg,rgba(0, 158, 253,.5) 0%,  rgba(42, 245, 152,.5) 100%);
+                                
+                                /*color: #f1f1f1; */
+                                color: #555;
                                 height: 90%;
-                                width : 50%;
-                                transition: .5s ease;
+                                width : 61%;
+                                transition: 3s ease;
                                 opacity:0;
-                                color: white;
                                 font-size: 20px;
                                 /*padding: 20px;*/
                                 text-align: center;
-                                padding-top: 150px;
+                                padding-top: 250px;
                             }
+                           
 
-                            .image-container .overlay:hover, .image-container .overlay2:hover  {
+                            .image-container .overlay:hover{
                                 opacity: 1.0;
+                                
+                                /*transition-timing-function: linear;
+                                transition: width 2s;*/
+                            }
+                            
+                            .image-container .overlay2:hover{
+                                opacity: 1.0;
+                                
+                                
+                                /*transition-timing-function: linear;
+                                transition: width 2s;*/
                             }
                             </style>
                         </div>
@@ -268,7 +309,7 @@
                     <div class="col-md-6">
                         <div class="card">
                             <div class="card-header"> 
-                                <h6> Radar</h6>
+                                <h6>สถานี Radar หนองจอก</h6>
                             </div>
 
                             <div class="card-body">
@@ -283,7 +324,7 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header"> 
-                                <h6> ระดับน้ำในท่อระบายน้ำที่ตำแหน่งจุดอ่อนน้ำท่วมในพื้นที่</h6>
+                                <h6> ระดับน้ำในท่อระบายน้ำที่ตำแหน่งจุดเสี่ยงน้ำท่วม</h6>
                             </div>
 
                             <div class="card-body">
