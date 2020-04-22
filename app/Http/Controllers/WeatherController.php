@@ -111,7 +111,7 @@ class WeatherController extends Controller
         //COPY MAIN OBJECT
         $small_object = json_decode(json_encode($weather));
         //MERGE DETAIL AND MAIN
-        $weather = (object) array_merge((array) $base_object, (array) $small_object, (array)  $large_object ); 
+        $weather = (object) array_merge((array) $base_object, (array)  $large_object , (array) $small_object); 
         
        
         
