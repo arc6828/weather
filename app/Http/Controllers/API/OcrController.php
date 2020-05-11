@@ -4,38 +4,47 @@ namespace App\Http\Controllers\API;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\MyLog;
 use App\Ocr;
-use App\Staffgauge;
 use App\Location;
-use App\Profile;
+use App\Staffgauge;
 
-use Illuminate\Http\File;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\Auth;
-
+use Google\Cloud\Vision\V1\ImageAnnotatorClient;
 use Google\Cloud\Vision\VisionClient;
+
 use Intervention\Image\ImageManagerStatic as Image;
+
 
 class OcrController extends Controller
 {
+    public $channel_access_token = "PAWHiPcSKPa2aHS81w2TRB2sJP1IQmf6kBFxtSE8BD5FLarviYZ2U57SVXiSkNgAzgXYjLGO60jDHhPdLwcuzUQWZxYLebilp0J1I1mrm6Jsv6tu1p3iHKzm2I2rWIPjASnO9jnpz9oD4QZ/fxhH+QdB04t89/1O/w1cDnyilFU=";
+        
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //
-    }
+    {        
+        //PREPARE DATA
+        $data = [
+            "address" => "......",
+            "latitude" => "13.96591547579",
+            "longitude" => "100.62308359891",
+            "typegroup" => "",
+            "lineid" => "",
+            "staffgaugeid" => 1, //ASSUME
+            "user_id" => 1,     //ASSUME
+            //"msglocid" => $event['message']['id'],
+        ];
+        $data["staffgaugeid"] = $this->findNearestStaffgauge($data);
+        //CREATE LOCATION        
+        //$location = Location::create($data);    
+        //$data["location"] = $location;             
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        //FINALLY REPLY TO USER                
+        //$channel_access_token = $this->channel_access_token;
+        //$this->replyToUser($data,$event, $channel_access_token,"flex-location");
     }
 
     /**
@@ -46,126 +55,171 @@ class OcrController extends Controller
      */
     public function store(Request $request)
     {
-        /* example format of $requestData : http://staffgauge.ckartisan.com/api/ocr
-        [
-            "title" => "100",                //level of water
-            "content" => [],                 //raw data (everything)
-            "photo" => "https://......jpg" , //URL IMAGE
-            "social_user_id" => "",          //line id
-            "numbers" => [],                 //Array of only number
-        ]
-        */
+        //SAVE LOG
         $requestData = $request->all();
-        //KEEP LOG BEFORE DO ANYTHINGS
-        if ($request->has('photo')) {
-            //$requestData['photo'] =  Storage::putFile('uploads/ocr', new File($requestData['photo']));
-            //$requestData['photo'] = $request->file('photo')->store('uploads/ocr', 'public');
-
-            //FOR OCR 
-            //$path = storage_path('app/public/'.$requestData['photo']);
-
-            //GET PATH LIKE : http://............/xxx.jpg
-            //$path = 'https://i.stack.imgur.com/koFpQ.png';
-            //$requestData['photo'] = str_replace("\/","/", $requestData['photo']);
-            $path = $requestData['photo'];
-            
-            //PATH FROM FIRESTORE : https://firebasestorage.googleapis.com/v0/b/royalirrigationfb.appspot.com/o/U239469c374d4e2337bbc5b4925938af8%2F10987025149678.jpg?alt=media&token=3a971dd0-12ee-42ba-9888-4eae5b29b371
-            //WARNING : %2F and ?xxxxxxxxx
-            //EXTRACT ONLY : xxx.jpg?alt=xxxxxxxxxxxxxxxxxxxxxx
-            $filename = basename(str_replace("%2F","/", $path));
-            //EXTRACT ONLY by remove ?xxxxxxxxx : xxx.jpg
-            $filename = explode("?",$filename)[0];
-            //NEW PATH : storage/app/public/uploads/ocr/xxx.jpg
-            $new_path = storage_path('app/public/uploads/ocr/'.$filename);
-            Image::make($path)->save($new_path);
-            //$requestData['json_line'] = json_encode( $requestData );
-            $requestData['json_line'] = basename($requestData['photo']);
-            $requestData['photo'] = 'uploads/ocr/'.$filename;
-            
-            //echo $path;
-            //$detected_text = $this->detect_text($path);
-
-            //$requestData['title'] = $detected_text['title'];
-            //$requestData['content'] = $detected_text['content'];
-
-        }
-        if ($request->has('content')) {
-            $requestData['content'] = json_encode( $requestData['content'], JSON_UNESCAPED_UNICODE );
-        }
-        if ($request->has('numbers')) {
-            $requestData['numbers'] = json_encode( $requestData['numbers'], JSON_UNESCAPED_UNICODE );
-        }
-
-        $requestData['user_id'] = 1;
-        $requestData['locationid'] = 1;
-        $requestData['staffgaugeid'] = 1;
-        
-        //ดึงข้อมูล location จาก lineid
-        if ($request->has('lineid')) {
-            $lineid = $requestData['lineid'];
-            
-            //ระวัง query นี้อาจมีผลลัพธ์ เป็น null
-            $profile = Profile::where('lineid' , $lineid)->first();
-            $requestData['user_id'] = $profile ? $profile->user_id : 1 ;
-            
-            
-            //ระวัง query นี้อาจมีผลลัพธ์ เป็น null
-            $location = Location::where('lineid' , $lineid)->latest()->first();
-
-            $requestData['locationid'] = $location ? $location->id : 1 ;
-            $requestData['staffgaugeid'] = $location ? $location->staffgaugeid : 1 ;
-        }
-        
-            
-        Ocr::create($requestData);
-        $arr = [
-            'status' => 'success'
+        $data = [
+            "title" => "Line : api/ocr",
+            "content" => json_encode($requestData, JSON_UNESCAPED_UNICODE),
         ];
-        return  json_encode( $arr, JSON_UNESCAPED_UNICODE );
-
+        MyLog::create($data);        
         
+        //GET ONLY FIRST EVENT
+        $event = $requestData["events"][0];
+        switch($event["type"]){
+            case "message" : 
+                $this->messageHandler($event);
+                break;
+            case "postback" : 
+                $this->postbackHandler($event);
+                break;
+        }
     }
 
-    // update title in ocr
-    function updateocrs(Request $request)
+    public function messageHandler($event)
     {
-        $requestData = $request->all();
-        $lineid = $requestData['lineid'];
-        $msgocrid = $requestData['msgocrid'];
-        $title = $requestData['title'];
+        switch($event["message"]["type"]){
+            case "image" :                 
+                $this->imageHandler($event);
+                break;
+            case "location" :                 
+                $this->locationHandler($event);
+                break;
+            case "text" :                 
+                $this->textHandler($event);
+                break;
+        }   
 
-        // update title in ocr
-        $updatetitle = Ocr::where('lineid', $lineid)
-                ->where('msgocrid', $msgocrid)
-                ->update(['title' => $title]);
     }
 
-
-    /*public function store2(Request $request)
+    public function textHandler($event)
     {
-        $requestData = $request->all();        
-        $text = jsonjson_encode( $requestData, JSON_UNESCAPED_UNICODE );
-        Ocr::create(["content"=>$text,"user_id"=>1]);
-        //return "{'status':'success'}";
-        //return redirect('ocr/lineoa');
-    }*/
+        switch( strtolower($event["message"]["text"]) )
+        {
+            case "line quick reply" :                 
+                $this->quickReplyHandler($event);
+                break;
 
-    function detect_text($path)
+            
+        }   
+    }
+
+    public function quickReplyHandler($event)
+    {
+        $channel_access_token = $this->channel_access_token;
+        $this->replyToUser(null, $event, $channel_access_token, "quickReply");
+    }
+
+    public function imageHandler($event)
+    {
+        //USE TO VERIFY YOURSELF
+        //$channel_access_token = "PAWHiPcSKPa2aHS8...................H+QdB04t89/1O/w1cDnyilFU=";
+        $channel_access_token = $this->channel_access_token;
+
+        //LOAD REMOTE IMAGE AND SAVE TO LOCAL
+        $binary_data  = $this->getImageFromLine($event["message"]["id"], $channel_access_token);                
+        $filename = $this->random_string(50).".png";
+        $new_path = storage_path('app/public/uploads/ocr/'.$filename);
+        Image::make($binary_data)->save($new_path);
+                        
+        //ANALYSE IMAGE WITH GOOGLE VISION API
+        $detected_text = $this->detectText($new_path);
+        
+        //CREATE OCR
+        $data = [
+            "title" => $detected_text['title'],
+            "content" => $detected_text['content'],
+            "numbers" => $detected_text['numbers'],
+            "photo" => "uploads/ocr/".$filename,
+            "user_id" => "1",  //ASSUME
+            "lineid" => $event["source"]["userId"],
+            //"staffgaugeid" => "1",
+            //"locationid" => "1",
+            "msgocrid" => $event["message"]["id"],
+        ];
+        $location = Location::where('lineid',$data['lineid'])->orderBy('created_at','desc')->first();
+        if($location){
+            $data["staffgaugeid"] = $location->staffgaugeid;
+            $data["locationid"] = $location->id;
+        }
+        $ocr = Ocr::create($data);
+        
+        $data["ocr"] = $ocr; 
+
+        //FINALLY REPLY TO USER                
+        $this->replyToUser($data,$event, $channel_access_token,"flex-image");
+
+    }
+
+    public function locationHandler($event)
+    {
+        //PREPARE DATA
+        $data = [
+            "address" => $event['message']['address'],
+            "latitude" => $event['message']['latitude'],
+            "longitude" => $event['message']['longitude'],
+            "typegroup" => $event['source']['type'],
+            "lineid" => $event['source']['userId'],
+            "staffgaugeid" => 1, //ASSUME
+            "user_id" => 1,     //ASSUME
+            "msglocid" => $event['message']['id'],
+        ];
+        $data["staffgaugeid"] = $this->findNearestStaffgauge($data);
+        //CREATE LOCATION        
+        $location = Location::create($data);    
+        $data["location"] = $location;             
+
+        //FINALLY REPLY TO USER                
+        $channel_access_token = $this->channel_access_token;
+        $this->replyToUser($data,$event, $channel_access_token,"flex-location");
+
+    }
+
+    public function findNearestStaffgauge($data)
+    {
+        $staffgauges = Staffgauge::get();
+
+        $nearest_staffgauge_id = null;
+        $min_distance = null;
+
+        foreach($staffgauges as $item)
+        {
+            $dLat = $item->latitudegauge - $data["latitude"];
+            //echo "<br> dLat : {$dLat} , {$item->latitudegauge} , {$data["latitude"]}";
+            $dLon = $item->longitudegauge - $data["longitude"];
+            //echo "<br> dLat : {$dLon} , {$item->longitudegauge} , {$data["longitude"]}";
+            $d = sqrt($dLat*$dLat + $dLon*$dLon);
+
+            if($min_distance == null)
+            {
+                $nearest_staffgauge_id = $item->id;
+                $min_distance = $d;
+            }
+            else if($d < $min_distance )
+            {
+                $nearest_staffgauge_id = $item->id;
+                $min_distance = $d;
+            }
+            //echo "<br>Best : [{$nearest_staffgauge_id} , {$min_distance}] , Current : [{$item->id} , {$d}] ";
+        }
+        return $nearest_staffgauge_id;
+    }
+
+    public function detectText($path)
     {
         //https://onlinelearningportal.website/google-vision-api-implementation-with-laravel-5-8/
+        
+        //CALL GOOGLE VISION OBJECT AND DO TEXT DETECTION
         $key_path = storage_path('../public/CKartisan-c6f07fc70d07.json');
-        $vision = new VisionClient(['keyFile' => json_decode(file_get_contents($key_path), true)]); 
-        
-        $image = $vision->image(file_get_contents($path),
-        [
-            'TEXT_DETECTION'
-        ]);
-        
+        $vision = new VisionClient(['keyFile' => json_decode(file_get_contents($key_path), true)]);         
+        $image = $vision->image(file_get_contents($path), [ 'TEXT_DETECTION' ] );        
         $result = $vision->annotate($image);
         //print_r($result); exit;
         $texts = $result->text();
-        $title = null;
+
+        //FIND OUT WATER LEVEL
+        $title = "-";
         $description=[];
+        $numbers=[];
         $first = true;
         if($texts){
             foreach($texts as $key=>$text)
@@ -176,6 +230,7 @@ class OcrController extends Controller
                 $temp = $this->cleanNumber($text->description());
                 //ถ้าได้ตัวเลขน้อยกว่าเดิม ให้บันทึก
                 if($temp){
+                    /*
                     if($title){
                         if($temp < $title){
                             $title = $temp;
@@ -183,28 +238,23 @@ class OcrController extends Controller
                     }else{
                         $title = $temp;
                     }
+                    */
+                    $title = $temp;
+                    $numbers[] = $temp;
                 }
-
-                //echo $text->description() ;
-                //print_r($text->info());
-                /*$bounds = [];
-                foreach ($text->boundingPoly()['vertices'] as $vertex) {
-                    $bounds[] = sprintf('(%d,%d)', $vertex['x'], $vertex['y']);
-                }
-                print('Bounds: ' . join(', ',$bounds) . PHP_EOL);*/
-                //echo "<br>";
             }
         }
         return [
             "title" => $title,
             "content" => json_encode($description, JSON_UNESCAPED_UNICODE ),
+            "numbers" => json_encode($numbers, JSON_UNESCAPED_UNICODE ),
         ];
         // fetch text from image //
         //print_r($description);    
 
     }
 
-    function cleanNumber($text){
+    public function cleanNumber($text){
         //REMOVE E
         $text = str_replace("E","",$text);
         //REMOVE .
@@ -227,6 +277,182 @@ class OcrController extends Controller
         return false;
     }
 
+    public function replyToUser($data, $event, $channel_access_token, $message_type)
+    {
+        
+        switch($message_type)
+        {
+            case "flex-image": 
+                
+                $ocr = $data["ocr"];
+                //$template_path = storage_path('../public/json/flexbubble-test.json');  
+                $template_path = storage_path('../public/json/flexbubble-reply.json'); 
+                //$template_path = storage_path('../public/json/text-reply.json');       
+                $string_json = file_get_contents($template_path);
+                $image_url = url('/storage')."/".$data["photo"];
+
+                //1
+                $string_json = str_replace("<image>",$image_url,$string_json);
+                //2
+                $string_json = str_replace("<message_id>",$event["message"]["id"],$string_json);
+                
+                //3
+                $string_json = str_replace("<content>","-",$string_json);
+                
+                //4
+                $numbers = join(",",json_decode($data["numbers"]));
+                if(empty($numbers)){ $numbers = "-";}
+                $string_json = str_replace("<numbers>",$numbers,$string_json); 
+                
+                $string_json = str_replace("<title>",$data["title"],$string_json); 
+                    
+                //5
+                $n = $data['title'];        
+                if(is_numeric($n)){            
+                    $levels = [$n-10,$n-5,$n+5,$n+10,$n-2,$n-4,$n-6,$n-8];
+                }else{
+                    $levels = ["-","-","-","-","-","-","-","-"];
+                }
+                $string_json = str_replace("<min0>",$levels[0],$string_json);
+                $string_json = str_replace("<min1>",$levels[1],$string_json);
+                $string_json = str_replace("<min2>",$levels[2],$string_json);
+                $string_json = str_replace("<min3>",$levels[3],$string_json);
+                $string_json = str_replace("<min4>",$levels[4],$string_json);
+                $string_json = str_replace("<min5>",$levels[5],$string_json);
+                $string_json = str_replace("<min6>",$levels[6],$string_json);
+                $string_json = str_replace("<min7>",$levels[7],$string_json);
+                
+                //6
+                $string_json = str_replace("<lineid>",$event["source"]["userId"],$string_json);
+                //7
+                $string_json = str_replace("<login>",$image_url,$string_json);
+                //8
+                $string_json = str_replace("<user_manual>",$image_url,$string_json);
+                //9
+                $string_json = str_replace("<msgocrid>",$event["message"]["id"],$string_json);
+                //10
+                $string_json = str_replace("<staffgauge_name>",$ocr->staffgauge->addressgauge." [{$ocr->staffgauge->id}]" ,$string_json);
+                $message =  json_decode($string_json, true); 
+                break;
+            case "flex-location": 
+                $location = $data["location"];
+                $template_path = storage_path('../public/json/flexbubble-location-reply.json');   
+                $string_json = file_get_contents($template_path);                
+                //1
+                $string_json = str_replace("<message_id>",$event["message"]["id"],$string_json);
+                //2
+                $string_json = str_replace("<address>",$data["address"],$string_json);
+                //3
+                $string_json = str_replace("<latitude>",$data["latitude"],$string_json);
+                //4
+                $string_json = str_replace("<longitude>",$data["longitude"],$string_json);
+                //5
+                $string_json = str_replace("<staffgauge_name>",$location->staffgauge->addressgauge." [{$location->staffgauge->id}]" ,$string_json);
+                //6
+                $string_json = str_replace("<created_at>",$location->created_at,$string_json);
+                $message = json_decode($string_json, true); 
+                break;
+            case "quickReply": 
+                $template_path = storage_path('../public/json/quick-reply.json');   
+                $string_json = file_get_contents($template_path);
+                $message = json_decode($string_json, true); 
+                break;
+        }        
+
+        $body = [
+            "replyToken" => $event["replyToken"],
+            "messages" => [ $message ],
+        ];
+
+        $opts = [
+            'http' =>[
+                'method'  => 'POST',
+                'header'  => "Content-Type: application/json \r\n".
+                            'Authorization: Bearer '.$channel_access_token,
+                'content' => json_encode($body, JSON_UNESCAPED_UNICODE),
+                //'timeout' => 60
+            ]
+        ];
+                            
+        $context  = stream_context_create($opts);
+        //https://api-data.line.me/v2/bot/message/11914912908139/content
+        $url = "https://api.line.me/v2/bot/message/reply";
+        $result = file_get_contents($url, false, $context);
+
+        //SAVE LOG
+        $data = [
+            "title" => "https://api.line.me/v2/bot/message/reply",
+            "content" => json_encode($result, JSON_UNESCAPED_UNICODE),
+        ];
+        MyLog::create($data);
+        return $result;
+
+    }
+
+    public function getImageFromLine($id, $channel_access_token){
+        $opts = array('http' =>[
+                'method'  => 'GET',
+                //'header'  => "Content-Type: text/xml\r\n".
+                'header' => 'Authorization: Bearer '.$channel_access_token,
+                //'content' => $body,
+                //'timeout' => 60
+            ]
+        );
+                            
+        $context  = stream_context_create($opts);
+        //https://api-data.line.me/v2/bot/message/11914912908139/content
+        $url = "https://api-data.line.me/v2/bot/message/{$id}/content";
+        $result = file_get_contents($url, false, $context);
+        return $result;
+    }
+
+    public function random_string($length) {
+        $key = '';
+        $keys = array_merge(range(0, 9), range('a', 'z'));
+    
+        for ($i = 0; $i < $length; $i++) {
+            $key .= $keys[array_rand($keys)];
+        }
+    
+        return $key;
+    }
+
+    public function postbackHandler($event)
+    {
+        
+        $queryString = $event['postback']['data'];
+        parse_str($queryString, $data);
+
+        // update title in ocr
+        
+        $ocr = Ocr::where('lineid', $data['lineid'])
+                ->where('msgocrid', $data['msgocrid'])
+                ->first();
+
+        $ocr->title = $data['title'];        
+        $ocr->save();        
+        
+        //REPLY
+        //CREATE OCR
+        $new_data = [
+            "title" => $ocr->title,
+            "content" => $ocr->content,
+            "numbers" => $ocr->numbers,
+            "photo" => $ocr->photo,
+        ];
+        //Ocr::create($data);
+
+        //FINALLY REPLY TO USER                
+        $channel_access_token = $this->channel_access_token;
+        $event['message'] = ['id' => ''.$data['msgocrid'] ];
+        $this->replyToUser($new_data,$event, $channel_access_token,"flex-image");
+        
+        
+    }
+
+
+    
+
     /**
      * Display the specified resource.
      *
@@ -234,17 +460,6 @@ class OcrController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
     {
         //
     }
