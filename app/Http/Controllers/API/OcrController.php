@@ -38,6 +38,9 @@ class OcrController extends Controller
             //"msglocid" => $event['message']['id'],
         ];
         $data["staffgaugeid"] = $this->findNearestStaffgauge($data);
+
+        $detected_text = $this->detectText('https://onlinelearningportal.website/wp-content/uploads/2019/07/cropped-sign_text.png');
+        print_r($detected_text);
         //CREATE LOCATION        
         //$location = Location::create($data);    
         //$data["location"] = $location;             
