@@ -1,0 +1,1 @@
+php artisan crud:generate MyLog --fields_from_file="resources/crud-generator/json/mylog.json"
