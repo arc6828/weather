@@ -31,6 +31,8 @@ class Location extends Model
         return $this->belongsTo('App\Staffgauge', 'staffgaugeid');
     }
 
+    
+
     public function ocr(){
         return $this->belongsTo('App\Ocr', 'lineid');
     }
