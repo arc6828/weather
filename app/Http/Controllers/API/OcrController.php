@@ -17,7 +17,7 @@ use Intervention\Image\ImageManagerStatic as Image;
 
 class OcrController extends Controller
 {
-    public $channel_access_token = "PAWHiPcSKPa2aHS81w2TRB2sJP1IQmf6kBFxtSE8BD5FLarviYZ2U57SVXiSkNgAzgXYjLGO60jDHhPdLwcuzUQWZxYLebilp0J1I1mrm6Jsv6tu1p3iHKzm2I2rWIPjASnO9jnpz9oD4QZ/fxhH+QdB04t89/1O/w1cDnyilFU=";
+    public $channel_access_token = "UZmfH2bLSKTKIAWNcQ+MJiIjtwiMyCCletK/OGjy0Ybe0EUOor2lN6CZcDKknPwaD4DX93T2MeI+ocBP6+tNcU/ORteuPvaORZIvKGg5x/1ZtpY5yyjH+xyAbqSe+5BUZbuUi+KSZ3WDC283ilfCfgdB04t89/1O/w1cDnyilFU=";
         
     /**
      * Display a listing of the resource.
