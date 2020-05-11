@@ -1,0 +1,20 @@
+{
+    "fields": [
+        {
+            "name": "role",
+            "type": "string"
+        },
+        {
+            "name": "user_id",
+            "type": "integer"
+        },
+        {
+            "name": "photo",
+            "type": "file"
+        },
+        {
+            "name": "lineid",
+            "type": "string"
+        }
+    ]
+}
