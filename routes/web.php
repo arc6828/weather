@@ -51,3 +51,4 @@ function getDataFromWeatherBangkok(){
     $homepage = explode("<",$homepage)[0];
     return $homepage;
 }
+Route::resource('my-log', 'MyLogController');
