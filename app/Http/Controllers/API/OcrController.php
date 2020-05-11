@@ -424,20 +424,20 @@ class OcrController extends Controller
     {
         
         $queryString = $event['postback']['data'];
-        parse_str($queryString, $data);
+        parse_str($queryString, $new_data);
 
         // update title in ocr
         
-        $ocr = Ocr::where('lineid', $data['lineid'])
-                ->where('msgocrid', $data['msgocrid'])
+        $ocr = Ocr::where('lineid', $new_data['lineid'])
+                ->where('msgocrid', $new_data['msgocrid'])
                 ->first();
 
-        $ocr->title = $data['title'];        
+        $ocr->title = $new_data['title'];        
         $ocr->save();        
         
         //REPLY
         //CREATE OCR
-        $new_data = [
+        $data = [
             "title" => $ocr->title,
             "content" => $ocr->content,
             "numbers" => $ocr->numbers,
@@ -445,10 +445,11 @@ class OcrController extends Controller
         ];
         //Ocr::create($data);
 
-        //FINALLY REPLY TO USER                
+        //FINALLY REPLY TO USER       
+        $data["ocr"] = $ocr;          
         $channel_access_token = $this->channel_access_token;
-        $event['message'] = ['id' => ''.$data['msgocrid'] ];
-        $this->replyToUser($new_data,$event, $channel_access_token,"flex-image");
+        $event['message'] = ['id' => ''.$new_data['msgocrid'] ];
+        $this->replyToUser($data,$event, $channel_access_token,"flex-image");
         
         
     }
