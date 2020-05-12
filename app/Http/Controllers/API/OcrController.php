@@ -95,7 +95,8 @@ class OcrController extends Controller
     public function imageHandler($event)
     {
         //LOAD REMOTE IMAGE AND SAVE TO LOCAL
-        $binary_data  = $this->getImageFromLine($event["message"]["id"]);                
+        $line = new LineMessagingAPI();         
+        $binary_data  = $line->getImageFromLine($event["message"]["id"]);                
         $filename = $this->random_string(50).".png";
         $new_path = storage_path('app/public/uploads/ocr/'.$filename);
         Image::make($binary_data)->save($new_path);
