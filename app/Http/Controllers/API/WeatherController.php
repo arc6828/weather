@@ -81,7 +81,7 @@ class WeatherController extends Controller
                 ->whereDate('last_newsletter_date','<', DB::raw('CURDATE()') )                
                 ->get();
             //loop lineids
-            $lineids = array_map(function($item){ return $item->lineid; },$a);
+            $lineids = array_map(function($item){ return $item->lineid; },$profiles);
             //push message
             $data = "Weather Now : ".$weather->weather_bangkok. " อ้างอิงจาก http://weather.bangkok.go.th/radar/RadarAnimation.aspx";
             $line = new LineMessagingAPI();   
