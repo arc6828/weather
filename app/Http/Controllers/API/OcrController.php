@@ -92,21 +92,21 @@ class OcrController extends Controller
 
     public function textHandler($event)
     {
+        
+        $line = new LineMessagingAPI();
         switch( strtolower($event["message"]["text"]) )
-        {
-            case "line quick reply" :                 
-                $this->quickReplyHandler($event);
+        {     
+            case "line quick reply" :            
+                $line->replyToUser(null, $event, "quickReply");
+                break;
+            case "line newsletter" :                 
+                $line->replyToUser(null, $event, "newsletter");
                 break;
 
             
         }   
     }
 
-    public function quickReplyHandler($event)
-    {
-        $line = new LineMessagingAPI();
-        $line->replyToUser(null, $event, "quickReply");
-    }
 
     public function imageHandler($event)
     {
@@ -263,6 +263,23 @@ class OcrController extends Controller
         $queryString = $event['postback']['data'];
         parse_str($queryString, $new_data);
 
+        switch($new_data['type'])
+        {
+            case "ocr-update" : 
+                $this->ocrUpdateHandler($event);
+                break;
+            case "newsletter" : 
+                $this->newsletterUpdateHandler($event);
+                break;
+            
+        }
+    }   
+    
+    public function ocrUpdateHandler($event)
+    {
+        $queryString = $event['postback']['data'];
+        parse_str($queryString, $new_data);
+
         // update title in ocr
         
         $ocr = Ocr::where('lineid', $new_data['lineid'])
@@ -286,7 +303,17 @@ class OcrController extends Controller
         $event['message'] = ['id' => ''.$new_data['msgocrid'] ];
         $line = new LineMessagingAPI();   
         $line->replyToUser($ocr,$event, "flex-image");
-    }    
+
+
+    }
+
+    public function newsletterUpdateHandler()
+    {
+
+    }
+
+
+
 
     /**
      * Display the specified resource.
