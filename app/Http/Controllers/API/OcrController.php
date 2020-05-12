@@ -49,6 +49,20 @@ class OcrController extends Controller
         
         //GET ONLY FIRST EVENT
         $event = $requestData["events"][0];
+        //FIRST OR CREATE 
+        if(isset($event["source"]["userId"] ))
+        {
+            $profile = Profile::firstOrCreate(
+                [ 'lineid' => $event["source"]["userId"] ],
+                [ 
+                    'role'=>'guest', 
+                    //'user_id'=>'', 
+                    //'photo'=>'', 
+                    //'newsletter'=>'no', 
+                ]
+            );
+        }
+        
         switch($event["type"]){
             case "message" : 
                 $this->messageHandler($event);
