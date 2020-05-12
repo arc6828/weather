@@ -200,10 +200,18 @@ class OcrController extends Controller
             
             $data["staffgaugeid"] = $location->staffgaugeid;
             $data["locationid"] = $location->id;
-            //$ocr = Ocr::create($data);   
-            $ocrs->update($data);  
+
+            Ocr::where('lineid',$data['lineid'])
+                ->whereDate('created_at', DB::raw('CURDATE()') )
+                ->whereNull('staffgaugeid')            
+                ->orderBy('created_at','desc')
+                ->update($data);  
+            $ocr = Ocr::where('lineid',$data['lineid'])
+                ->whereDate('created_at', DB::raw('CURDATE()') )     
+                ->orderBy('created_at','desc')
+                ->first(); 
             //FINALLY REPLY TO USER      
-            $data["ocr"] = $ocrs[0];                  
+            $data["ocr"] = $ocrs;                  
             $this->replyToUser($data,$event, $channel_access_token,"flex-image");
         }
         else
