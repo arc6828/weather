@@ -134,7 +134,10 @@ class OcrController extends Controller
         }
         else
         {
-            //NO LOCATIONS        
+            //NO UPDATE STAFFGAUGE 
+            $ocr = Ocr::create($data);    
+            
+            //REQUEST FOR LOCATION
             $line = new LineMessagingAPI();             
             $line->replyToUser(null, $event, "quickReply-only-location");
         }     
