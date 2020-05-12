@@ -103,7 +103,7 @@ class OcrController extends Controller
             case "line newsletter" :        
                 $profile = Profile::where('lineid',$event['source']['userId'])->first();         
                 $data = ($profile->newsletter=="yes")? "เปิดการรับข่าวสาร" : "ไม่รับข่าวสาร" ;
-                $line->replyToUser(null, $event, "newsletter");
+                $line->replyToUser($data, $event, "newsletter");
                 break;
             case "line weather now" :    
                 $weather = Weather::orderBy('created_at', 'desc')->first();
