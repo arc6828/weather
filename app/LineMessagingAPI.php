@@ -152,6 +152,49 @@ class LineMessagingAPI //extends Model
 
     }
 
+    public function pushToUser($data,$lineids, $event, $message_type)
+    {
+        
+        switch($message_type)
+        {
+            
+            case "text": 
+                $template_path = storage_path('../public/json/text-reply.json');   
+                $string_json = file_get_contents($template_path);
+                $string_json = str_replace("<text>",$data,$string_json);
+                $messages = [ json_decode($string_json, true) ]; 
+                break;
+        }        
+
+        $body = [
+            "to" => $lineids,
+            "messages" => $messages,
+        ];
+
+        $opts = [
+            'http' =>[
+                'method'  => 'POST',
+                'header'  => "Content-Type: application/json \r\n".
+                            'Authorization: Bearer '.$this->channel_access_token,
+                'content' => json_encode($body, JSON_UNESCAPED_UNICODE),
+                //'timeout' => 60
+            ]
+        ];
+                            
+        $context  = stream_context_create($opts);
+        $url = "https://api.line.me/v2/bot/message/multicast";
+        $result = file_get_contents($url, false, $context);
+
+        //SAVE LOG
+        $data = [
+            "title" => "https://api.line.me/v2/bot/message/multicast",
+            "content" => json_encode($result, JSON_UNESCAPED_UNICODE),
+        ];
+        MyLog::create($data);
+        return $result;
+
+    }
+
     public function getImageFromLine($id){
         $opts = array('http' =>[
                 'method'  => 'GET',

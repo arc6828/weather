@@ -14,7 +14,7 @@ class AddLastNewsletterDateInProfilesTable extends Migration
     public function up()
     {
         Schema::table('profiles', function (Blueprint $table) {
-            $table->date('last_newsletter_date')->nullable();
+            $table->timestamp('last_newsletter_date')->nullable()->useCurrent();
         });
     }
 
