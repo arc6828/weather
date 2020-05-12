@@ -139,17 +139,27 @@ class OcrController extends Controller
             //"locationid" => "1",
             "msgocrid" => $event["message"]["id"],
         ];
-        $location = Location::where('lineid',$data['lineid'])->orderBy('created_at','desc')->first();
-        if($location){
+        $location = Location::where('lineid',$data['lineid'])->whereDate('created_at', DB::raw('CURDATE()') )->orderBy('created_at','desc')->first();
+        if($location)
+        {
             $data["staffgaugeid"] = $location->staffgaugeid;
             $data["locationid"] = $location->id;
+            $ocr = Ocr::create($data);     
+            //FINALLY REPLY TO USER      
+            $data["ocr"] = $ocr;                  
+            $this->replyToUser($data,$event, $channel_access_token,"flex-image");
         }
-        $ocr = Ocr::create($data);
+        else
+        {
+            //NO LOCATIONS
+            //$data["staffgaugeid"] = $location->staffgaugeid;
+            //$data["locationid"] = $location->id;
+            $ocr = Ocr::create($data);     
+            //FINALLY REPLY TO USER      
+            $data["ocr"] = $ocr;                  
+            $this->replyToUser($data,$event, $channel_access_token,"quickReply-only-location");
+        }
         
-        $data["ocr"] = $ocr; 
-
-        //FINALLY REPLY TO USER                
-        $this->replyToUser($data,$event, $channel_access_token,"flex-image");
 
     }
 
@@ -335,7 +345,8 @@ class OcrController extends Controller
                 $string_json = str_replace("<msgocrid>",$event["message"]["id"],$string_json);
                 //10
                 $string_json = str_replace("<staffgauge_name>",$ocr->staffgauge->addressgauge." [{$ocr->staffgauge->id}]" ,$string_json);
-                $message =  json_decode($string_json, true); 
+                
+                $messages = [ json_decode($string_json, true) ]; 
                 break;
             case "flex-location": 
                 $location = $data["location"];
@@ -353,18 +364,23 @@ class OcrController extends Controller
                 $string_json = str_replace("<staffgauge_name>",$location->staffgauge->addressgauge." [{$location->staffgauge->id}]" ,$string_json);
                 //6
                 $string_json = str_replace("<created_at>",$location->created_at,$string_json);
-                $message = json_decode($string_json, true); 
+                $messages = [ json_decode($string_json, true) ]; 
                 break;
             case "quickReply": 
                 $template_path = storage_path('../public/json/quick-reply.json');   
                 $string_json = file_get_contents($template_path);
-                $message = json_decode($string_json, true); 
+                $messages = [ json_decode($string_json, true) ]; 
+                break;
+            case "quickReply-only-location": 
+                $template_path = storage_path('../public/json/quick-reply-only-location.json');   
+                $string_json = file_get_contents($template_path);
+                $messages = [ json_decode($string_json, true) ]; 
                 break;
         }        
 
         $body = [
             "replyToken" => $event["replyToken"],
-            "messages" => [ $message ],
+            "messages" => $messages,
         ];
 
         $opts = [

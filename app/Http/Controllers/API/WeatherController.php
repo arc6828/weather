@@ -64,10 +64,21 @@ class WeatherController extends Controller
         $requestData['detail'] = json_encode($requestData, JSON_UNESCAPED_UNICODE);
 
         $report = $requestData['report_generate'];
-        $requestData['weather_bangkok'] = $this->getDataFromWeatherBangkok();
+        $weather_bangkok = $this->getDataFromWeatherBangkok();
+        $requestData['weather_bangkok'] = $weather_bangkok;
         $checkreport = Weather::firstOrCreate(['report_generate' => $report], $requestData);
 
         //Weather::create($requestData);
+        
+        //ถ้าไม่พบคำว่า "ไม่" หมายถึง มีฝนตก ให้ push message หา subscribed user 
+        if( strpos($weather_bangkok , "ไม่") != false )
+        {
+            //echo "found !!! ";
+
+            //หา subscribed users จาก profile
+
+            //loop and push message
+        }
 
         return response()->json($requestData);
     }
