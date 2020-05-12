@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\MyLog;
 use App\Ocr;
 use App\Location;
+use App\Profile;
 use App\Staffgauge;
 use App\LineMessagingAPI;
 use App\GoogleCloudVision;
