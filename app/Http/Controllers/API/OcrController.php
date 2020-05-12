@@ -263,14 +263,15 @@ class OcrController extends Controller
         $queryString = $event['postback']['data'];
         parse_str($queryString, $new_data);
 
+        $new_data['type'] = isset($new_data['type']) ? $new_data['type'] : "";
+
         switch($new_data['type'])
         {
-            case "ocr-update" : 
-                $this->ocrUpdateHandler($event);
-                break;
             case "newsletter" : 
                 $this->newsletterUpdateHandler($event);
                 break;
+            default :
+                $this->ocrUpdateHandler($event);
             
         }
     }   
@@ -307,8 +308,26 @@ class OcrController extends Controller
 
     }
 
-    public function newsletterUpdateHandler()
+    public function newsletterUpdateHandler($event)
     {
+        $queryString = $event['postback']['data'];
+        parse_str($queryString, $new_data);
+
+        // update newsletter in profile
+        
+        $profile = Profile::where('lineid', $event['source']['userId'])->first();
+
+        $profile->newsletter = $new_data['value'];        
+        $profile->save();        
+        
+        //REPLY
+        //CREATE OCR
+        $data = "Hello";
+        //Ocr::create($data);
+
+        //FINALLY REPLY TO USER         
+        $line = new LineMessagingAPI();   
+        $line->replyToUser($ocr,$event, "text");
 
     }
 

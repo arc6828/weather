@@ -112,6 +112,12 @@ class LineMessagingAPI //extends Model
                 $string_json = file_get_contents($template_path);
                 $messages = [ json_decode($string_json, true) ]; 
                 break;
+            case "text": 
+                $template_path = storage_path('../public/json/text-reply.json');   
+                $string_json = file_get_contents($template_path);
+                $string_json = str_replace("<text>",$data,$string_json);
+                $messages = [ json_decode($string_json, true) ]; 
+                break;
         }        
 
         $body = [

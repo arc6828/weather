@@ -1,60 +1,76 @@
 {
-    "type": "flex",
-    "altText": "Flex Message",
-    "contents": {
-      "type": "bubble",
-      "direction": "ltr",
-      "hero": {
-        "type": "image",
-        "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
-        "size": "full",
-        "aspectRatio": "20:13",
-        "aspectMode": "cover"
-      },
-      "body": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "text",
-            "text": "ต้องการรับข่าวสารเมื่อสภาพอากาศเปลี่ยนแปลงผ่านไลน์ (ฟรี)",
-            "size": "xl",
-            "weight": "bold",
-            "wrap": true
-          }
-        ]
-      },
-      "footer": {
-        "type": "box",
-        "layout": "vertical",
-        "flex": 0,
-        "spacing": "sm",
-        "contents": [
-          {
-            "type": "button",
-            "action": {
-              "type": "postback",
-              "label": "ต้องการ",
-              "data": "type=newsletter&value=yes"
+  "type": "flex",
+  "altText": "Flex Message",
+  "contents": {
+    "type": "bubble",
+    "direction": "ltr",
+    "hero": {
+      "type": "image",
+      "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
+      "size": "full",
+      "aspectRatio": "20:13",
+      "aspectMode": "cover"
+    },
+    "body": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+        {
+          "type": "text",
+          "text": "ต้องการรับข่าวสารเมื่อสภาพอากาศเปลี่ยนแปลงผ่านไลน์ (ฟรี)",
+          "size": "xl",
+          "weight": "bold",
+          "wrap": true
+        },
+        {
+          "type": "box",
+          "layout": "horizontal",
+          "margin": "lg",
+          "contents": [
+            {
+              "type": "text",
+              "text": "สถานะ",
+              "color": "#AAAAAA"
             },
-            "height": "sm",
-            "style": "primary"
+            {
+              "type": "text",
+              "text": "NEWSLETTER"
+            }
+          ]
+        }
+      ]
+    },
+    "footer": {
+      "type": "box",
+      "layout": "vertical",
+      "flex": 0,
+      "spacing": "sm",
+      "contents": [
+        {
+          "type": "button",
+          "action": {
+            "type": "postback",
+            "label": "ต้องการ",
+            "data": "type=newsletter&value=yes"
           },
-          {
-            "type": "button",
-            "action": {
-              "type": "postback",
-              "label": "ไม่ต้องการ, ขอบคุณ",
-              "data": "type=newsletter&value=no"
-            },
-            "height": "sm",
-            "style": "secondary"
+          "height": "sm",
+          "style": "primary"
+        },
+        {
+          "type": "button",
+          "action": {
+            "type": "postback",
+            "label": "ไม่ต้องการ, ขอบคุณ",
+            "data": "type=newsletter&value=no"
           },
-          {
-            "type": "spacer",
-            "size": "sm"
-          }
-        ]
-      }
+          "height": "sm",
+          "style": "secondary"
+        },
+        {
+          "type": "spacer",
+          "size": "sm"
+        }
+      ]
     }
   }
+}
