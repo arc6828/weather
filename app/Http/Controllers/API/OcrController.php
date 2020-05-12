@@ -327,7 +327,7 @@ class OcrController extends Controller
 
         //FINALLY REPLY TO USER         
         $line = new LineMessagingAPI();   
-        $line->replyToUser($ocr,$event, "text");
+        $line->replyToUser($data,$event, "text");
 
     }
 
