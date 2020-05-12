@@ -140,7 +140,10 @@ class OcrController extends Controller
             //"locationid" => "1",
             "msgocrid" => $event["message"]["id"],
         ];
-        $location = Location::where('lineid',$data['lineid'])->whereDate('created_at', DB::raw('CURDATE()') )->orderBy('created_at','desc')->first();
+        $location = Location::where('lineid',$data['lineid'])
+            ->whereDate('created_at', DB::raw('CURDATE()') )
+            ->orderBy('created_at','desc')
+            ->first();
         if($location)
         {
             $data["staffgaugeid"] = $location->staffgaugeid;
@@ -184,6 +187,35 @@ class OcrController extends Controller
 
         //FINALLY REPLY TO USER                
         $channel_access_token = $this->channel_access_token;
+
+        //CHECK ว่ามี OCR ของวันนี้ยังไม่ได้ใส่ Location / Staffgauge หรือไม่
+        $ocrs = Ocr::where('lineid',$data['lineid'])
+            ->whereDate('created_at', DB::raw('CURDATE()') )
+            ->whereNull('staffgaugeid')            
+            ->orderBy('created_at','desc');
+            //->get();
+
+        if(count( $ocrs->get() ) > 0)
+        {
+            $data["staffgaugeid"] = $location->staffgaugeid;
+            $data["locationid"] = $location->id;
+            //$ocr = Ocr::create($data);   
+            $ocrs->update();  
+            //FINALLY REPLY TO USER      
+            $data["ocr"] = $ocr[0];                  
+            $this->replyToUser($data,$event, $channel_access_token,"flex-image");
+        }
+        else
+        {
+            //NO LOCATIONS
+            //$data["staffgaugeid"] = $location->staffgaugeid;
+            //$data["locationid"] = $location->id;
+            $ocr = Ocr::create($data);     
+            //FINALLY REPLY TO USER      
+            $data["ocr"] = $ocr;                  
+            $this->replyToUser($data,$event, $channel_access_token,"quickReply-only-location");
+        }
+
         $this->replyToUser($data,$event, $channel_access_token,"flex-location");
 
     }
