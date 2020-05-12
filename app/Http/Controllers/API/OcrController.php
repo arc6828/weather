@@ -105,7 +105,7 @@ class OcrController extends Controller
                 break;
             case "line weather now" :    
                 $weather = Weather::orderBy('created_at', 'desc')->first();
-                $data = "Weather Now : ".$weather->weather_bangkok;
+                $data = "Weather Now : ".$weather->weather_bangkok. " อ้างอิงจาก http://weather.bangkok.go.th/radar/RadarAnimation.aspx";
                 $line->replyToUser($data, $event, "text");
                 break;
 
