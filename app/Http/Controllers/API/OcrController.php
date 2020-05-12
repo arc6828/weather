@@ -9,6 +9,7 @@ use App\Ocr;
 use App\Location;
 use App\Profile;
 use App\Staffgauge;
+use App\Weather;
 use App\LineMessagingAPI;
 use App\GoogleCloudVision;
 
@@ -322,7 +323,17 @@ class OcrController extends Controller
         
         //REPLY
         //CREATE OCR
-        $data = "Hello";
+        $data = "";
+        switch($new_data['value'])
+        {
+            case "yes" : 
+                $weather = Weather::orderBy('created_at', 'desc')->first();
+                $data = "เริ่มต้นรับข่าวสาร ... ".$weather->weather_bangkok;
+                break;
+            case "no" : 
+                $data = "ยกเลิกการรับแจ้งข่าวสารเรียบร้อย";
+                break;
+        }
         //Ocr::create($data);
 
         //FINALLY REPLY TO USER         
