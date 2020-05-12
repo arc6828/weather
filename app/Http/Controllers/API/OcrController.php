@@ -200,7 +200,7 @@ class OcrController extends Controller
             $data["staffgaugeid"] = $location->staffgaugeid;
             $data["locationid"] = $location->id;
             //$ocr = Ocr::create($data);   
-            $ocrs->update();  
+            $ocrs->update($data);  
             //FINALLY REPLY TO USER      
             $data["ocr"] = $ocr[0];                  
             $this->replyToUser($data,$event, $channel_access_token,"flex-image");
