@@ -9,6 +9,7 @@ use App\Ocr;
 use App\Location;
 use App\Staffgauge;
 use App\LineMessagingAPI;
+use App\GoogleCloudVision;
 
 //use Google\Cloud\Vision\V1\ImageAnnotatorClient;
 //use Google\Cloud\Vision\VisionClient;
