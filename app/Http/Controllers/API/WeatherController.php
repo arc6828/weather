@@ -72,7 +72,7 @@ class WeatherController extends Controller
         //Weather::create($requestData);
         
         //ถ้าไม่พบคำว่า "ไม่" หมายถึง มีฝนตก ให้ push message หา subscribed user 
-        if( strpos($weather_bangkok , "ไม่") != false )
+        if( strpos($weather_bangkok , "ไม่") == false )
         {
             //หา subscribed users จาก profile และ last_newsletter_date not today
             //SELECT * FROM `profiles` where date(last_newsletter_date) != CURDATE() or last_newsletter_date is null
