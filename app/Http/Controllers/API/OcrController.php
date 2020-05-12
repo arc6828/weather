@@ -103,6 +103,11 @@ class OcrController extends Controller
             case "line newsletter" :                 
                 $line->replyToUser(null, $event, "newsletter");
                 break;
+            case "line weather now" :    
+                $weather = Weather::orderBy('created_at', 'desc')->first();
+                $data = "Weather Now : ".$weather->weather_bangkok;
+                $line->replyToUser($data, $event, "text");
+                break;
 
             
         }   
