@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Weather;
 use App\Profile;
+use App\LineMessagingAPI;
 
 class WeatherController extends Controller
 {
@@ -83,6 +84,7 @@ class WeatherController extends Controller
             $lineids = array_map(function($item){ return $item->lineid; },$a);
             //push message
             $data = "Weather Now : ".$weather->weather_bangkok. " อ้างอิงจาก http://weather.bangkok.go.th/radar/RadarAnimation.aspx";
+            $line = new LineMessagingAPI();   
             $line->pushToUser($data, $lineids, $event, "text");
             //Update 
             $profiles = Profile::where('newsletter','yes')
