@@ -100,7 +100,9 @@ class OcrController extends Controller
             case "line quick reply" :            
                 $line->replyToUser(null, $event, "quickReply");
                 break;
-            case "line newsletter" :                 
+            case "line newsletter" :        
+                $profile = Profile::where('lineid',$event['source']['userId'])->first();         
+                $data = ($profile->newsletter=="yes")? "เปิดการรับข่าวสาร" : "ไม่รับข่าวสาร" ;
                 $line->replyToUser(null, $event, "newsletter");
                 break;
             case "line weather now" :    

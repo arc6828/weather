@@ -9,6 +9,7 @@ use App\MyLog;
 use App\Ocr;
 use App\Location;
 use App\Staffgauge;
+use App\Weather;
 
 use Google\Cloud\Vision\V1\ImageAnnotatorClient;
 use Google\Cloud\Vision\VisionClient;
@@ -110,6 +111,7 @@ class LineMessagingAPI //extends Model
             case "newsletter": 
                 $template_path = storage_path('../public/json/flexbubble-newsletter.json');   
                 $string_json = file_get_contents($template_path);
+                $string_json = str_replace("<newsletter>",$data,$string_json);
                 $messages = [ json_decode($string_json, true) ]; 
                 break;
             case "text": 
