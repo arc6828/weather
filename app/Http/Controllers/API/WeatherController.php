@@ -46,7 +46,7 @@ class WeatherController extends Controller
             //push message
             $data = "Weather Now : ".$weather_bangkok. " อ้างอิงจาก http://weather.bangkok.go.th/radar/RadarAnimation.aspx";
             $line = new LineMessagingAPI();   
-            $line->pushToUser($data, $lineids, $event, "text");
+            $line->pushToUser($data, $lineids,  "text");
             //Update 
             /*
             $profiles = Profile::where('newsletter','yes')

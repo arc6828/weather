@@ -152,7 +152,7 @@ class LineMessagingAPI //extends Model
 
     }
 
-    public function pushToUser($data,$lineids, $event, $message_type)
+    public function pushToUser($data,$lineids, $message_type)
     {
         
         switch($message_type)
