@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Weather;
 use App\Profile;
 use App\LineMessagingAPI;
+use Illuminate\Support\Facades\DB;
 
 class WeatherController extends Controller
 {
