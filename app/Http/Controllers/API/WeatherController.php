@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Weather;
 use App\Profile;
+use App\MyLog;
 use App\LineMessagingAPI;
 use Illuminate\Support\Facades\DB;
 
@@ -42,17 +43,23 @@ class WeatherController extends Controller
             foreach($profiles as $item){ $lineids[] = $item->lineid; }
             //$lineids = array_map(function($item){ return $item->lineid; },$profiles);
             //print_r($lineids);
+            //SAVE LOG
+            $data = [
+                "title" => "Before Push",
+                "content" => json_encode($lineids, JSON_UNESCAPED_UNICODE),
+            ];
+            MyLog::create($data);
              
             //push message
             $data = "Weather Now : ".$weather_bangkok. " อ้างอิงจาก http://weather.bangkok.go.th/radar/RadarAnimation.aspx";
             $line = new LineMessagingAPI();   
             $line->pushToUser($data, $lineids,  "text");
             //Update 
-            /*
+            
             $profiles = Profile::where('newsletter','yes')
                 ->whereDate('last_newsletter_date','<', DB::raw('CURDATE()') )
                 ->update(['last_newsletter_date'=> date("Y-m-d H:i:s") ]);
-            */
+            
 
         }
         /*
