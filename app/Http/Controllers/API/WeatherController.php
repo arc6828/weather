@@ -28,7 +28,7 @@ class WeatherController extends Controller
         if( strpos($weather_bangkok , "ไม่") == false )
         {
             echo "hello";
-            /*
+            
             //หา subscribed users จาก profile และ last_newsletter_date not today
             //SELECT * FROM `profiles` where date(last_newsletter_date) != CURDATE() or last_newsletter_date is null
             $profiles = Profile::where('newsletter','yes')
@@ -36,6 +36,8 @@ class WeatherController extends Controller
                 ->get();
             //loop lineids
             $lineids = array_map(function($item){ return $item->lineid; },$profiles);
+            print_r($lineids);
+            /*
             //push message
             $data = "Weather Now : ".$weather->weather_bangkok. " อ้างอิงจาก http://weather.bangkok.go.th/radar/RadarAnimation.aspx";
             $line = new LineMessagingAPI();   
