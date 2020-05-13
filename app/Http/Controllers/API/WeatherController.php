@@ -38,9 +38,9 @@ class WeatherController extends Controller
             //loop lineids
             
             print_r($profiles);
-            /*
             $lineids = array_map(function($item){ return $item->lineid; },$profiles);
             print_r($lineids);
+            /*
             //push message
             $data = "Weather Now : ".$weather->weather_bangkok. " อ้างอิงจาก http://weather.bangkok.go.th/radar/RadarAnimation.aspx";
             $line = new LineMessagingAPI();   
