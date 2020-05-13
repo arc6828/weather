@@ -27,7 +27,8 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Report Generate</th>
+                                        <th>Date</th>
+                                        <th>Report</th>
                                         <th>Outfalls</th>
                                         <th>Kmls</th>
                                         <th>Profiles</th>
@@ -44,7 +45,7 @@
                                                 {{ $item->report_generate }}
                                             </a>                                            
                                         </td>
-                                  
+                                        <td>{{ $item->weather_bangkok }}</td>
                                         <td> <a class="btn btn-dark btn-sm" href=" {{ asset('/storage') }}/{{ $item->Outfalls }}" target="_blank"><img src="{{ asset('/storage') }}/{{ $item->Outfalls }}" width="50" /></a></td>
                                         <td> <a class="btn btn-secondary btn-sm" href=" {{ asset('/storage') }}/{{ $item->kmls }}"><i class="icon-file"></i> KMZ File</a></td>
                                         <td> 
