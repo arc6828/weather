@@ -17,8 +17,40 @@ class WeatherController extends Controller
      */
     public function index()
     {
+        $weather_bangkok = $this->getDataFromWeatherBangkok();
+        echo $weather_bangkok;
+        $requestData['weather_bangkok'] = $weather_bangkok;
+        //$checkreport = Weather::firstOrCreate(['report_generate' => $report], $requestData);
+
+        //Weather::create($requestData);
+        
+        //ถ้าไม่พบคำว่า "ไม่" หมายถึง มีฝนตก ให้ push message หา subscribed user 
+        if( strpos($weather_bangkok , "ไม่") == false )
+        {
+            echo "hello";
+            /*
+            //หา subscribed users จาก profile และ last_newsletter_date not today
+            //SELECT * FROM `profiles` where date(last_newsletter_date) != CURDATE() or last_newsletter_date is null
+            $profiles = Profile::where('newsletter','yes')
+                ->whereDate('last_newsletter_date','<', DB::raw('CURDATE()') )                
+                ->get();
+            //loop lineids
+            $lineids = array_map(function($item){ return $item->lineid; },$profiles);
+            //push message
+            $data = "Weather Now : ".$weather->weather_bangkok. " อ้างอิงจาก http://weather.bangkok.go.th/radar/RadarAnimation.aspx";
+            $line = new LineMessagingAPI();   
+            $line->pushToUser($data, $lineids, $event, "text");
+            //Update 
+            $profiles = Profile::where('newsletter','yes')
+                ->whereDate('last_newsletter_date','<', DB::raw('CURDATE()') )
+                ->update(['last_newsletter_date'=> date("Y-m-d H:i:s") ]);
+            */
+
+        }
+        /*
         $weathers = Weather::all();
         return response()->json($weathers);
+        */
     }
 
     /**
