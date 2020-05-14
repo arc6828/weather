@@ -19,7 +19,7 @@ class WeatherController extends Controller
      */
     public function index()
     {
-        $weather_bangkok = $this->getDataFromWeatherBangkok();
+        $weather_bangkok = "Test Line Push";
         echo $weather_bangkok;
         $requestData['weather_bangkok'] = $weather_bangkok;
         //$checkreport = Weather::firstOrCreate(['report_generate' => $report], $requestData);
@@ -38,14 +38,14 @@ class WeatherController extends Controller
                 ->get();
             //loop lineids
             
-            //print_r($profiles);
+            print_r($profiles);
             $lineids = [];
             foreach($profiles as $item){ $lineids[] = $item->lineid; }
             //$lineids = array_map(function($item){ return $item->lineid; },$profiles);
-            //print_r($lineids);
+            print_r($lineids);
             //SAVE LOG
             $data = [
-                "title" => "Before Push",
+                "title" => "Before Push Test",
                 "content" => json_encode($lineids, JSON_UNESCAPED_UNICODE),
             ];
             MyLog::create($data);
@@ -56,10 +56,10 @@ class WeatherController extends Controller
             $line->pushToUser($data, $lineids,  "text");
             //Update 
             
-            $profiles = Profile::where('newsletter','yes')
+            /*$profiles = Profile::where('newsletter','yes')
                 ->whereDate('last_newsletter_date','<', DB::raw('CURDATE()') )
                 ->update(['last_newsletter_date'=> date("Y-m-d H:i:s") ]);
-            
+            */
 
         }
         /*
