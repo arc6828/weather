@@ -53,3 +53,8 @@ function getDataFromWeatherBangkok(){
 }
 Route::resource('my-log', 'MyLogController');
 Route::resource('profile', 'ProfileController');
+
+
+Route::resource('user-manual', function(){
+    return view('user-manual');
+});
