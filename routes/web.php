@@ -55,6 +55,6 @@ Route::resource('my-log', 'MyLogController');
 Route::resource('profile', 'ProfileController');
 
 
-Route::resource('user-manual', function(){
+Route::get('user-manual', function(){
     return view('user-manual');
 });
