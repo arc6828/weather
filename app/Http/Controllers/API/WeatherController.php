@@ -130,10 +130,17 @@ class WeatherController extends Controller
             //loop lineids
             $lineids = [];
             foreach($profiles as $item){ $lineids[] = $item->lineid; }
+
+            //SAVE LOG
+            $data = [
+                "title" => "Before Push : ".$weather_bangkok,
+                "content" => json_encode($lineids, JSON_UNESCAPED_UNICODE),
+            ];
+            MyLog::create($data);
             //push message
-            $data = "Weather Now : ".$weather_bangkok. " อ้างอิงจาก http://weather.bangkok.go.th/radar/RadarAnimation.aspx";
+            $data = "แจ้งเตือนข่าวสาร : ".$weather_bangkok. " อ้างอิงจาก http://weather.bangkok.go.th/radar/RadarAnimation.aspx";
             $line = new LineMessagingAPI();   
-            $line->pushToUser($data, $lineids, $event, "text");
+            $line->pushToUser($data, $lineids, "text");
             //Update 
             $profiles = Profile::where('newsletter','yes')
                 ->whereDate('last_newsletter_date','<', DB::raw('CURDATE()') )
