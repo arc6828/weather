@@ -58,3 +58,9 @@ Route::resource('profile', 'ProfileController');
 Route::get('user-manual', function(){
     return view('user-manual');
 });
+
+Route::get('barcode', function(){
+    echo '<img src="data:image/png;base64,' . DNS1D::getBarcodePNG('OE1234564', 'C128') . '" alt="barcode"   /><br>';
+    echo 'OE1234564';
+    return "";
+});
