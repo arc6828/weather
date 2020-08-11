@@ -27,7 +27,7 @@
                                         <th>ID</th><td>{{ $ocr->id }}</td>
                                     </tr>
                                     <tr><th> Msg.Id </th><td> {{ $ocr->msgocrid }} </td></tr>
-                                    <tr><th> Owner </th><td> {{ $ocr->user->name }} </td></tr>
+                                    <tr><th> Owner </th><td> {{ isset($ocr->user) ? $ocr->user->name : "" }} </td></tr>
                                     <tr><th> Title </th><td> {{ $ocr->title }} </td></tr>
                                     <tr><th> Content </th><td> {{ $ocr->content }} </td></tr>
                                     <tr><th> Numbers </th><td> {{ $ocr->numbers }} </td></tr>
